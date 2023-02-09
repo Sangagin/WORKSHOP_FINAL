@@ -4,7 +4,7 @@
 # -------------------------------- IMAGES ----------------------------------
 
 # ----- Scenes -----
-
+#test
 # ----- jour -----
 image barConcert1 = "images/bgjour/barconcert1.jpg"
 image bureau1 = "images/bgjour/bureau1.jpg"
