@@ -1481,7 +1481,7 @@ label start:
 
         menu:
             "Je vais le suivre, j'ai peur qu'il lui arrive quelque chose de grave.":
-                "Je crois qu'ils n'ont pas compris la dernière fois en effet."
+                "Moi" "Je crois qu'ils n'ont pas compris la dernière fois en effet."
 
                 $amitie_punk += 1
 
@@ -1494,12 +1494,10 @@ label start:
 
                 punk "C'est parti, on va les démolir."
 
-                "Est-ce que j'essaie de le convaincre de se calmer et de ne pas y aller ?"
-                hide hugopieddebiche1
-                # MINI JEU CONVAINCRE LE PUNK DE NE PAS Y ALLER
-                #Au final pas de mini jeu, juste le choix
-                # si echec
-                "Il a l'air résolu à y aller..."
+                "Moi" "Tu ne penses pas que c'est trop dangereux tout de même ?"
+                punk "Si on est armés, ils ne feront pas le poids."
+
+                "Il me pointe du nez le pied de biche que j'ai entre les mains. Je crois qu'il est vraiment résolu à y aller..."
                 "Je ne sais pas si je l'accompagne ou pas, ça a tout de même l'air dangereux."
                 menu:
                     "Je ne vais pas le laisser seul.":
@@ -2288,7 +2286,35 @@ label start:
 
     # MAUVAISE FIN : LE JOUEUR PRINCIPAL MEURT AVEC PUNK
     label badEnding_3:
-        "aha les deux meurent"
+        "Moi" "Bon on y va ?"
+        punk "J'aime ta motivation petit."
+
+        "Il me guide jusqu'au centre-ville, puis me traîne dans des petites ruelles dont j'ignorais l'existence."
+        
+        skh "Alors Patrick, on ramène son petit copain pour la castagne ?"
+        punk "Ouais et alors ? Va te faire foutre putain de nazi."
+
+        "Son petit copain ??? Je..."
+        "Je me sens rougir mais je ne dois pas me laisser emporter par mes émotions, je donne le premier coup au chauve en face de moi avant même qu'il ne puisse le voir arriver."
+
+        punk "Eh beh [nom] ! Je ne t'imaginais pas aussi aggressif."
+        "Moi" "Je ne suis pas aggressif. J'ai juste envie de proteger celui que j'aime."
+
+        #punk sourit
+        "Je n'ai jamais vu Patrick autant sourire."
+        "Jusqu'à ce qu'il se prenne un coup, puis un deuxième."
+        "Il se fait pousser à terre par deux personnes du groupe opposé."
+        # mc se fait pousser lui aussi, jsp si c'est clair
+        "Je me sens perdre équilibre."
+        "Mes sens perdus, j'ai du mal à distinguer où je suis."
+        "J'ai mal à la tête, mal aux côtes."
+        "Je crois que je suis en train de me prendre des coups."
+        "En relevant les yeux, je vois Patrick, gisant au sol."
+        "Ses yeux inanimés me blessent plus que tous les coups que je me prends."
+        "Je tente de tendre ma main vers lui mais suis coupé de mon élan."
+        "Le sol est si froid."
+        "J'ai mal à la tête."
+        "Je suis fatigué."
 
 
         "----- MAUVAISE FIN 03 -----"
@@ -2296,9 +2322,14 @@ label start:
         jump end
 
 
-    # MAUVAIS FIN : PUNK MEURT DANS LA BAGARRE - FESTIVAL AVEC SKINHEADS
+    # MAUVAISE FIN : PUNK MEURT DANS LA BAGARRE - FESTIVAL AVEC SKINHEADS
     label badEnding_4:
-        "Je décide de rentrer chez moi directement pour éviter de me faire ennyuer."
+        "Moi" "Dis Patrick, je suis désolé mais je penses tout de même que c'est trop dangereux."
+        "Moi" "Je vais rentrer chez moi."
+        punk "Taffiole."
+
+        "Je regarde Patrick me tourner le dos puis partir en direction du centre-ville."
+        "Je décide de ne pas le suivre et de rentrer chez moi directement pour éviter de me faire ennyuer."
         "J'espère tout de même que Patrick va bien..."
 
         "La nuit se passe sans encombre, puis la journée qui suit est mon jour de repos."
@@ -2733,6 +2764,9 @@ label start:
         
 
     label end:
+
+        scene ecrandefin
+
         "MERCI D'AVOIR JOUE A \"DE L'AMOUR ENTRE LES NOTES\" !"
 
         $renpy.pause()
