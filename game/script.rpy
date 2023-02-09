@@ -1830,7 +1830,7 @@ label start:
         "Bassiste" "Tu vas payer !"
 
         "Je ne comprends vraiment pas de quoi il veut parler."
-        "Après lui avoir demandé des explications, j'aprrends que Marie-Anne a été arrêtée hier soir."
+        "Après lui avoir demandé des explications, j'apprends que Marie-Anne a été arrêtée hier soir."
         "Les policiers du coin faisaient leur ronde pendant qu'elle exhumait un corps."
         "Elle a apparemment été arrêtée sur le champ, et est depuis en cellule."
 
@@ -1844,8 +1844,9 @@ label start:
         hippie "J'espère quand même te revoir au studio un jour."
         hippie "De Jeanne."
 
-        "Affalé sur mon lit, je laisse tomber la lettre a terre pendant qu'une larme coule sur mon visage."
+        "Affalé sur mon lit, je laisse tomber la lettre à terre pendant qu'une larme coule sur mon visage."
 
+        # photo mugshot gothioque
         "----- MAUVAISE FIN 01 -----"
 
         jump end
@@ -1855,6 +1856,18 @@ label start:
     label badEnding_2:
         hippie "overdooooose"
 
+
+        "Sous le choc, je rentre chez moi, bras ballants. Ne sachant plus quoi faire car je n'ai pas pu l'aider."
+        "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
+        "Quelques jours après le festival, je reçois une lettre de Marie-Anne."
+
+        got "[nom], je vais commencer ma lettre en te disant que je t'en veux pour ce qui est arrivé à Jeanne et pour nous avoir lâchés au festival."
+        got "blabla"
+        got "J'aimerais également que tu saches aussi que ce sont les \"Plus Plus Plan\" qui ont pu performer au festival. C'était vraiment merdique de ta part de nous lâcher comme ça."
+        got "J'espère ne jamais te revoir au studio."
+        got "De Marie-Anne."
+
+        "Affalé sur mon lit, je laisse tomber la lettre a terre pendant qu'une larme coule sur mon visage."
 
         "----- MAUVAISE FIN 02 -----"
 
@@ -1877,7 +1890,7 @@ label start:
 
 
         "----- MAUVAISE FIN 04 -----"
-        
+
         jump end
 
 
