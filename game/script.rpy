@@ -152,7 +152,7 @@ define voisine = Character('Vieille Voisine', color="cc8888")
 
 
 init python:
-    
+    import random
     class Item:
         def __init__(self, name, imageI):
             self.name = name
@@ -183,6 +183,7 @@ label start:
     $thune = 0
     $ pvAlan = 5
     $ pvPerso = 3
+    $ points =0
 
     # Declaration varaibles inventaire
     $ inventaire = []
@@ -1888,6 +1889,72 @@ label start:
         "Moi" "Heu... ok je peux essayer."
         hide gotpos01
         # MINI JEU NOURRITURE
+        jump prepaBouffe
+
+    label prepaBouffe:
+        "Preparez un delicieux repas."
+        window hide
+
+    label montreObjet :
+        "Choisissez le bon ingrédient."
+
+        $chance=random.randint(1,4)
+
+        if chance==1:
+            show screen poison
+        elif(1<chance<5):
+            show screen nourriture
+
+        $ renpy.pause()
+
+        jump montreObjet
+
+    label negatif : 
+
+        hide screen poison
+        hide screen nourriture
+
+
+        $points=points-1
+
+        "vous avez [points] points"
+
+        $ renpy.pause()
+
+        if points<0:
+            jump finNeg
+        else:
+            jump montreObjet
+
+    label positif : 
+
+
+        hide screen nourriture
+        hide screen poison
+
+
+        $points=points+1
+
+        "vous avez [points] points"
+
+        $ renpy.pause()
+
+        if points>=5:
+            jump finPos
+        else:
+            jump montreObjet
+
+
+
+
+        
+
+    label finNeg :
+        "C'est perdu"
+        $ renpy.pause()
+
+
+
 
         #--- si minijzu perdu ---
 
@@ -1937,7 +2004,9 @@ label start:
         "En rouvrant les yeux je la vois au loin, j'imagine que cela ne sert a rien de la rattraper."
         "Je devrais rentrer et lui reparler une prochaine fois."
 
-
+    label finPos :
+        "Cela me semble parfait !"
+        $ renpy.pause()
         #---si minijeu reussi---
         $flirt_got = True
 
