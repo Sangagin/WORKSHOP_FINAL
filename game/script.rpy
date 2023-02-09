@@ -328,8 +328,8 @@ label start:
 
         # ------------------------- JOURNEE 2 (PAS JOUABLE) -------------------------------------
         $jour += 1
-        "Allez, c’est parti pour une nouvelle journée de travail. "
-        "Je me demande pourquoi le groupe d’aujourd’hui ne voulait pas faire la présentation en même temps que les autres."
+        "Allez, c'est parti pour une nouvelle journée de travail. "
+        "Je me demande pourquoi le groupe d'aujourd'hui ne voulait pas faire la présentation en même temps que les autres."
 
         scene studio with dissolve
         #scene studio
@@ -755,7 +755,46 @@ label start:
 
         $choix2_balade = True
 
-        # ECRIRE ICI
+        "Autant aller découvrir le quartier."
+        "J'ai vu un super parc en arrivant, je vais aller passer un moment là bas, prendre un petit peu l'ambiance du quartier."
+        "Après quelques minutes de marche, j'arrive enfin devant l'entrée de celui-ci."
+        "Le quartier est sympathique, même de nuit."
+        "La lumière de l'éclairage urbain donne une ambiance toute particulière aux vieux bâtiments, c'est très joli. Ce petit parc l'est également d'ailleurs."
+        "Mais… Est ce que ça ne serait pas Marie-Anne ? "
+        "Je ne savais pas qu'elle habitait dans le coin."
+        "Avant que je puisse décider si je voulais l'interpeller ou non, elle me fait signe de m'approcher. "
+        "Elle a dû me repérer."
+
+        got "Bah alors le nouveau, qu'est-ce que vient faire dans le coin ?"
+        got "Tu profites de la nuit pour traquer tes artistes ?"
+
+        "Si elle n'avait pas eu un sourire narquois aux lèvres, j'aurais presque pu croire qu'elle était sérieuse. "
+
+        "Moi" "Non, c'est un hasard. Nous ne sommes pas partis d'un bon pied tout à l'heure, je m'en excuse... "
+        got "T'inquiète, j'ai l'habitude. "
+        got "Et je me doute bien que c'est un hasard, t'as pas l'air d'être le genre de mec à faire des coups dans le dos comme ça."
+        "Moi" "Ha ! Je prend le compliment. "
+        "Moi" "Tu me sembles prompte à juger les gens en tout cas."
+        got "Bien obligé. Par ici, un mauvais regard ça peut valoir un coup de batte dans les genoux si tu fais pas attention."
+
+        "Je commence à regretter d'être sorti me balader le soir..."
+
+        "Moi" "Le quartier craint à ce point ? "
+        "Moi" "Mais et toi alors, tu n'as pas peur des mauvaises rencontres ? "
+
+        "Marie-Anne affiche un sourire mystérieux."
+
+        got "T'inquiète pas pour moi va, je sais me débrouiller. "
+        got "Et puis je suis en bas de chez moi, je suis juste sortie fumer une clope."
+        got "On se revoit au studio un de ces quatre, si tu décides de nous choisir pour la session. "
+
+        "Elle m'adresse un signe de la main et se retourne sans attendre de réponse de ma part."
+
+        got "Ah et, te pisse pas dessus si tu vois des ombres en rentrant chez toi !"
+
+        "Son exclamation me fait sursauter, et c'est en grommelant que je rentre chez moi. "
+        "Je remarque une épicerie asiatique sur le chemin, il faudra que j'aille y faire un tour un de ces quatre."
+
         jump suite2
 
     label choix2_hippie:
@@ -883,6 +922,7 @@ label start:
         "Patrick se lève et s'en va, me laissant seul face à ma bière."
         "..."
         "Bon, je vais finir ma bière et je vais rentrer."
+        "Je remarque une épicerie asiatique sur le chemin, il faudra que j'aille y faire un tour un de ces quatre."
 
         jump suite2
 
