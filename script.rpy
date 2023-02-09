@@ -19,7 +19,8 @@ image thabor7 = "images/bgjour/thabor7.jpg"
 image thaborcage1 = "images/bgjour/thaborcage1.jpg"
 image barPunk = "images/bgjour/barpunk.jpg"
 image barPunk2 = "images/bgjour/barpunk2.jpg"
-image studio = "images/bgjour/studio.jpeg.jpg"
+image studio = "images/bgjour/studio.jpg"
+image apt = "images/bgjour/apt.jpg"
 
 # ----- nuit -----
 image bar01 = "images/bgn/bar01.jpg"
@@ -289,6 +290,7 @@ label start:
         "Moi" "Pas de soucis madame, je sais me défendre. Je vous souhaite une bonne soirée cependant, je dois me lever tôt demain."
         voisine "Il n’y a pas de soucis. Passez prendre une tasse de thé un de ces quatre. Bonne soirée."
 
+        scene apt
         # image interieur appartement
         "Je rentre dans mon appartement, laissant la vieille femme rentrer chez elle."
         "Je ne m’attendais pas à passer une soirée si agitée. Il faudra que je fasse attention dans le voisinage désormais. "
@@ -302,9 +304,10 @@ label start:
         $jour += 1
         "Allez, c’est parti pour une nouvelle journée de travail. "
         "Je me demande pourquoi le groupe d’aujourd’hui ne voulait pas faire la présentation en même temps que les autres."
+        scene studio
         #scene studio
         "Enfin, ils ne devraient pas tarder."
-
+        show alanneutre
         #afficher skinhead
         skh "Oy, c’est toi le nouveau ?"
 
