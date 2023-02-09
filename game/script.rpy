@@ -195,11 +195,13 @@ label start:
     scene rue1
 
     # afficher devanture studio
+    scene bgchemin02
     "Le bus ne m'a pas aidé pour mon retard…"
     "Je crois que je me suis pas trompé de rue cette fois, pas comme ce matin haha !"
     "Par contre j'entends deux femmes qui ont l'air de se disputer, le quartier a l'air un peu dangereux..."
 
     # afficher interieur studio et got, hippie au premier plan, punk derriere en petit
+    scene studio
     show gotangry01 at left
     "Gothique" "Mais putain ! Tu m'as désaccordé ma guitare ! Pourquoi tu touches à mes instruments, reste avec ton djembé dans ton coin !"
     show  romaneangry at right
@@ -222,6 +224,8 @@ label start:
 
 
     label suite1:
+        hide gotneutral01
+        hide romaneneutre
         "Les membres des deux groupent partent ensuite se reposer après m'avoir demandé de les appeler rapidement pour reprendre les répetitions."
         "Bon, maintenant qu'elles sont parties, je vais pouvoir m'y mettre. "
         "Qui est-ce que j'enregistre aujourd'hui déjà ?"
@@ -229,12 +233,15 @@ label start:
         "C'est à ce moment que l'homme qui semblait s'amuser de la dispute de tout à l'heure ouvre violemment la porte."
         "Il rentre dans la petite pièce puis me salue d'un mouvement de tête."
         "Moi" "Bonjour, enchanté de vous rencontrer, je suis le nouvel ingé-son, [nom]. J'..."
+        show hugoangry
         "Punk" "Ouais ouais, super super. "
         punk "Moi c'est Patrick."
         punk "Contente-toi d'enregistrer et silence. Et t'as pas intérêt à foirer."
 
         "Oups, je crois qu'il vaudrait mieux éviter de trop lui parler..."
         #fondu noir
+        scene black with dissolve 
+        scene studio
         "La séance se passe, puis arrive la fin de la journée."
         "Patrick sort du studio et me laisse ainsi seul."
 
@@ -623,7 +630,10 @@ label start:
         "Moi" "Je suis [nom] . J'ai été embauché en tant qu'ingé son dans ce studio. Et pour répondre à votre question, la porte était ouverte."
         "Hippie" "Hahahaha !"
         "Moi" "Pourriez vous me dire qui vous êtes ?"
-
+        hide romaneangry
+        show romaneneutre
+        hide gotangry01
+        show gotneutral01
         "hippie" "Excusez moi hahaha ! Je suis Jeanne, membre du groupe \"Quatuor\", on m'a dit de venir aujourd'hui concernant un festival donc me voici !"
         "hippie" "C'est un plaisir de vous rencontrer"
         "got" "Ouais, désolée. Je m'appelle Marie-Anne et suis la guitariste de mon groupe \"Effervecence\"."
