@@ -586,7 +586,7 @@ label start:
             jump suite03
         if jour == 4:
             jump suite04
-        if jour == 5
+        if jour == 5:
             jump suite05
 
 
@@ -669,16 +669,19 @@ label start:
         "Moi" "Pourriez vous me dire qui vous êtes ?"
 
         hide romaneangry
-        show romaneneutre
-
-        hide gotangry01
-        show gotneutral01
+        show romaneneutre 
 
         "hippie" "Excusez moi hahaha ! Je suis Jeanne, membre du groupe \"Quatuor\", on m'a dit de venir aujourd'hui concernant un festival donc me voici !"
         "hippie" "C'est un plaisir de vous rencontrer"
+
+        hide romaneneutre
+        hide gotangry01
+        show gotneutral01
+
+        
         "got" "Ouais, désolée. Je m'appelle Marie-Anne et suis la guitariste de mon groupe \"Effervecence\"."
 
-        "L'homme qui observait la dispute se lève sort par la porte qui mène à l'arrière du studio."
+        "L'homme qui observait la dispute se lève et sort par la porte qui mène à l'arrière du studio."
 
         "Nous continuons à discuter jusqu'à ce que, en effet, les autres membres de chaque groupe arrivent."
         "J'ai également appris que le quatrième groupe qui devait venir ne viendrait en fait que demain, seul."
@@ -1065,10 +1068,12 @@ label start:
                     "J'espère que Patrick aussi... "
                     jump suite3
 
-    else:
-        punk "Beau travail aujourd'hui."
-        punk "A demain peut-être."
-        jump suite3
+
+
+#   else:
+#       punk "Beau travail aujourd'hui."
+#       punk "A demain peut-être."
+#       jump suite3
 
 
     label bagarre:
@@ -1168,7 +1173,7 @@ label start:
 
                 "Est-ce que j'essaie de le convaincre de se calmer et de ne pas y aller ?"
                 # MINI JEU CONVAINCRE LE PUNK DE NE PAS Y ALLER
-
+                #Au final pas de mini jeu, juste le choix
                 # si echec
                 "Il a l'air résolu à y aller..."
                 "Je ne sais pas si je l'accompagne ou pas, ça a tout de même l'air dangereux."
