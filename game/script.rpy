@@ -36,6 +36,9 @@ image bgcn04 = "images/bgn/bgcn04.jpg"
 image bgcnchemin01 = "images/bgn/bgcnchemin01.jpg"
 image bge01 = "images/bgn/bge01.jpg"
 image bge02 = "images/bgn/bge02.jpg"
+image thaborn01 = "images/bgn/thaborn01.jpg"
+image thaborn02 = "images/bgn/thaborn02.jpg"
+image thaborn03 = "images/bgn/thaborn03.jpg"
 
 
 # ----- Personnages -----
@@ -392,12 +395,8 @@ label start:
             "Une autre fois peut-être..."
 
 
-<<<<<<< HEAD
     label suite02:
         scene studio
-=======
-    label suite03:
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
         "En arrivant je découvre cette fois le studio dans un silence assez effrayant. "
         "Aujoud'hui je vais devoir choisir un des trois groupes que j'ai rencontré hier pour commencer à enregistrer."
         "J'hésite..."
@@ -419,39 +418,15 @@ label start:
 
     label suite3:
         # CHANGER DIALOGUES
-<<<<<<< HEAD
         scene apt with dissolve
         "Je suis enfin chez moi."
         "rompiche"
-=======
-        "Je ne pensais pas en arrivant au studio ce matin que cette journée durerait aussi longtemps."
-        if choix3_bagarre:
-            "Patrick m'en a fait voir de toutes les couleurs..."
-        if choix3_cimetiere:
-            "Je ne m'attendais pas à être invité par Marie-Anne de la sorte."
-            if flirt_got:
-                "Un rendez-vous dans un cimetière... C'est quand même assez improbable !"
-        if choix3_diabolo:
-            "Je repense à Jeanne et je me rend compte qu'elle est super sympa !"
-            if flirt_hippie:
-                "J'ai adoré son atelier découverte, j'ai pu découvrir de nouvelles choses."
-        "Je me suis ensuite rappelé que j'ai deux autres groupes à gérer, il ne faudrait pas que je les oublie non plus."
-        "Mais je verrais tout cela demain, pour le moment, je mérite une bonne nuit de sommeil."
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
 
 
     # --------------------------------------------------------------------------
     # ----- JOURNEE 4 -----
     $jour += 1
 
-<<<<<<< HEAD
-=======
-    "A peine réveillé que je réflechis déjà au festival..."
-    "Je devrais penser à autre chose en dehors de mes heures de travail, et plutôt essayer de me familiariser avec cette nouvelle ville et ses habitants."
-    "Mais pour le moment je n'ai pas le temps."
-    "Je prends ma douche en vitesse, un café que je bois d'une traite, puis je file au studio."
-
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
     "Dans le noir, le studio a une allure terifiante."
     "Les ombres des instruments peuvent ressembler à des créatures tapies dans la pénombre."
     "Mais il me suffit d'un seul bouton pour les faire disparaître."
@@ -740,17 +715,10 @@ label start:
         "Moi" "Je suis [nom] . J'ai été embauché en tant qu'ingé son dans ce studio. Et pour répondre à votre question, la porte était ouverte."
         "Hippie" "Hahahaha !"
         "Moi" "Pourriez vous me dire qui vous êtes ?"
-<<<<<<< HEAD
         hide romaneangry
         show romaneneutre at right
         hide gotangry01 
         show gotneutral01 at left
-=======
-        hide gotangry01
-        hide romaneangry
-        show romaneneutre 
-
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
         "hippie" "Excusez moi hahaha ! Je suis Jeanne, membre du groupe \"Quatuor\", on m'a dit de venir aujourd'hui concernant un festival donc me voici !"
         "hippie" "C'est un plaisir de vous rencontrer"
 
@@ -960,11 +928,7 @@ label start:
             "Je comptais rentrer, je n'ai toujours pas fini de m'installer.":
                 "Moi" "C'est gentil d'avoir proposé ceci dit"
                 got "Boh pas grave ! Une prochaine fois."
-<<<<<<< HEAD
                 hide gotpos01
-=======
-                jump suite3
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
 
 
 
@@ -1020,7 +984,6 @@ label start:
         "blablabla"
         #ne pas oublier d'ecrire ici"
 
-<<<<<<< HEAD
         if amitie_punk >= 2:
             scene black with dissolve 
             scene studio
@@ -1189,12 +1152,6 @@ label start:
             show hugoneutre
             punk "Beau travail aujourd'hui."
             punk "A demain peut-être."
-=======
-        if choix2_bar:
-            punk "Hey [nom], tu trouvais l'autre trou pas trop mal, j't'attends à la sortie, j'vais te montrer un vrai bar."
-        else:
-            punk "Hey [nom], j't'attends à la sortie, j'vais te montrer un endroit sympa."
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
 
         "C'est presque menaçant comme invitation, je me demande si je devrais avoir peur."
 
@@ -1390,11 +1347,8 @@ label start:
 
             # Dialogue spécial si la gothique a été choisie la veille
             if choix3_cimetiere:
-<<<<<<< HEAD
                 # si choix got la veille
                 show gotpos02
-=======
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
                 got "Oh oui bien sûr ! ça été hier après que je sois parti ?"
                 "Moi" "Nan tu m'as quand même laissé comme un imbécile au milieu d'un cimetière !"
                 got "Mais je suis sûre que tu t'es bien amusé nan ?"
@@ -1418,37 +1372,21 @@ label start:
             menu:
                 "Ouais je mangerais bien un truc la.":
                     jump date2_got
-<<<<<<< HEAD
                 "Je me suis déjà préparé un repas à me réchauffer désolé...":
                     hide gotpos02
                     "fin de journee"
                     "tu apprends que la goth est en prison"
                     "----- BAD ENDING 1 -----"
-=======
-
-                "Je me suis déjà préparé un repas à réchauffer désolé...":
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
                     jump badEnding_1
         else:
             jump choix3_got
 
 
     label choix4_punk:
-<<<<<<< HEAD
         # ecrire dialogue de merde passe temps
         scene black with dissolve 
         scene studio
         show hugohappy
-=======
-        "Encore une fois, Patrick se défoule lorsqu'il est devant son micro."
-        "Je constate que son niveau s'améliore de jour en jour. Je devrais peut-être lui en faire part pour le motiver."
-
-        "Moi" "C'est super Patrick ! Les nouvelles chansons prennent bien forme. Je vous félicite toi et ton groupe."
-        punk "Evidemment que ça prend forme, qu'est-ce que tu crois ?"
-
-        "J'aurais peut-être dû me taire..."
-
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
         punk "Hey, champion, viens par là deux secondes."
         "Moi" "Qu'est-ce qu'il y a, tu as besoin de quelque chose ?"
         punk "Ça te dirait de remettre ça avec les fachos ? "
@@ -1751,13 +1689,9 @@ label start:
         "J'ai pu lui dire que moi même je n'étais pas sûr d'être à cent pour cent hétérosexuel, et je lui ai promis de garder le secret."
 
         #cut sur ruelle avec skinhead
-<<<<<<< HEAD
         scene bgchemin02 with dissolve
         show alanmachiavelique
         skh "Et bien dis donc, Patrick est un pd, voilà qui change tout…"
-=======
-        skh "Et bien dis donc, Patrick est un pd, voilà qui change tout..."
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
 
         "Une fois rentré, je m'allonge dans mon lit, épuisé par la journée que je viens de passer."
         "Je suis tellement fatigué mais n'arrive pas à fermer l'oeil. Je n'arrive pas à me sortir Patrick de la tête."
@@ -1847,12 +1781,8 @@ label start:
         "En arrivnt au niveau de la lumière je peux voir avec une certaine appréhension Marie-Anne en train de dresser une nappe sur deux tombes collées côte à côte."
         "Elle y place plusieurs boites et quelques boissons."
 
-<<<<<<< HEAD
         show gotpos01
         got "Oh ! t'es deja la !"
-=======
-        got "Oh ! T'es deja la !"
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
         got "Viens j'ai préparé quelques trucs."
 
         "Pour pouvoir m'asseoir en face d'elle je dois enjamber quelques caveaux et urnes sur mon passage. "
@@ -2018,7 +1948,7 @@ label start:
         hide romaneneutresmile
 
         scene black with dissolve 
-        scene bge01
+        scene thaborn02
         "Le soir venu..."
         "Je suis bien à l'adresse que m'a donnée Jeanne, mais je ne la vois nulle part..."
         "Je comprends pourquoi elle voulait qu'on se retrouve ici cependant, avec le coucher du soleil sur les arbres et la multitude de fleurs dans les hautes herbes, l'ambiance est presque atypique."
@@ -2035,11 +1965,12 @@ label start:
         hippie "Non attends, tu vas voir, le meilleur est à venir. "
         hippie "Tiens, allonge- toi dans l'herbe à côté de moi."
 
-        scene 
+        scene thaborn03
         "Surpris par sa demande, je m'exécute, curieux de voir où celà allait mener."
         "Nous restons ainsi quelques instants à profiter du coucher de soleil. "
         "Juste au moment où je tourne la tête vers Jeanne pour lui demander ce que nous allons faire ensuite, elle pousse un cri."
 
+        show romaneneutresmile
         hippie "Regarde, ça commence !"
 
         "Relevant les yeux vers le ciel, je vois les étoiles de la voûte céleste s'allumer les unes après les autres. "
@@ -2261,12 +2192,8 @@ label start:
 
     # FIN HEUREUSE : FESTIVALE AVEC GOTHIQUE EN COUPLE
     label goodEnding_1:
-<<<<<<< HEAD
         hide gotneutral02
         show gotchock01
-=======
-
->>>>>>> a55fc02989a5acc4124395408543bd29430f45d2
         got "Tu te fous de ma gueule ?"
         #got "C'est le vrai ?"
         # changer ici la phrase est bizarre ptdr
