@@ -488,15 +488,11 @@ label start:
 
                 "Je suis désolé, je ne pense pas que ça soit une bonne idée.":
                     "Moi" "Je t'apprécie énormément, mais je pense que nos relations doivent rester professionnelles."
-                    hippie "Oh… Je… Je croyais que... "
+                    hippie "Oh... Je... Je croyais que... "
                     hippie "Je suis désolée."
 
-                    "Jeanne part en courant avant que je puisse l'arrêter."
-                    #CHANGER ICI
-                    if (nbRejets_hippie >= 4):
-                        hippie "jai fait une overdose bg"
-                        #changer dialogues ici
-                        jump badEnding_2
+                    "Jeanne part en courant avant que je ne puisse l'arrêter."
+                    jump badEnding_2
 
 
         "Je préfererai enregistrer avec les \"Perruquiers noirs\".":
@@ -1859,7 +1855,7 @@ label start:
         "Je remasterise certaines des chansons de chaque groupe, puis je rentre chez moi."
 
         "Le lendemain est pour moi jour de repos, je reçois un appel de Jeanne me demandant avec entrain si je peux venir au studio..."
-        "... mais refuse, bien évidemment. Rien ne va chambouler mon jour de repos."
+        "... mais je refuse, bien évidemment. Rien ne va chambouler mon jour de repos."
 
         "Je reçois par la suite de nombreux appels, mais décide de ne répondre à aucuns d'entre eux."
 
@@ -1884,6 +1880,7 @@ label start:
         "Elle a apparemment été arrêtée sur le champ, et est depuis en cellule."
 
         "Sous le choc, je rentre chez moi, bras ballants. Ne sachant pas quoi faire pour pouvoir l'aider."
+        "J'aurais dû accepter sa proposition de rencard..."
         "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
         "Quelques jours après le festival, je reçois une lettre de Jeanne."
 
@@ -1903,15 +1900,44 @@ label start:
 
     # MAUVAISE FIN : OVERDOSE HIPPIE - FESTIVAL AVEC SKINHEADS
     label badEnding_2:
-        hippie "overdooooose"
+
+        "Je décide de rentrer chez moi directement."
+        "J'aurais peut-être du être plus doux avec Jeanne..."
+
+        "La nuit se passe sans encombre, puis la journée qui suit est mon jour de repos."
+        "Je reçois un appel de Patrick me demandant si je peux venir au studio..."
+        "... mais je refuse, bien évidemment. Rien ne va chambouler mon jour de repos."
+
+        "Je reçois par la suite de nombreux appels, mais décide de ne répondre à aucuns d'entre eux."
+
+        "La journée se passe tranquillement."
+        "Je décide en fin d'après midi d'aller au magasin pour remplir mon frigo qui se fait vide..."
+        "Sur le chemin du retour, je décide de passer devant le parc où nous avions fait l'atelier cirque avec Jeanne."
+        "Je repense à elle, et je ressens soudainement une hâte à être le lendemain, juste pour pouvoir la revoir."
+        "Je dois avouer qu'elle me plaît bien..."
+        "Arrivant devant l'entrée du parc, je me fais interpeller par un homme que je reconnais."
+        "C'est le guitariste de \"Quatuor\" !"
+
+        "Après m'avoir vu, il se dirige rapidement vers moi puis me frappe le visage."
+        "Choqué que cet homme aussi gentil lève la main sur moi, j'attends ses explications..."
+
+        "Guitariste" "Tout est de ta faute !"
+        "Guitariste" "C'est de ta faute !"
+        "Guitariste" "Tu vas payer !"
+
+        "Je ne comprends vraiment pas de quoi il veut parler."
+        "Après lui avoir demandé des explications, j'apprends que Jeanne a fait une overdose hier soir."
+        "Alors qu'il passait par chez elle lui emprunter son diabolo, il l'a retrouvée inanimée dans son lit."
+        "Elle a apparemment été emportée à l'hôpital sur le champ, mais il était déjà trop tard."
 
 
         "Sous le choc, je rentre chez moi, bras ballants. Ne sachant plus quoi faire car je n'ai pas pu l'aider."
+        "J'aurais dû accepter sa proposition de rencard..."
         "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
         "Quelques jours après le festival, je reçois une lettre de Marie-Anne."
 
         got "[nom], je vais commencer ma lettre en te disant que je t'en veux pour ce qui est arrivé à Jeanne et pour nous avoir lâchés au festival."
-        got "blabla"
+        got "Ses funérailles se passent dans quelques jours, tu n'es évidemment pas invité."
         got "J'aimerais également que tu saches aussi que ce sont les \"Plus Plus Plan\" qui ont pu performer au festival. C'était vraiment merdique de ta part de nous lâcher comme ça."
         got "J'espère ne jamais te revoir au studio."
         got "De Marie-Anne."
@@ -1935,7 +1961,49 @@ label start:
 
     # MAUVAIS FIN : PUNK MEURT DANS LA BAGARRE - FESTIVAL AVEC SKINHEADS
     label badEnding_4:
-        punk "je meurs"
+        "Je décide de rentrer chez moi directement pour éviter de me faire ennyuer."
+        "J'espère tout de même que Patrick va bien..."
+
+        "La nuit se passe sans encombre, puis la journée qui suit est mon jour de repos."
+        "Je reçois un appel de Jeanne me demandant avec entrain si je peux venir au studio..."
+        "... mais je refuse, bien évidemment. Rien ne va chambouler mon jour de repos."
+
+        "Je reçois par la suite de nombreux appels, mais décide de ne répondre à aucuns d'entre eux."
+
+        "La journée se passe tranquillement."
+        "Je décide en fin d'après midi d'aller au magasin pour remplir mon frigo qui se fait vide..."
+        "Sur le chemin du retour, je décide de passer devant un des bars où Patrick m'avait emmené."
+        "Je repense à lui, et je ressens soudainement une hâte à être le lendemain, juste pour pouvoir le revoir."
+        "Je dois avouer qu'il me plaît bien..."
+        "Arrivant devant le, je me fais interpeller par un homme que je reconnais."
+        "C'est le guitariste des \"Perruquiers noirs\" !"
+
+        "Après m'avoir vu, il se dirige rapidement vers moi puis me colle son poing au visage."
+        "Je ne comprends pas pourquoi il m'en veut. Je devrais être celui qui le frappe, vu le mal qu'il fait à mon ami."
+
+        "Guitariste" "Tout est de ta faute !"
+        "Guitariste" "C'est de ta faute !"
+        "Guitariste" "Tu vas payer !"
+
+        "Je ne comprends vraiment pas de quoi il veut parler."
+        "Après lui avoir demandé des explications, j'apprends que Patrick a été retrouvé par les skinheads hier soir."
+        "Alors qu'il essayait de les fuir vu leur nombre, il n'a pas été assez rapide et a été tabassé à mort."
+        "Il a apparemment été laissé pour mort dans la rue, jusqu'à ce qu'un passant appelle les secours, plusieurs minutes après les faits."
+        "Il était déjà trop tard."
+
+
+        "Sous le choc, je rentre chez moi, bras ballants. Ne sachant plus quoi faire car je n'ai pas pu l'aider."
+        "J'aurais dû le suivre ou même réussir à le convaincre de ne pas y aller..."
+        "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
+        "Quelques jours après le festival, je reçois une lettre de Marie-Anne."
+
+        got "[nom], je vais commencer ma lettre en te disant que je t'en veux pour ce qui est arrivé à Patrick et pour nous avoir lâchés au festival."
+        got "Ses funérailles se passent dans quelques jours, tu n'es évidemment pas invité."
+        got "J'aimerais également que tu saches aussi que ce sont les \"Plus Plus Plan\" qui ont pu performer au festival. C'était vraiment merdique de ta part de nous lâcher comme ça."
+        got "J'espère ne jamais te revoir au studio."
+        got "De Marie-Anne."
+
+        "Affalé sur mon lit, je laisse tomber la lettre a terre pendant qu'une larme coule sur mon visage."
 
 
         "----- MAUVAISE FIN 04 -----"
