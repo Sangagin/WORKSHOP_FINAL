@@ -205,6 +205,65 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
+
+
+screen bracelet:
+    imagebutton:
+        xpos 190
+        ypos 250
+        idle "images/props/bracelet.png"
+        action Jump("achat_bracelet")
+        at custom_zoom
+
+
+screen pendentif:
+    imagebutton:
+        xpos 750
+        ypos 250
+        idle "images/props/collier.png"
+        action Jump("achat_pendentif")
+        at custom_zoom
+
+screen canette:
+    imagebutton:
+        xpos 1450
+        ypos 250
+        idle "images/props/canette.png"
+        action Jump("achat_canette")
+        at custom_zoom
+
+
+screen bouton_quitter:
+    imagebutton:
+        xpos 0
+        ypos 0
+        idle "images/props/sortie.png"
+        action Jump("magasin_done")
+        at custom_zoom
+
+transform custom_zoom:
+    zoom 0.2
+
+
+
+
+
+screen inventory:
+    # Dans une horizontal box...
+    hbox:
+        # Pour chaque item dans inventory...
+        for i in inventaire:
+            # On crée une frame...
+            frame:
+                xpadding 10
+                ypadding 10
+                xmargin 10
+                ymargin 10
+                # Contenant l'image attachée à chaque item.
+                add i.imageI size(60,60)
+
+
+
 screen choice(items):
     style_prefix "choice"
 
