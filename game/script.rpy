@@ -187,7 +187,17 @@ label start:
     $ pendentifH = Item("Un pendentif cliché", "pendentif.png")
     $ canetteP = Item("Une canette de maximator", "canette.png")
 
+    $ pvAlan = 5
+    $ pvPerso = 3
 
+
+    $choix2_bar=False
+    $boitBiere=False
+    $victoire_bagarre=False
+    $choix3_cimetiere=False
+    $flirt_got=False
+    $choix3_diabolo=False
+    $flirt_hippie=False
     # --------------------------------------------------------------------------
     # ----- JOURNEE 1 -----
     $jour += 1
@@ -420,7 +430,7 @@ label start:
                 "Un rendez-vous dans un cimetière... C'est quand même assez improbable !"
         if choix3_diabolo:
             "Je repense à Jeanne et je me rend compte qu'elle est super sympa !"
-            if flirt_hippie:
+            if flirt_hippie :
                 "J'ai adoré son atelier découverte, j'ai pu découvrir de nouvelles choses."
         "Je me suis ensuite rappelé que j'ai deux autres groupes à gérer, il ne faudrait pas que je les oublie non plus."
         "Mais je verrais tout cela demain, pour le moment, je mérite une bonne nuit de sommeil."
@@ -443,7 +453,7 @@ label start:
     # Aller chez le marchand ou non ?
     menu:
         "Aller à l'Epicerie du Soleil":
-            jump marchand_oui
+            jump magasin
         "Rester au studio d'enregistrement":
             "Je vais me concentrer sur les groupes..."
 
@@ -528,7 +538,7 @@ label start:
     # Aller chez le marchand ou non ?
     menu:
         "Pourquoi pas ?":
-            jump marchand_oui
+            jump magasin
         "Je crois que j'en ai assez vu.":
             "Je vais me concentrer sur mon travail."
             "Le festival arrive à grands pas."
@@ -976,7 +986,7 @@ label start:
         "blablabla"
         #ne pas oublier d'ecrire ici"
 
-        if choix2_bar:
+        if choix2_bar==True:
             punk "Hey [nom], tu trouvais l'autre trou pas trop mal, j't'attends à la sortie, j'vais te montrer un vrai bar."
         else:
             punk "Hey [nom], j't'attends à la sortie, j'vais te montrer un endroit sympa."
@@ -1078,7 +1088,7 @@ label start:
         "Moi" "Merci."
 
         "Je regarde Patrick enfiler son verre cul-sec"
-        if boitBiere:
+        if boitBiere==True:
             punk "Alors ? Je t'attends là en fait."
 
             "Je crois qu'il veut que je cul-sec aussi..."
@@ -1127,9 +1137,44 @@ label start:
 
     label bagarre:
         #MINI JEU BAGARRE
+        "Je saute dans la mélée et rejoint Patrick. Je me met face à un de ces skinheads, prèt à en découdre."
+        jump guarde
 
+    label guarde :
+        window hide
+        show screen alanGuarde
+        show screen redMark
+        $ renpy.pause()
+
+    label coup:
+        show screen alanCoup
+        hide screen redMark
+
+        $pvPerso=pvPerso-1
+        $ renpy.pause()
+        if pvPerso==0:
+            jump gPerduLaBaguarre
+        else:
+            jump guarde
+
+    label hit:
+        show screen alanHit
+        hide screen redMark
+
+        $pvAlan=pvAlan-1
+
+        $ renpy.pause()
+
+        if pvAlan==0:
+            jump gGagneLaBaguarre
+        else:
+            jump guarde
+
+    label gPerduLaBaguarre:
         #si defaite
         $victoire_bagarre = False
+        window show
+        hide screen alanCoup
         "Après nous avoir mis tous les deux à terre et nous avoir pris nos portefeuille les skinheads sont partis."
         punk "Putain, on s'est pris une grosse raclée."
         punk "Je pensais que tu aurait été plus utile que ça."
@@ -1138,6 +1183,12 @@ label start:
 
         "--- Votre amitié avec Patrick diminue ---"
         $amitie_punk -= 1
+
+        jump suite3
+
+
+    label gGagneLaBaguarre:
+        hide screen alanHit
 
         # si victoire
         $victoire_bagarre = True
@@ -1167,7 +1218,7 @@ label start:
             "Moi" "Bonjour c'est [nom], je t'appelle pour savoir si tu avais envie de refaire une session aujourd'hui ?"
 
             # Dialogue spécial si la gothique a été choisie la veille
-            if choix3_cimetiere:
+            if choix3_cimetiere==True:
                 got "Oh oui bien sûr ! ça été hier après que je sois parti ?"
                 "Moi" "Nan tu m'as quand même laissé comme un imbécile au milieu d'un cimetière !"
                 got "Mais je suis sûre que tu t'es bien amusé nan ?"

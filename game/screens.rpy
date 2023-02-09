@@ -245,6 +245,41 @@ transform custom_zoom:
     zoom 0.2
 
 
+transform custom_zoom2:
+    zoom 0.5
+
+
+screen alanGuarde:
+    imagebutton:
+        xpos 600
+        ypos 200
+        idle "images/alan/alanfight.png"
+    tag alan
+
+
+screen alanCoup:
+    imagebutton:
+        xpos 600
+        ypos 200
+        idle "images/alan/alanrepost.png"
+    tag alan
+
+
+screen alanHit:
+    imagebutton:
+        xpos 600
+        ypos 200
+        idle "images/alan/alantakehit.png"
+    tag alan
+
+
+screen redMark:
+    imagebutton:
+        xpos renpy.random.randint(600,1400)
+        ypos renpy.random.randint(0,1000)
+        idle "images/props/cercle_rouge.png"
+        action Jump("hit")
+        at custom_zoom
 
 
 
