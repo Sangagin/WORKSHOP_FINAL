@@ -190,13 +190,17 @@ label start:
 
     "Bon je dois me préparer maintenant, et me dépêcher d’y aller, je crois que je suis déjà en retard !"
 
+    scene rue1
+
     # afficher devanture studio
     "Le bus ne m’a pas aidé pour mon retard…"
     "Je crois que je me suis pas trompé de rue cette fois, pas comme ce matin haha !"
     "Par contre j’entends deux femmes qui ont l’air de se disputer, le quartier a l’air un peu dangereux..."
 
     # afficher interieur studio et got, hippie au premier plan, punk derriere en petit
+    show gotangry01 at left
     "Gothique" "Mais putain ! Tu m’as désaccordé ma guitare ! Pourquoi tu touches à mes instruments, reste avec ton djembé dans ton coin !"
+    show  romaneangry at right
     "Hippie" "C’est bon pas besoin de s’énerver, ça se réaccorde facilement."
     "Hippie" "Est-ce que tu peux éviter d’élever la voix maintenant ?"
     "Hippie" "J’aimerais que l’ambiance soit agréable pour accueillir notre nouvel ingé son..."
@@ -254,10 +258,13 @@ label start:
 
     label suite2:
 
+        scene bgchemin02
         # rue la nuit
         "Il commence à se faire tard, la nuit est déjà tombée. "
         "Je travaille également demain, avec l'autre groupe que je n’ai pas encore rencontré."
         "Je vais essayer de ne pas faire de folies ce soir et avoir l’air frais pour donner une bonne première impression."
+        
+        scene bgchemin01
         # image devanture immeuble
         "En arrivant devant mon immeuble, je remarque quelques personnes en train de fumer devant l’entrée, discutant bruyamment sans faire attention aux autres personnes alentours."
         "D’ailleurs, ils semblent ignorer volontairement les personnes essayant d’entrer, présentement une vieille personne avec son caddie à courses, qui essaye de les interpeller sans succès."
@@ -613,9 +620,9 @@ label start:
         "Hippie" "Hahahaha !"
         "Moi" "Pourriez vous me dire qui vous êtes ?"
 
-        hippie "Excusez moi hahaha ! Je suis Jeanne, membre du groupe \"Quatuor\", on m'a dit de venir aujourd'hui concernant un festival donc me voici !"
-        hippie "C'est un plaisir de vous rencontrer"
-        got "Ouais, désolée. Je m'appelle Marie-Anne et suis la guitariste de mon groupe \"Effervecence\"."
+        "hippie" "Excusez moi hahaha ! Je suis Jeanne, membre du groupe \"Quatuor\", on m'a dit de venir aujourd'hui concernant un festival donc me voici !"
+        "hippie" "C'est un plaisir de vous rencontrer"
+        "got" "Ouais, désolée. Je m'appelle Marie-Anne et suis la guitariste de mon groupe \"Effervecence\"."
 
         "L'homme qui observait la dispute se lève sort par la porte qui mène à l'arrière du studio."
 
