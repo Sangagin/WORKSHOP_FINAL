@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 319, in script
+    scene studio with disolve
+  File "game/script.rpy", line 319, in <module>
+    scene studio with disolve
+NameError: name 'disolve' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 319, in script
+    scene studio with disolve
+  File "I:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 1654, in execute
+    paired = renpy.python.py_eval(self.paired)
+  File "I:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 1092, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "I:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 319, in <module>
+    scene studio with disolve
+NameError: name 'disolve' is not defined
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.0.3.22090809
+workshop 1.0
+Thu Feb  9 19:44:04 2023
