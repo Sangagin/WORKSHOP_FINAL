@@ -975,6 +975,7 @@ label start:
                 "Moi" "C'est gentil d'avoir proposé ceci dit"
                 got "Boh pas grave ! Une prochaine fois."
                 hide gotpos01
+                jump suite 3
 
 
 
