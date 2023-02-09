@@ -616,11 +616,11 @@ label start:
         hide arnaudmain
         hide arnaudneutre
         if jour == 3:
-            jump suite03
+            jump suite02
         if jour == 4:
-            jump suite04
+            jump suite3
         if jour == 5:
-            jump suite05
+            jump suite4
 
 
     label achat_bracelet:
@@ -975,6 +975,7 @@ label start:
                 "Moi" "C'est gentil d'avoir proposé ceci dit"
                 got "Boh pas grave ! Une prochaine fois."
                 hide gotpos01
+                jump suite3
 
 
 
