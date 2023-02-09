@@ -309,7 +309,7 @@ label start:
 
         #METTRE FONDU NOIR
         scene black with dissolve 
-        scene studio
+        scene apt
 
         # ------------------------- JOURNEE 2 (PAS JOUABLE) -------------------------------------
         $jour += 1
@@ -335,19 +335,25 @@ label start:
         "Moi" "Eh bien nous allons pouvoir voir ça. La séance d'enregistrement va commencer, vous pouvez y aller."
 
         #fondu noir pour faire comprendre qu'on est plus tard
+        scene black with dissolve 
+        scene studio
         "Ça m'embête de le dire, mais ils sont effectivement très doués. "
         "C'est frustrant, mais en l'état, ce sont les favoris pour gagner le festival."
 
+        hide alanneutre
+        show alanmachiavelique
         skh "Alors minable, t'en as pensé quoi ? Ça envoie du lourd non ?"
         "Moi" "C'est pas mal en effet. Je ne pense pas que vous ayez besoin de plus de sessions avant le festival. "
         "Moi " "Je vais me concentrer sur les autres groupes d'ici là."
         skh "Ah ! Dis plutôt que t'as la trouille de nous revoir ! "
         skh "Mais ça nous va, moins on voit ta gueule de fouine, mieux on se porte. Et ça nous donne plus de temps pour… He he he…"
+        hide alanmachiavelique
 
         "Je n'ai même pas envie d'imaginer ce qu'il laisse sous entendre. "
         "La journée à été suffisamment épuisante comme ça, juste par leur présence malsaine dans le studio."
         # image interieur appart
         "Je rentre chez moi sans incidents. "
+        scene apt with disolve
         "Demain, il faudra que je choisisse quel groupe appeler pour une session d'enregistrement. "
 
         #fondu noir
