@@ -21,6 +21,7 @@ image barPunk = "images/bgjour/barpunk.jpg"
 image barPunk2 = "images/bgjour/barpunk2.jpg"
 image studio = "images/bgjour/studio.jpg"
 image apt = "images/bgjour/apt.jpg"
+image marchand = "images/bgjour/marchand.jpg" 
 
 # ----- nuit -----
 image bar01 = "images/bgn/bar01.jpg"
