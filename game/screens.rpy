@@ -232,6 +232,15 @@ screen canette:
         action Jump("achat_canette")
         at custom_zoom
 
+
+screen bouton_quitter:
+    imagebutton:
+        xpos 0
+        ypos 0
+        idle "images/props/sortie.png"
+        action Jump("magasin_done")
+        at custom_zoom
+
 transform custom_zoom:
     zoom 0.2
 

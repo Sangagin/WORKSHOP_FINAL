@@ -123,9 +123,9 @@ image policestop02 = "images/police/policestop02.png"
 
 
 # ----- arnaud -----
-image arnaudback = "arnaudback"
-image arnaudmain = "arnaudmain"
-image arnaudneutre = "arnaudneutre"
+image arnaudback = "images/marchand/arnaudback.png"
+image arnaudmain = "images/marchand/arnaudmain.png"
+image arnaudneutre = "images/marchand/arnaudneutre.png"
 
 
 # ----- fin -----
@@ -583,13 +583,16 @@ label start:
     # Aller chez le marchand ou non ?
 
     label magasin:
+        scene marchand
+        hide arnaudback
         hide screen inventory
-        show astride with dissolve
+        show arnaudmain with dissolve
         march "Bienvenue dans mon humble boutique ! Que désirez vous acheter ?"
 
         show screen bracelet
         show screen canette
         show screen pendentif
+        show screen bouton_quitter
         $ renpy.pause()
 
         jump magasin
@@ -602,6 +605,12 @@ label start:
 
 
     label magasin_done:
+        hide screen bouton_quitter
+        hide screen bracelet
+        hide screen canette
+        hide screen pendentif
+        hide arnaudmain
+        hide arnaudneutre
         if jour == 3:
             jump suite03
         if jour == 4:
@@ -614,11 +623,17 @@ label start:
         hide screen bracelet
         hide screen canette
         hide screen pendentif
+        hide screen bouton_quitter
 
         if thune<200:
+            hide arnaudmain
+            show arnaudneutre
             march "Vous n'avez pas assez d'argent !"
             jump magasin
         else:
+            hide arnaudmain
+            show arnaudback
+            march "Je vous attrape ça."
             $ thune = thune-200
             $inventaire.append(braceletOS)
             #ligne de commande pour afficher inventaire
@@ -633,11 +648,18 @@ label start:
         hide screen bracelet
         hide screen canette
         hide screen pendentif
+        hide screen bouton_quitter
+
 
         if thune<200:
+            hide arnaudmain
+            show arnaudneutre
             march "Vous n'avez pas assez d'argent !"
             jump magasin
         else:
+            march "Je vous attrape ça."
+            hide arnaudmain
+            show arnaudback
             $ thune = thune-200
 
             $inventaire.append(canetteP)
@@ -653,11 +675,19 @@ label start:
         hide screen bracelet
         hide screen canette
         hide screen pendentif
+        hide screen bouton_quitter
+
 
         if thune<200:
+            hide arnaudmain
+            show arnaudneutre
             march "Vous n'avez pas assez d'argent !"
             jump magasin
         else:
+            hide arnaudmain
+            show arnaudback
+            march "Je vous attrape ça."
+
             $ thune = thune-200
 
             $inventaire.append(pendentifH)
