@@ -1038,7 +1038,7 @@ label start:
         if amitie_got >= 5:
             got "Allô ?"
             "Moi" "Bonjour c'est [nom], je t'appelle pour savoir si tu avais envie de refaire une session aujourd'hui ?"
-            if $choix3_cimetiere:
+            if choix3_cimetiere:
                 # si choix got la veille
                 got "Oh oui bien sûr ! ça été hier après que je sois parti ?"
                 "Moi" "Nan tu m'as quand même laissé comme un imbécile au milieu d'un cimetière !"
@@ -1385,7 +1385,7 @@ label start:
                 "Alors que Jeanne et Marie-Anne sont bouche bée, je sens mon cœur se serrer dans ma poitrine."
                 "Je n'avais jamais envisagé avoir des sentiments envers un autre homme et pourtant à cet instant rien ne m'importe plus que lui."
 
-                if $flirt_got and $flirt_hippie:
+                if flirt_got and flirt_hippie:
                     jump goodEnding_4
                 else:
                     jump goodEnding_5
