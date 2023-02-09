@@ -4,7 +4,7 @@
 # -------------------------------- IMAGES ----------------------------------
 
 # ----- Scenes -----
-#test
+
 # ----- jour -----
 image barConcert1 = "images/bgjour/barconcert1.jpg"
 image bureau1 = "images/bgjour/bureau1.jpg"
@@ -179,28 +179,34 @@ label start:
     $flirt_hippie = False
     $flirt_punk = False
 
-    $nbRejets_hippie = 0
     $jour = 0
-    $nbBieres = 0
-    $pasInterrompre = False
-    $ thune=0
+    $thune = 0
+    $ pvAlan = 5
+    $ pvPerso = 3
 
+    # Declaration varaibles inventaire
     $ inventaire = []
     $ braceletOS = Item("Bracelet en Os", "bracelet.png")
     $ pendentifH = Item("Un pendentif cliché", "pendentif.png")
     $ canetteP = Item("Une canette de maximator", "canette.png")
 
-    $ pvAlan = 5
-    $ pvPerso = 3
+
+    # Declaration booleens de verification
+    $choix2_balade = False
+    $choix2_bar = False
+    $choix2_magasin = False
+
+    $choix3_cimetiere = False
+    $choix3_diabolo = False
+    $choix3_bagarre = False
+
+    $boitBiere = False
+    $victoire_bagarre = False
+    $nbBieres = 0
+    $pasInterrompre = False
 
 
-    $choix2_bar=False
-    $boitBiere=False
-    $victoire_bagarre=False
-    $choix3_cimetiere=False
-    $flirt_got=False
-    $choix3_diabolo=False
-    $flirt_hippie=False
+
     # --------------------------------------------------------------------------
     # ----- JOURNEE 1 -----
     $jour += 1
@@ -220,13 +226,11 @@ label start:
 
     scene rue1
 
-    # afficher devanture studio
     scene bgchemin02
     "Le bus ne m'a pas aidé pour mon retard…"
     "Je crois que je me suis pas trompé de rue cette fois, pas comme ce matin haha !"
     "Par contre j'entends deux femmes qui ont l'air de se disputer, le quartier a l'air un peu dangereux..."
 
-    # afficher interieur studio et got, hippie au premier plan, punk derriere en petit
     scene studio
     show gotangry01 at left
     "Gothique" "Mais putain ! Tu m'as désaccordé ma guitare ! Pourquoi tu touches à mes instruments, reste avec ton djembé dans ton coin !"
@@ -265,7 +269,6 @@ label start:
         punk "Contente-toi d'enregistrer et silence. Et t'as pas intérêt à foirer."
 
         "Oups, je crois qu'il vaudrait mieux éviter de trop lui parler..."
-        #fondu noir
         scene black with dissolve 
         scene studio
         "La séance se passe, puis arrive la fin de la journée."
@@ -292,13 +295,11 @@ label start:
     label suite2:
 
         scene bgchemin02 with dissolve
-        # rue la nuit
         "Il commence à se faire tard, la nuit est déjà tombée. "
         "Je travaille également demain, avec l'autre groupe que je n'ai pas encore rencontré."
         "Je vais essayer de ne pas faire de folies ce soir et avoir l'air frais pour donner une bonne première impression."
         
         scene bgchemin01 with dissolve
-        # image devanture immeuble
         "En arrivant devant mon immeuble, je remarque quelques personnes en train de fumer devant l'entrée, discutant bruyamment sans faire attention aux autres personnes alentours."
         "D'ailleurs, ils semblent ignorer volontairement les personnes essayant d'entrer, présentement une vieille personne avec son caddie à courses, qui essaye de les interpeller sans succès."
         show alanneutre
@@ -325,14 +326,12 @@ label start:
         voisine "Il n'y a pas de soucis. Passez prendre une tasse de thé un de ces quatre. Bonne soirée."
 
         scene apt with dissolve
-        # image interieur appartement
         "Je rentre dans mon appartement, laissant la vieille femme rentrer chez elle."
         "Je ne m'attendais pas à passer une soirée si agitée. Il faudra que je fasse attention dans le voisinage désormais. "
         "Le coin n'est clairement pas aussi tranquille que le prétendais le promoteur immobilier."
         "La journée à été longue, autant aller se coucher directement."
 
 
-        #METTRE FONDU NOIR
         scene black with dissolve 
         scene apt
 
@@ -342,11 +341,9 @@ label start:
         "Je me demande pourquoi le groupe d'aujourd'hui ne voulait pas faire la présentation en même temps que les autres."
 
         scene studio with dissolve
-        #scene studio
         "Enfin, ils ne devraient pas tarder."
 
         show alanneutre
-        #afficher skinhead
         skh "Oy, c'est toi le nouveau ?"
 
         "Oh bon sang."
@@ -359,7 +356,6 @@ label start:
         skh "Tu vas voir que lors de votre festival minable, c'est nous qui allons tout remporter. "
         "Moi" "Eh bien nous allons pouvoir voir ça. La séance d'enregistrement va commencer, vous pouvez y aller."
 
-        #fondu noir pour faire comprendre qu'on est plus tard
         scene black with dissolve 
         scene studio
         "Ça m'embête de le dire, mais ils sont effectivement très doués. "
@@ -376,12 +372,10 @@ label start:
 
         "Je n'ai même pas envie d'imaginer ce qu'il laisse sous entendre. "
         "La journée à été suffisamment épuisante comme ça, juste par leur présence malsaine dans le studio."
-        # image interieur appart
         "Je rentre chez moi sans incidents. "
         scene apt with dissolve
         "Demain, il faudra que je choisisse quel groupe appeler pour une session d'enregistrement. "
 
-        #fondu noir
         scene black with dissolve 
         scene apt
 
@@ -393,7 +387,6 @@ label start:
     "Le bruit de mon réveil insupportable me tire de mon sommeil."
     "Après la journée d'hier, j'ai une petite appréhension de comment celle d'aujourd'hui va tourner."
     "Un café et une tranche de pain puis direction le studio."
-    #afficher image studio
     scene rue1
 
     # Aller chez le marchand ou non ?
@@ -413,7 +406,7 @@ label start:
 
     # Decision session studio de la journée
     menu:
-        "Je vais appeler le groupe \"Effervecence\".":
+        "Je vais appeler le groupe \"Effervescence\".":
             $amitie_got += 1
             jump choix3_got
 
@@ -427,7 +420,6 @@ label start:
 
 
     label suite3:
-        # CHANGER DIALOGUES
         "Je ne pensais pas en arrivant au studio ce matin que cette journée durerait aussi longtemps."
         if choix3_bagarre:
             "Patrick m'en a fait voir de toutes les couleurs..."
@@ -452,6 +444,7 @@ label start:
     "Mais il me suffit d'un seul bouton pour les faire disparaître."
     scene studio with dissolve
     "J'allume la lumière puis un reflet sur le côté attire mon œil vers le téléphone du studio."
+
     "Est-ce que je n'irai pas passer à coup d'oeil au magasin avant d'appeler un groupe ?"
     # Aller chez le marchand ou non ?
     menu:
@@ -461,11 +454,11 @@ label start:
             "Je vais me concentrer sur les groupes..."
 
     label suite04:
-        "Je suis content de mes achats aujourd'hui."
+        "Qui devrais-je appeler pour aujourd'hui ?"
 
     # Decision session studio de la journée
     menu:
-        "\"Effervecence\" me fait de l'oeil.":
+        "\"Effervescence\" me fait de l'oeil.":
             $amitie_got += 1
 
             jump choix4_got
@@ -537,6 +530,7 @@ label start:
     "Les ombres des instruments ne me font plus croire à des monstres ou autres."
     scene studio with dissolve
     "Le reflet des lumières en allumant continue par contre à attirer mon oeil vers le téléphone."
+    "Je retrouve sur le bureau une note de la part de Patrick, indiquant que son groupe ne peut pas être présent aujourd'hui."
 
     "Est-ce que je vais chez les marchand pour voir s'il a des nouveautés ?"
     # Aller chez le marchand ou non ?
@@ -548,13 +542,14 @@ label start:
             "Le festival arrive à grands pas."
 
     label suite05:
-        "Je pense avoir fait des courses productives."
+        "C'est la dernière ligne droite."
+        "Quel groupe aurait besoin d'ajustements avant le festival ?"
 
 
     "C'est la dernière session d'enregistrement avant le festival."
     # Decision studio
     menu:
-        "Le groupe \"Effervecence\" me plait bien.":
+        "Le groupe \"Effervescence\" me plait bien.":
             $amitie_got += 1
 
             if flirt_got:
@@ -610,13 +605,7 @@ label start:
         show screen bouton_quitter
         $ renpy.pause()
 
-        jump magasin
-
-
-
-
-
- 
+        jump magasin_done
 
 
     label magasin_done:
@@ -735,14 +724,15 @@ label start:
         show romaneneutre at right
         hide gotangry01 
         show gotneutral01 at left
-        "hippie" "Excusez moi hahaha ! Je suis Jeanne, membre du groupe \"Quatuor\", on m'a dit de venir aujourd'hui concernant un festival donc me voici !"
-        "hippie" "C'est un plaisir de vous rencontrer"
+        # On apprend leurs noms maintenant donc leurs variables Personnages sont utilisées
+        hippie "Excusez moi hahaha ! Je suis Jeanne, membre du groupe \"Quatuor\", on m'a dit de venir aujourd'hui concernant un festival donc me voici !"
+        hippie "C'est un plaisir de vous rencontrer"
 
         hide romaneneutre
         show gotneutral01
 
         
-        "got" "Ouais, désolée. Je m'appelle Marie-Anne et suis la guitariste de mon groupe \"Effervecence\"."
+        got "Ouais, désolée. Je m'appelle Marie-Anne et suis la guitariste de mon groupe \"Effervescence\"."
 
         "L'homme qui observait la dispute se lève et sort par la porte qui mène à l'arrière du studio."
 
@@ -750,7 +740,7 @@ label start:
         "Nous continuons à discuter jusqu'à ce que, en effet, les autres membres de chaque groupe arrivent."
         "J'ai également appris que le quatrième groupe qui devait venir ne viendrait en fait que demain, seul."
         "Un peu déçu de ne pas les voir, je me concentre tout de même sur les trois qui se trouvent en face de moi."
-        "\"Quatuor\" et \"Effervecence\" passent l'un après l'autre pour me montrer quelques titres qu'ils produisent chaque semaine dans des bars."
+        "\"Quatuor\" et \"Effervescence\" passent l'un après l'autre pour me montrer quelques titres qu'ils produisent chaque semaine dans des bars."
         "Les deux groupes sont uniques et ont leur patte qui les diffèrent de l'autre."
 
         jump suite1
@@ -2212,7 +2202,7 @@ label start:
         "Je repense à Marie-Anne, et je ressens soudainement une hâte à être le lendemain, juste pour pouvoir la revoir."
         "Je dois avouer qu'elle me plaît bien..."
         "Arrivant devant les grilles, je me fais interpeller par un homme que je reconnais."
-        "C'est le bassiste d'\"Effervecence\" !"
+        "C'est le bassiste d'\"Effervescence\" !"
 
         "Après m'avoir vu, il se dirige rapidement vers moi puis lève sa main pour me la claquer au visage."
         "Qu'est-ce qu'ils ont dans ce groupe à tous vouloir me frapper..."
@@ -2232,7 +2222,7 @@ label start:
         "Quelques jours après le festival, je reçois une lettre de Jeanne."
 
         hippie "[nom], je vais commencer ma lettre en te disant que je ne t'en veux pas pour ce qui est arrivé à Marie-Anne et pour nous avoir lâchés au festival."
-        hippie "J'ai appris par les musiciens d'\"Effervecence\" que Marie-Anne va bientôt être incarcerée pour les torts qu'elle a commis."
+        hippie "J'ai appris par les musiciens d'\"Effervescence\" que Marie-Anne va bientôt être incarcerée pour les torts qu'elle a commis."
         hippie "J'aimerais également que tu saches aussi que ce sont les \"Plus Plus Plan\" qui ont pu performer au festival. C'était vraiment pas cool de ta part de nous lâcher ainsi..."
         hippie "J'espère quand même te revoir au studio un jour."
         hippie "De Jeanne."
@@ -2371,7 +2361,7 @@ label start:
         hide gotchock01
         show gothappy01
         got "Comment t'as fait pour le faire venir ?"
-        "Moi" "J'ai déjà travaillé avec lui, et je lui ai demandé si il pouvait venir jouer pour\"Effervecence\" lors du festival de ce soir."
+        "Moi" "J'ai déjà travaillé avec lui, et je lui ai demandé si il pouvait venir jouer pour\"Effervescence\" lors du festival de ce soir."
         got "Attend, attend..."
         got "Je vais jouer avec LUI ?!"
         "Moi" "Ouais c'est pas une blague."
