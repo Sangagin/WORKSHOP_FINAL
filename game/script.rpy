@@ -267,13 +267,13 @@ label start:
 
     label suite2:
 
-        scene bgchemin02
+        scene bgchemin02 with dissolve
         # rue la nuit
         "Il commence à se faire tard, la nuit est déjà tombée. "
         "Je travaille également demain, avec l'autre groupe que je n'ai pas encore rencontré."
         "Je vais essayer de ne pas faire de folies ce soir et avoir l'air frais pour donner une bonne première impression."
         
-        scene bgchemin01
+        scene bgchemin01 with dissolve
         # image devanture immeuble
         "En arrivant devant mon immeuble, je remarque quelques personnes en train de fumer devant l'entrée, discutant bruyamment sans faire attention aux autres personnes alentours."
         "D'ailleurs, ils semblent ignorer volontairement les personnes essayant d'entrer, présentement une vieille personne avec son caddie à courses, qui essaye de les interpeller sans succès."
@@ -290,6 +290,7 @@ label start:
         "Voyant qu'il ne réagissent cependant pas plus que ça, se contentant de ricaner, je les ignore et aide la vieille femme à rentrer dans l'immeuble. "
         "Par un fait du hasard, elle se trouve être ma voisine de palier."
 
+        show commungm02
         voisine "Merci beaucoup monsieur. Ces voyous rendent la vie ici impossible, ils se croient tout permis ! "
         voisine "Cela fait plaisir de voir qu'il y a encore des gens bien dans ce monde."
         "Moi" "Ils sont souvent par ici ?"
@@ -298,7 +299,7 @@ label start:
         "Moi" "Pas de soucis madame, je sais me défendre. Je vous souhaite une bonne soirée cependant, je dois me lever tôt demain."
         voisine "Il n'y a pas de soucis. Passez prendre une tasse de thé un de ces quatre. Bonne soirée."
 
-        scene apt
+        scene apt with dissolve
         # image interieur appartement
         "Je rentre dans mon appartement, laissant la vieille femme rentrer chez elle."
         "Je ne m'attendais pas à passer une soirée si agitée. Il faudra que je fasse attention dans le voisinage désormais. "
@@ -307,14 +308,18 @@ label start:
 
 
         #METTRE FONDU NOIR
+        scene black with dissolve 
+        scene studio
 
         # ------------------------- JOURNEE 2 (PAS JOUABLE) -------------------------------------
         $jour += 1
         "Allez, c’est parti pour une nouvelle journée de travail. "
         "Je me demande pourquoi le groupe d’aujourd’hui ne voulait pas faire la présentation en même temps que les autres."
-        scene studio
+
+        scene studio with disolve
         #scene studio
         "Enfin, ils ne devraient pas tarder."
+
         show alanneutre
         #afficher skinhead
         skh "Oy, c'est toi le nouveau ?"
@@ -678,14 +683,18 @@ label start:
     label choix2_hippie:
         $choix2_magasin = True
 
+        scene rue1 with dissolve
         "Après avoir un petit peu tourné dans les rues autour de chez moi, j'ai trouvé une supérette, mais il semble y avoir un attroupement devant."
         "Mais… C'est pas la fille de tout à l'heure avec une pancarte au milieu de la foule ?"
 
+        show romaneangry
         hippie "Non ! Non ! Non à l'exploitation !"
 
         "On dirait une manifestation..."
         "Je n'ai pas vraiment envie de me mêler de tout ça, autant chercher un autre magasin."
 
+        hide romaneangry
+        show romanesmile
         hippie "Oh ! Mais tu es l'ingénieur de tout à l'heure ! Tu es venu te joindre à nous ? Comme c'est gentil !"
 
         "Trop tard, la fille aux vêtements colorés m'a vu."
@@ -710,12 +719,15 @@ label start:
         "D'ailleurs, en les observant de plus près, ils sont tous vêtus de la même façon, des habits larges, mais sales."
         "Certains maculés de boue dissimulant des motifs bigarrés multicolores qui couvrent leurs pantalons pattes d'eph."
 
+        hide romanesmile
+        show romanepouce
         hippie "Bah, c'est pas grave, on à l'habitude. Au pire, on se prend quelques coups, mais la cause en vaut la peine."
         "Moi" "Oui alors non. "
         "Moi" "Je comprend que cette cause vous tient à cœur, mais je ne peux permettre à une de mes artistes de se mettre en danger comme ça. "
         "Moi" "Vous voulez bien rentrer chez vous ce soir ? Je vous promet de ne pas acheter de produits à ce magasin."
         hippie "Oh ! Tu cherchais un magasin en fait ? Ne t'inquiète pas, je connais un super magasin si tu veux ! Viens, je te le montre !"
 
+        hide romanepouce
         "Sans regarder si je la suit, la jeune femme rousse part en trombe dans une ruelle adjacente, laissant tomber sa pancarte au sol. "
         "Au moins elle ne se fera pas arrêter avant le festival..."
         "Je décide de la suivre cependant, intrigué par sa fougue et son esprit libre. "
@@ -723,11 +735,13 @@ label start:
         "Elle s'arrête finalement devant la petite devanture d'une épicerie asiatique, nommée « L'épicerie du Soleil ». "
         "Ironiquement, cette boutique est plus près de chez moi que l'autre magasin, mais je ne l'avais pas remarquée auparavant."
 
+        show romaneneutresmile
         hippie "Ici tu trouvera tout ce dont tu as besoin ! Et les vendeurs sont super sympas !"
         "Moi" "Je vois. Eh bien merci je suppose."
         hippie "Pas de soucis ! Ça fait plaisir de s'entraider non ? "
         hippie "Oh, c'est presque l'heure de mon cour de yoga ! Il faut que j'y aille, on se revoit bientôt au studio j'espère !"
 
+        hide romaneneutresmile
         "Elle part encore une fois comme une fusée, sans que je la suive cette fois. "
         "Si elle a l'air tête en l'air, elle a également l'air de ne jamais s'arrêter. Une chic fille en vrai."
         "..."
@@ -738,13 +752,18 @@ label start:
     label choix2_punk:
         $choix2_bar = True
 
+        scene rue1 with dissolve
+
         "J'irais bien faire un tour au bar ce soir, ça pourrait m'aider à rencontrer du monde et à me familiariser avec la ville."
         "J'entre dans un bar et m‘approche du comptoir pour commander une bière"
 
+        show hugoneutre
         punk "Hey! Le nouveau! Ramène toi!"
         "Est-ce que je vais le rejoindre ?"
         menu:
             "Oui pourquoi pas.":
+                hide hugoneutre
+                show hugohappy
                 punk "Je savais pas que trainais dans ce genre de trous miteux."
                 "Moi" "Il est pas si miteux ce bar."
                 punk "(a voix basse) C'est surtout le moins cher oui."
@@ -753,14 +772,22 @@ label start:
                 "Je le vois se lever et se diriger vers moi. J'aurais peut être du accepter..."
                 punk "Alors t'es timide ?"
                 "Moi" "J'avais cru comprendre que vous préfériez que je me taise."
+                hide hugoneutre
+                show hugoangry
                 punk "Alors déjà, TU, ensuite quand  on bosse tu te tais, mais là on bosse pas."
 
         if interrompre:
+            hide hugoangry
+            hide hugohappy
+            show hugoneutre
             punk "Par contre, t'as merdé, fallait les laisser s'arracher les cheveux aux deux autres."
             "Moi" "C'était mon premier jour, je ne voulais pas avoir d'ennuis."
             punk "Ouais bah la prochaine fois laisse les en venir au mains, j'ai un billet sur la gothique."
 
         else:
+            hide hugoangry
+            hide hugohappy
+            show hugoneutre
             punk "D'ailleurs, merci de pas les avoir interrompues direct au studio. "
             punk "Tu m'as fait gagner un billet. "
             "Moi" "Un billet ?"
@@ -768,9 +795,13 @@ label start:
 
         "Moi " "C'est pas vraiment moral."
         punk "Rien à carrer. "
+
+        hide hugoneutre
+        show hugoangry
         punk "Écoute, c'est pas que j'apprécie pas cette discussion, mais c'est bientôt l'heure ou ces tocards de droitards sortent de la fac."
         punk "J'ai bien envie de leur mettre un coup de pression."
 
+        hide hugoangry
         "Patrick se lève et s'en va, me laissant seul face à ma bière."
         "..."
         "Bon, je vais finir ma bière et je vais rentrer."
