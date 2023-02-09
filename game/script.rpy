@@ -145,8 +145,15 @@ define hippie = Character('Jeanne', color="#ffffa8")
 define march = Character('Marchand', color="a8a8ff")
 define skh = Character('Skinhead', color="ff8080")
 define voisine = Character('Vieille Voisine', color="cc8888")
-#test
 
+
+
+init python:
+    
+    class Item:
+        def __init__(self, name, imageI):
+            self.name = name
+            self.imageI = imageI
 
 
 # --------------------------------------------------------------------------
@@ -173,6 +180,12 @@ label start:
     $jour = 0
     $nbBieres = 0
     $pasInterrompre = False
+    $ thune=0
+
+    $ inventaire = []
+    $ braceletOS = Item("Bracelet en Os", "bracelet.png")
+    $ pendentifH = Item("Un pendentif cliché", "pendentif.png")
+    $ canetteP = Item("Une canette de maximator", "canette.png")
 
 
     # --------------------------------------------------------------------------
@@ -275,6 +288,7 @@ label start:
         # image devanture immeuble
         "En arrivant devant mon immeuble, je remarque quelques personnes en train de fumer devant l'entrée, discutant bruyamment sans faire attention aux autres personnes alentours."
         "D'ailleurs, ils semblent ignorer volontairement les personnes essayant d'entrer, présentement une vieille personne avec son caddie à courses, qui essaye de les interpeller sans succès."
+        show alanneutre
         "Les trois personnes, chauves, vont jusqu'à pousser la vieille femme lorsqu'elle tente de passer à coté d'eux, la faisant chuter lourdement au sol. "
         "Je ne peux pas rester sans réagir."
 
@@ -287,7 +301,7 @@ label start:
         "S'ils traînent dans le voisinage, il faudra que je fasse attention."
         "Voyant qu'il ne réagissent cependant pas plus que ça, se contentant de ricaner, je les ignore et aide la vieille femme à rentrer dans l'immeuble. "
         "Par un fait du hasard, elle se trouve être ma voisine de palier."
-
+        hide alanneutre
         show commungm02
         voisine "Merci beaucoup monsieur. Ces voyous rendent la vie ici impossible, ils se croient tout permis ! "
         voisine "Cela fait plaisir de voir qu'il y a encore des gens bien dans ce monde."
@@ -314,7 +328,7 @@ label start:
         "Allez, c’est parti pour une nouvelle journée de travail. "
         "Je me demande pourquoi le groupe d’aujourd’hui ne voulait pas faire la présentation en même temps que les autres."
 
-        scene studio with disolve
+        scene studio with dissolve
         #scene studio
         "Enfin, ils ne devraient pas tarder."
 
@@ -351,7 +365,7 @@ label start:
         "La journée à été suffisamment épuisante comme ça, juste par leur présence malsaine dans le studio."
         # image interieur appart
         "Je rentre chez moi sans incidents. "
-        scene apt with disolve
+        scene apt with dissolve
         "Demain, il faudra que je choisisse quel groupe appeler pour une session d'enregistrement. "
 
         #fondu noir
@@ -578,7 +592,13 @@ label start:
         show screen pendentif
         $ renpy.pause()
 
-        jump magasin_done
+        jump magasin
+
+
+
+
+
+ 
 
 
     label magasin_done:
@@ -607,7 +627,7 @@ label start:
 
             march "Merci pour votre achat !"
             jump magasin
-        jump achat_done
+        jump magasin
 
     label achat_canette:
         hide screen bracelet
@@ -627,7 +647,7 @@ label start:
 
             march "Merci pour votre achat !"
             jump magasin
-        jump achat_done
+        jump magasin
 
     label achat_pendentif:
         hide screen bracelet
@@ -647,8 +667,7 @@ label start:
 
             march "Merci pour votre achat !"
             jump magasin
-        jump achat_done
-    label achat_done:
+        jump magasin
 
 
 
@@ -667,7 +686,7 @@ label start:
         "Moi" "Je suis [nom] . J'ai été embauché en tant qu'ingé son dans ce studio. Et pour répondre à votre question, la porte était ouverte."
         "Hippie" "Hahahaha !"
         "Moi" "Pourriez vous me dire qui vous êtes ?"
-
+        hide gotangry01
         hide romaneangry
         show romaneneutre 
 
@@ -675,7 +694,6 @@ label start:
         "hippie" "C'est un plaisir de vous rencontrer"
 
         hide romaneneutre
-        hide gotangry01
         show gotneutral01
 
         
@@ -683,6 +701,7 @@ label start:
 
         "L'homme qui observait la dispute se lève et sort par la porte qui mène à l'arrière du studio."
 
+        hide gotneutral01
         "Nous continuons à discuter jusqu'à ce que, en effet, les autres membres de chaque groupe arrivent."
         "J'ai également appris que le quatrième groupe qui devait venir ne viendrait en fait que demain, seul."
         "Un peu déçu de ne pas les voir, je me concentre tout de même sur les trois qui se trouvent en face de moi."
