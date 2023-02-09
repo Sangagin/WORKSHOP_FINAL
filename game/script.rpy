@@ -1813,33 +1813,97 @@ label start:
 
 
 
-
-
     # --------------------------------------------------------------------------
-    # ------------------------------- ENDINGS  ---------------------------------
+    # -------------------------------- FINS  -----------------------------------
 
+
+    # MAUVAISE FIN : GOTHIQUE EN PRISON - FESTIVAL AVEC SKINHEADS
     label badEnding_1:
-        got "prisooooon"
-        jump badEnding_done
+        got "Ah. Dommage."
 
+        "Visiblement déçue par ma réponse, elle quitte le studio en claquant la porte."
+        "Les deux autres membres la suivent, sans oublier de me jeter un regard noir avant de quitter la pièce."
+
+        "Me voilà de nouveau seul, dans ce studio."
+        "Après avoir réchauffé mon plat dans le micro-ondes, je m'assoie sur un des fauteuils avant de me nourrir."
+        "Je remasterise certaines des chansons de chaque groupe, puis je rentre chez moi."
+
+        "Le lendemain est pour moi jour de repos, je reçois un appel de Jeanne me demandant avec entrain si je peux venir au studio..."
+        "... mais refuse, bien évidemment. Rien ne va chambouler mon jour de repos."
+
+        "Je reçois par la suite de nombreux appels, mais décide de ne répondre à aucuns d'entre eux."
+
+        "La journée se passe tranquillement."
+        "Je décide en fin d'après midi d'aller au magasin pour remplir mon frigo qui se fait vide..."
+        "Sur le chemin du retour, je décide de passer devant le cimetière."
+        "Je repense à Marie-Anne, et je ressens soudainement une hâte à être le lendemain, juste pour pouvoir la revoir."
+        "Je dois avouer qu'elle me plaît bien..."
+        "Arrivant devant les grilles, je me fais interpeller par un homme que je reconnais."
+        "C'est le bassiste d'\"Effervecence\" !"
+
+        "Après m'avoir vu, il se dirige rapidement vers moi puis lève sa main pour me la claquer au visage."
+        "Qu'est-ce qu'ils ont dans ce groupe à tous vouloir me frapper..."
+
+        "Bassiste" "Tout est de ta faute !"
+        "Bassiste" "C'est de ta faute !"
+        "Bassiste" "Tu vas payer !"
+
+        "Je ne comprends vraiment pas de quoi il veut parler."
+        "Après lui avoir demandé des explications, j'aprrends que Marie-Anne a été arrêtée hier soir."
+        "Les policiers du coin faisaient leur ronde pendant qu'elle exhumait un corps."
+        "Elle a apparemment été arrêtée sur le champ, et est depuis en cellule."
+
+        "Sous le choc, je rentre chez moi, bras ballants. Ne sachant pas quoi faire pour pouvoir l'aider."
+        "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
+        "Quelques jours après le festival, je reçois une lettre de Jeanne."
+
+        hippie "[nom], je vais commencer ma lettre en te disant que je ne t'en veux pas pour ce qui est arrivé à Marie-Anne et pour nous avoir lâchés au festival."
+        hippie "J'ai appris par les musiciens d'\"Effervecence\" que Marie-Anne va bientôt être incarcerée pour les torts qu'elle a commis."
+        hippie "J'aimerais également que tu saches aussi que ce sont les \"Plus Plus Plan\" qui ont pu performer au festival. C'était vraiment pas cool de ta part de nous lâcher ainsi..."
+        hippie "J'espère quand même te revoir au studio un jour."
+        hippie "De Jeanne."
+
+        "Affalé sur mon lit, je laisse tomber la lettre a terre pendant qu'une larme coule sur mon visage."
+
+        "----- MAUVAISE FIN 01 -----"
+
+        jump end
+
+
+    # MAUVAISE FIN : OVERDOSE HIPPIE - FESTIVAL AVEC SKINHEADS
     label badEnding_2:
         hippie "overdooooose"
-        jump badEnding_done
 
+
+        "----- MAUVAISE FIN 02 -----"
+
+        jump end
+
+
+    # MAUVAISE FIN : LE JOUEUR PRINCIPAL MEURT AVEC PUNK
     label badEnding_3:
         "aha les deux meurent"
-        jump badEnding_done
 
+
+        "----- MAUVAISE FIN 03 -----"
+
+        jump end
+
+
+    # MAUVAIS FIN : PUNK MEURT DANS LA BAGARRE - FESTIVAL AVEC SKINHEADS
     label badEnding_4:
         punk "je meurs"
-        jump badEnding_done
 
-    label badEnding_done:
+
+        "----- MAUVAISE FIN 04 -----"
+        
         jump end
 
 
 
+    # FIN HEUREUSE : FESTIVALE AVEC GOTHIQUE EN COUPLE
     label goodEnding_1:
+
         got "Tu te fous de ma gueule ?"
         got "C'est le vrai ?"
         # changer ici la phrase est bizarre ptdr
@@ -1896,9 +1960,13 @@ label start:
         "Je la trouve et lui fais un signe de la main qu'elle me rend."
         "Sa musique sonne incroyablement bien ce soir, je ne peux que en profiter."
 
+        "----- FIN HEUREUSE 01 -----"
 
-        jump goodEnding_done
 
+        jump end
+
+
+    # FIN HEUREUSE : FESTIVAL AVEC HIPPIE EN COUPLE
     label goodEnding_2:
         "Le festival bat son plein. "
         "C'est un succès retentissant, réunissant un public de tous horizons venu découvrir la culture hippie. "
@@ -1911,9 +1979,13 @@ label start:
         "Elle continue de jouer de la musique et moi de gérer différents groupes. "
         "J'accorde cependant désormais plus de temps à ma famille, et aux causes sociales qui me semblaient juste. "
         "Quant à Jeanne, elle continue d'aller en manifestation, mais elle ne se met plus en danger comme avant, surtout qu'un petit grumeau lui fait désormais location sous le nombril."
-        jump goodEnding_done
+        
+        "----- FIN HEUREUSE 02 -----"
+        
+        jump end
 
 
+    # FIN HEUREUSE : FESTIVAL AVEC PUNK EN COUPLE
     label goodEnding_3:
 
         "Faites qu'il ouvre."
@@ -1989,9 +2061,12 @@ label start:
         "Malgré tout, il à continué à faire de la musique, et les membres de son groupe ont fini par venir lui présenter leurs excuses."
         "Quant à moi, j'ai continué de travailler dans le studio pendant les quelques années qui suivirent cet évenement."
 
-        jump goodEnding_done
+        "----- FIN HEUREUSE 03 -----"
+
+        jump end
 
 
+    # FIN HEUREUSE : FESTIVAL POLYAMOUREUX
     label goodEnding_4:
 
         "En fait rien ne m'importe plus qu'eux. Tous les trois."
@@ -2058,8 +2133,12 @@ label start:
         "Après le festival, j'ai continué à les voir, tous, je ne réalise toujours pas à quel point je suis chanceux d'être tombé sur ces gens."
         "Ils me rendent vraiment heureux."
 
-        jump goodEnding_done
+        "----- FIN HEUREUSE 04 -----"
 
+        jump end
+
+
+    # FIN HEUREUSE : COUPLE AVEC PUNK ET FESTIVAL MULTI-GROUPE
     label goodEnding_5:
 
         got "On les emmerde ces fachos, moi j'en ai rien a faire. "
@@ -2113,14 +2192,13 @@ label start:
         "Après le festival, Patrick et moi avons continué à vivre notre relation discrètement pour éviter les attaques et l'homophobie."
         "Mais nous avons milité dès que possible pour la libération des orientations sexuelles."
 
-        jump goodEnding_done
+        "----- FIN HEUREUSE 05 -----"
 
-
-    label goodEnding_done:
         jump end
 
 
 
+    # FIN NEUTRE : FESTIVAL AVEC GOTHIQUE
     label neutralEnding_1:
 
         got "Dommage pour toi alors, je déteste ce groupe. "
@@ -2154,9 +2232,12 @@ label start:
         "J'aime sa musique mais je ne me sens pas d'aller la voir, je préfère l'écouter d'ici..."
         "Une fois son passage fini je retourne sur mes pas et rentre chez moi."
 
+        "----- FIN NEUTRE 01 -----"
 
-        jump neutralEnding_done
+        jump end
 
+
+    # FIN NEUTRE : FESTIVAL AVEC HIPPIE
     label neutralEnding_2:
         # scene festival
         "Nous arrivons ensemble sur la plaine où va se dérouler le festival."
@@ -2183,18 +2264,15 @@ label start:
         "Ils commencent à jouer les chansons que nous avons préparées ensemble ces derniers jours. "
         "Je ne peux m'empêcher de verser une larme, tout en regardant leur public qui semblent être laissés bouche bée devant le talent indéniable du groupe."
 
+        "----- FIN NEUTRE 02 -----"
 
-        jump neutralEnding_done
-        
-    label neutralEnding_done:
         jump end
+        
 
-label end:
-    "MERCI D'AVOIR JOUE A \"DE L'AMOUR ENTRE LES NOTES\" !"
+    label end:
+        "MERCI D'AVOIR JOUE A \"DE L'AMOUR ENTRE LES NOTES\" !"
 
-
-
-    $renpy.pause()
+        $renpy.pause()
 
 
     return
