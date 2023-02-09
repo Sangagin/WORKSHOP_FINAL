@@ -4,12 +4,131 @@
 # -------------------------------- IMAGES ----------------------------------
 
 # ----- Scenes -----
-#ici commentaire
+
+# ----- jour -----
+image barConcert1 = "images/bgjour/barconcert1.jpg"
+image bureau1 = "images/bgjour/bureau1.jpg"
+image rue1 = "images/bgjour/rue1.jpg"
+image thabor1 = "images/bgjour/thabor1.jpg"
+image thabor2 = "images/bgjour/thabor2.jpg"
+image thabor3 = "images/bgjour/thabor3.jpg"
+image thabor4 = "images/bgjour/thabor4.jpg"
+image thabor5 = "images/bgjour/thabor5.jpg"
+image thabor6 = "images/bgjour/thabor6.jpg"
+image thabor7 = "images/bgjour/thabor7.jpg"
+image thaborcage1 = "images/bgjour/thaborcage1.jpg"
+image barPunk = "images/bgjour/barpunk.jpg"
+image barPunk2 = "images/bgjour/barpunk2.jpg"
+image studio = "images/bgjour/studio.jpeg.jpg"
+
+# ----- nuit -----
+image bar01 = "images/bgn/bar01.jpg"
+image bar02 = "images/bgn/bar02.jpg"
+image bar03 = "images/bgn/bar03.jpg"
+image bgchemin01 = "images/bgn/bgchemin01.jpg"
+image bgchemin02 = "images/bgn/bgchemin02.jpg"
+image bgcn01 = "images/bgn/bgcn01.jpg"
+image bgcn02 = "images/bgn/bgcn02.jpg"
+image bgcn03 = "images/bgn/bgcn03.jpg"
+image bgcn04 = "images/bgn/bgcn04.jpg"
+image bgcnchemin01 = "images/bgn/bgcnchemin01.jpg"
+image bge01 = "images/bgn/bge01.jpg"
+image bge02 = "images/bgn/bge02.jpg"
+
 
 # ----- Personnages -----
+image lol = "lol.jpg"
+# ----- alan -----
+image alan fight = "images/alan/alanfight.png"
+image alan machi = "images/alan/alanmachiavelique.png"
+image alan neutre = "images/alan/alanneutre.png"
+image alan repost = "images/alan/alanrepost.png"
+image alan takehit = "images/alan/alantakehit.png"
+
+# ----- bastien -----
+image gm 01 = "images/bastien/commungm01.png"
+image gm 02 = "images/bastien/commungm02.png"
+image gotb01 = "images/bastien/gotb01.png"
+image gotb02 = "images/bastien/gotb02.png"
+image hib01 = "images/bastien/hib01.png"
+image hib02 = "images/bastien/hib02.png"
+image punkb01 = "images/bastien/punkb01.png"
+image punkb02 = "images/bastien/punkb02.png"
+
+# ----- solenn -----
+image gotangry01 = "images/goth/gotangry01.png"
+image gotchock01 = "images/goth/gotchock01.png"
+image gotgift01 = "images/goth/gotgift01.png"
+image gotgift02 = "images/goth/gotgift02.png"
+image gotgift03 = "images/goth/gotgift03.png"
+image gotgift04 = "images/goth/gotgift04.png"
+image gothappy01 = "images/goth/gothappy01.png"
+image gotjail01 = "images/goth/gotjail01.png"
+image gotjail02 = "images/goth/gotjail02.png"
+image gotjail03 = "images/goth/gotjail03.png"
+image gotkiss01 = "images/goth/gotkiss01.png"
+image gotneutral01 = "images/goth/gotneutral01.png"
+image gotpos01 = "images/goth/gotpos01.png"
+image gotpos02 = "images/goth/gotpos02.png"
+image gotsad01 = "images/goth/gotsad01.png"
+
+# ----- romane -----
+image romaneangry = "images/hippie/romaneangry.png"
+image romanecollier = "images/hippie/romanecollier.png"
+image romanecollier2 = "images/hippie/romanecollier2.png"
+image romanecollier3 = "images/hippie/romanecollier3.png"
+image romanecollier4 = "images/hippie/romanecollier4.png"
+image romanecollier5 = "images/hippie/romanecollier5.png"
+image romanecollier6 = "images/hippie/romanecollier6.png"
+image romanedegeu = "images/hippie/romanedegeu.png"
+image romaneneutre = "images/hippie/romaneneutre.png"
+image romaneneutresmile = "images/hippie/romaneneutresmile.png"
+image romanepouce = "images/hippie/romanepouce.png"
+image romanesmile ="images/hippie/romanesmile.png"
+
+# ----- hugo -----
+image hugoangry = "images/punk/hugoangry.png"
+image hugoback = "images/punk/hugoback.png"
+image hugobeer = "images/punk/hugobeer.png"
+image hugocry = "images/punk/hugocry.png"
+image hugodrunk = "images/punk/hugodrunk.png"
+image hugoface = "images/punk/hugoface.png"
+image hugofight = "images/punk/hugofight.png"
+image hugohappy = "images/punk/hugohappy.png"
+image hugoneutre = "images/punk/hugoneutre.png"
+image hugoouin = "images/punk/hugoouin.png"
+image hugopieddebiche1 = "images/punk/hugopieddebiche1.png"
+image hugopieddebiche2 = "images/punk/hugopieddebiche2.png"
+image hugoregarddroite = "images/punk/hugoregarddroite.png"
+image hugowalk1back = "images/punk/hugowalk1back.png"
+image hugowalk2back = "images/punk/hugowalk2back.png"
+
+# ----- achille -----
+image policeangry = "images/police/policeangry.png"
+image policeft01 = "images/police/policeft01.png"
+image policeft02 = "images/police/policeft02.png"
+image policegeule = "images/police/policegeule.png"
+image policeneutre01 = "images/police/policeneutre01.png"
+image policeneutre02 = "images/police/policeneutre02.png"
+image policeneutre03 = "images/police/policeneutre03.png"
+image policepense01 = "images/police/policepense01.png"
+image policepense02 = "images/police/policepense02.png"
+image policepense03 = "images/police/policepense03.png"
+image policepense04 = "images/police/policepense04.png"
+image policepense05 = "images/police/policepense05.png"
+image policestop01 = "images/police/policestop01.png"
+image policestop02 = "images/police/policestop02.png"
 
 
+# ----- arnaud -----
+image arnaudback = "arnaudback"
+image arnaudmain = "arnaudmain"
+image arnaudneutre = "arnaudneutre"
 
+
+# ----- fin -----
+
+image ecrandefin = "images/ecrandefin"
 
 # --------------------------------------------------------------------------
 # ----------------------------- PERSONNAGES --------------------------------
