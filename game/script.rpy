@@ -616,11 +616,11 @@ label start:
         hide arnaudmain
         hide arnaudneutre
         if jour == 3:
-            jump suite03
+            jump suite02
         if jour == 4:
-            jump suite04
+            jump suite3
         if jour == 5:
-            jump suite05
+            jump suite4
 
 
     label achat_bracelet:
