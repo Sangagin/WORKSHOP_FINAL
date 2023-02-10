@@ -1,11 +1,17 @@
+##### ETPA - WORK SHOP 2 #####
+# DE L'AMOUR ENTRE LES NOTES #
+# ----- BODERE Bastien ----- #
+# ----- CATTIN Solenn ------ #
+# ------ DAMON Romane ------ #
+# ----- MARTIN Achille ----- #
+# ------ PIERRE Hugo ------- #
+# ------- TU Arnaud -------- #
 
 
 # --------------------------------------------------------------------------
 # -------------------------------- IMAGES ----------------------------------
 
-# ----- Scenes -----
-
-# ----- jour -----
+# Scenes de jour
 image barConcert1 = "images/bgjour/barconcert1.jpg"
 image bureau1 = "images/bgjour/bureau1.jpg"
 image rue1 = "images/bgjour/rue1.jpg"
@@ -24,7 +30,8 @@ image apt = "images/bgjour/apt.jpg"
 image apt02 = "images/bgjour/apt02.jpg"
 image marchand = "images/bgjour/marchand.jpg" 
 
-# ----- nuit -----
+
+# Scenes de nuit
 image bar01 = "images/bgn/bar01.jpg"
 image bar02 = "images/bgn/bar02.jpg"
 image bar03 = "images/bgn/bar03.jpg"
@@ -42,16 +49,13 @@ image thaborn02 = "images/bgn/thaborn02.jpg"
 image thaborn03 = "images/bgn/thaborn03.jpg"
 
 
-# ----- Personnages -----
-image lol = "lol.jpg"
-# ----- alan -----
+# Personnages
 image alan fight = "images/alan/alanfight.png"
 image alan machi = "images/alan/alanmachiavelique.png"
 image alan neutre = "images/alan/alanneutre.png"
 image alan repost = "images/alan/alanrepost.png"
 image alan takehit = "images/alan/alantakehit.png"
 
-# ----- bastien -----
 image gm 01 = "images/bastien/commungm01.png"
 image gm 02 = "images/bastien/commungm02.png"
 image gotb01 = "images/bastien/gotb01.png"
@@ -61,7 +65,6 @@ image hib02 = "images/bastien/hib02.png"
 image punkb01 = "images/bastien/punkb01.png"
 image punkb02 = "images/bastien/punkb02.png"
 
-# ----- solenn -----
 image gotangry01 = "images/goth/gotangry01.png"
 image gotchock01 = "images/goth/gotchock01.png"
 image gotgift01 = "images/goth/gotgift01.png"
@@ -78,7 +81,6 @@ image gotpos01 = "images/goth/gotpos01.png"
 image gotpos02 = "images/goth/gotpos02.png"
 image gotsad01 = "images/goth/gotsad01.png"
 
-# ----- romane -----
 image romaneangry = "images/hippie/romaneangry.png"
 image romanecollier = "images/hippie/romanecollier.png"
 image romanecollier2 = "images/hippie/romanecollier2.png"
@@ -92,7 +94,6 @@ image romaneneutresmile = "images/hippie/romaneneutresmile.png"
 image romanepouce = "images/hippie/romanepouce.png"
 image romanesmile ="images/hippie/romanesmile.png"
 
-# ----- hugo -----
 image hugoangry = "images/punk/hugoangry.png"
 image hugoback = "images/punk/hugoback.png"
 image hugobeer = "images/punk/hugobeer.png"
@@ -109,7 +110,6 @@ image hugoregarddroite = "images/punk/hugoregarddroite.png"
 image hugowalk1back = "images/punk/hugowalk1back.png"
 image hugowalk2back = "images/punk/hugowalk2back.png"
 
-# ----- achille -----
 image policeangry = "images/police/policeangry.png"
 image policeft01 = "images/police/policeft01.png"
 image policeft02 = "images/police/policeft02.png"
@@ -125,8 +125,6 @@ image policepense05 = "images/police/policepense05.png"
 image policestop01 = "images/police/policestop01.png"
 image policestop02 = "images/police/policestop02.png"
 
-
-# ----- arnaud -----
 image arnaudback = "images/marchand/arnaudback.png"
 image arnaudmain = "images/marchand/arnaudmain.png"
 image arnaudneutre = "images/marchand/arnaudneutre.png"
@@ -137,12 +135,10 @@ image redBall = "images/props/cercle_rouge.png"
 image persoRatrappe = "images/props/diabolo.png"
 
 # ----- fin -----
-
-image ecrandefin = "images/ecrandefin"
+image ecrandefin = "images/ecrandefin.png"
 
 # --------------------------------------------------------------------------
 # ----------------------------- PERSONNAGES --------------------------------
-
 
 # Declarartions des personnages principaux / Love interests
 define got = Character('Marie-Anne', color="#c8ffa8")
@@ -153,7 +149,6 @@ define hippie = Character('Jeanne', color="#ffffa8")
 define march = Character('Marchand', color="a8a8ff")
 define skh = Character('Skinhead', color="ff8080")
 define voisine = Character('Vieille Voisine', color="cc8888")
-
 
 
 init python:
@@ -174,8 +169,6 @@ init python:
 # --------------------------------------------------------------------------
 # --------------------------------------------------------------------------
 
-
-# Le jeu commence ici
 label start:
     python:
         nom = renpy.input("Quel est ton nom ?")
@@ -196,9 +189,9 @@ label start:
 
     $jour = 0
     $thune = 0
-    $ pvAlan = 5
-    $ pvPerso = 3
-    $ points =0
+    $pvAlan = 5
+    $pvPerso = 3
+    $points =0
 
     # Declaration varaibles inventaire
     $ inventaire = []
@@ -224,10 +217,10 @@ label start:
 
 
     # --------------------------------------------------------------------------
-    # ----- JOURNEE 1 -----
+    # JOURNEE 1
+
     $jour += 1
 
-    # afficher interieur studio
     "Tu t'appelles [nom]."
 
     "(Téléphone sonne)"
@@ -241,7 +234,6 @@ label start:
     "Bon je dois me préparer maintenant, et me dépêcher d'y aller, je crois que je suis déjà en retard !"
 
     scene rue1
-
     scene bgchemin02
     "Le bus ne m'a pas aidé pour mon retard…"
     "Je crois que je me suis pas trompé de rue cette fois, pas comme ce matin haha !"
@@ -249,8 +241,11 @@ label start:
 
     scene studio
     show gotangry01 at left
+
     "Gothique" "Mais putain ! Tu m'as désaccordé ma guitare ! Pourquoi tu touches à mes instruments, reste avec ton djembé dans ton coin !"
+
     show  romaneangry at right
+
     "Hippie" "C'est bon pas besoin de s'énerver, ça se réaccorde facilement."
     "Hippie" "Est-ce que tu peux éviter d'élever la voix maintenant ?"
     "Hippie" "J'aimerais que l'ambiance soit agréable pour accueillir notre nouvel ingé son..."
@@ -261,6 +256,7 @@ label start:
     "Elles ne m'ont visiblement pas vu, trop investies dans leur discussion"
 
     "Est-ce que je les interrompt pour les prévenir de mon arrivée ?"
+
     menu:
         "oui":
             jump choix1_oui
@@ -272,6 +268,7 @@ label start:
     label suite1:
         hide gotneutral01
         hide romaneneutre
+
         "Les membres des deux groupent partent ensuite se reposer après m'avoir demandé de les appeler rapidement pour reprendre les répetitions."
         "Bon, maintenant qu'elles sont parties, je vais pouvoir m'y mettre. "
         "Qui est-ce que j'enregistre aujourd'hui déjà ?"
@@ -279,12 +276,15 @@ label start:
         "C'est à ce moment que l'homme qui semblait s'amuser de la dispute de tout à l'heure ouvre violemment la porte."
         "Il rentre dans la petite pièce puis me salue d'un mouvement de tête."
         "Moi" "Bonjour, enchanté de vous rencontrer, je suis le nouvel ingé-son, [nom]. J'..."
+
         show hugoangry
+
         "Punk" "Ouais ouais, super super. "
         punk "Moi c'est Patrick."
         punk "Contente-toi d'enregistrer et silence. Et t'as pas intérêt à foirer."
 
         "Oups, je crois qu'il vaudrait mieux éviter de trop lui parler..."
+
         scene black with dissolve 
         scene studio
         "La séance se passe, puis arrive la fin de la journée."
@@ -318,7 +318,9 @@ label start:
         scene bgchemin01 with dissolve
         "En arrivant devant mon immeuble, je remarque quelques personnes en train de fumer devant l'entrée, discutant bruyamment sans faire attention aux autres personnes alentours."
         "D'ailleurs, ils semblent ignorer volontairement les personnes essayant d'entrer, présentement une vieille personne avec son caddie à courses, qui essaye de les interpeller sans succès."
+
         show alanneutre
+
         "Les trois personnes, chauves, vont jusqu'à pousser la vieille femme lorsqu'elle tente de passer à coté d'eux, la faisant chuter lourdement au sol. "
         "Je ne peux pas rester sans réagir."
 
@@ -331,8 +333,10 @@ label start:
         "S'ils traînent dans le voisinage, il faudra que je fasse attention."
         "Voyant qu'il ne réagissent cependant pas plus que ça, se contentant de ricaner, je les ignore et aide la vieille femme à rentrer dans l'immeuble. "
         "Par un fait du hasard, elle se trouve être ma voisine de palier."
+
         hide alanneutre
         show commungm02
+
         voisine "Merci beaucoup monsieur. Ces voyous rendent la vie ici impossible, ils se croient tout permis ! "
         voisine "Cela fait plaisir de voir qu'il y a encore des gens bien dans ce monde."
         "Moi" "Ils sont souvent par ici ?"
@@ -347,12 +351,15 @@ label start:
         "Le coin n'est clairement pas aussi tranquille que le prétendais le promoteur immobilier."
         "La journée à été longue, autant aller se coucher directement."
 
-
         scene black with dissolve 
         scene apt
-        $thune=thune+200
-        # ------------------------- JOURNEE 2 (PAS JOUABLE) -------------------------------------
+
+
+        # --------------------------------------------------------------------------
+        #  JOURNEE 2 (PAS DE PHASE DE GAMEPLAY)
+
         $jour += 1
+
         "Allez, c'est parti pour une nouvelle journée de travail. "
         "Je me demande pourquoi le groupe d'aujourd'hui ne voulait pas faire la présentation en même temps que les autres."
 
@@ -360,6 +367,7 @@ label start:
         "Enfin, ils ne devraient pas tarder."
 
         show alanneutre
+
         skh "Oy, c'est toi le nouveau ?"
 
         "Oh bon sang."
@@ -379,16 +387,19 @@ label start:
 
         hide alanneutre
         show alanmachiavelique
+
         skh "Alors minable, t'en as pensé quoi ? Ça envoie du lourd non ?"
         "Moi" "C'est pas mal en effet. Je ne pense pas que vous ayez besoin de plus de sessions avant le festival. "
         "Moi " "Je vais me concentrer sur les autres groupes d'ici là."
         skh "Ah ! Dis plutôt que t'as la trouille de nous revoir ! "
         skh "Mais ça nous va, moins on voit ta gueule de fouine, mieux on se porte. Et ça nous donne plus de temps pour… He he he…"
+
         hide alanmachiavelique
 
         "Je n'ai même pas envie d'imaginer ce qu'il laisse sous entendre. "
         "La journée à été suffisamment épuisante comme ça, juste par leur présence malsaine dans le studio."
         "Je rentre chez moi sans incidents. "
+
         scene apt with dissolve
         "Demain, il faudra que je choisisse quel groupe appeler pour une session d'enregistrement. "
 
@@ -397,30 +408,34 @@ label start:
 
 
     # --------------------------------------------------------------------------
-    # ----- JOURNEE 3 -----
+    # JOURNEE 3
+
     $jour += 1
 
     "Le bruit de mon réveil insupportable me tire de mon sommeil."
     "Après la journée d'hier, j'ai une petite appréhension de comment celle d'aujourd'hui va tourner."
     "Un café et une tranche de pain puis direction le studio."
+
     scene rue1
 
-    # Aller chez le marchand ou non ?
     "Est-ce que je passerais pas à la supérette du coin avant pour voir ce qu'ils proposent aujourd'hui ?"
+
     menu:
         "Pourquoi pas ?":
             jump magasin
+
         "Je suis déjà en retard...":
             "Une autre fois peut-être..."
 
 
     label suite02:
+
         scene studio
         "En arrivant je découvre cette fois le studio dans un silence assez effrayant. "
         "Aujoud'hui je vais devoir choisir un des trois groupes que j'ai rencontré hier pour commencer à enregistrer."
         "J'hésite..."
 
-    # Decision session studio de la journée
+
     menu:
         "Je vais appeler le groupe \"Effervescence\".":
             $amitie_got += 1
@@ -436,61 +451,69 @@ label start:
 
 
     label suite3:
+
         "Je ne pensais pas en arrivant au studio ce matin que cette journée durerait aussi longtemps."
+
         if choix3_bagarre:
             "Patrick m'en a fait voir de toutes les couleurs..."
+
         elif choix3_cimetiere:
             "Je ne m'attendais pas à être invité par Marie-Anne de la sorte."
             if flirt_got:
                 "Un rendez-vous dans un cimetière... C'est quand même assez improbable !"
+
         elif choix3_diabolo:
             "Je repense à Jeanne et je me rend compte qu'elle est super sympa !"
             if flirt_hippie :
                 "J'ai adoré son atelier découverte, j'ai pu découvrir de nouvelles choses."
+
         "Je me suis ensuite rappelé que j'ai deux autres groupes à gérer, il ne faudrait pas que je les oublie non plus."
         "Mais je verrais tout cela demain, pour le moment, je mérite une bonne nuit de sommeil."
 
         $thune=thune+200
 
     # --------------------------------------------------------------------------
-    # ----- JOURNEE 4 -----
+    # JOURNEE 4 
+
     $jour += 1
     label jour3:
     "Dans le noir, le studio a une allure terifiante."
     "Les ombres des instruments peuvent ressembler à des créatures tapies dans la pénombre."
     "Mais il me suffit d'un seul bouton pour les faire disparaître."
+
     scene studio with dissolve
     "J'allume la lumière puis un reflet sur le côté attire mon œil vers le téléphone du studio."
 
     "Est-ce que je n'irai pas passer à coup d'oeil au magasin avant d'appeler un groupe ?"
-    # Aller chez le marchand ou non ?
+
     menu:
         "Aller à l'Epicerie du Soleil":
             jump magasin
+
         "Rester au studio d'enregistrement":
             "Je vais me concentrer sur les groupes..."
+
 
     label suite04:
         "Qui devrais-je appeler pour aujourd'hui ?"
 
-    # Decision session studio de la journée
+
     menu:
         "\"Effervescence\" me fait de l'oeil.":
             $amitie_got += 1
-
             jump choix4_got
-
-
 
         "Je vais appeler \"Quatuor\" aujourd'hui.":
             $amitie_hippie += 1
 
             if flirt_hippie:
                 "Dans un but purement professionnel, bien sûr."
+
             "La session se passe extrêmement bien, le groupe à bien progressé en quelques semaines."
             "Après la session, Jeanne vient me voir."
 
             show romaneneutresmile
+
             hippie "Hey beau gosse, comment tu vas ? "
             hippie "Merci pour la session d'enregistrement, on a vraiment progressé aujourd'hui. "
             "Moi" "C'est vrai, vous étiez incroyables. "
@@ -509,38 +532,42 @@ label start:
                 "Je serais là !":
                     jump date2_hippie
 
-
                 "Je suis désolé, je ne pense pas que ça soit une bonne idée.":
                     "Moi" "Je t'apprécie énormément, mais je pense que nos relations doivent rester professionnelles."
+
                     hide romaneneutresmile
                     show romaneneutre
+
                     hippie "Oh... Je... Je croyais que... "
                     hippie "Je suis désolée."
 
                     hide romaneneutre
                     "Jeanne part en courant avant que je ne puisse l'arrêter."
-                    jump badEnding_2
 
+                    jump badEnding_2
 
         "Je préfererai enregistrer avec les \"Perruquiers noirs\".":
             $amitie_punk += 1
 
             if (amitie_punk >= 4):
                 jump choix4_punk
+
             else:
                 jump choix3_punk
 
+
     label suite4:
+
         scene apt with dissolve
+
         "Une fois dans mon petit appartemment, je repense à la journée que je viens de passer."
         "Je me glisse sous mes draps, sans pouvoir pour autant fermer l'oeil de la nuit."
         $thune=thune+200
 
         
 
-
     # --------------------------------------------------------------------------
-    # ----- JOURNEE 5 -----
+    # JOURNEE 5 
 
     $jour += 1
     label jour5:
@@ -548,26 +575,29 @@ label start:
     "Je dois retourner au studio travailler avec mes groupes, en espérant que les membres aient plus dormi que moi."
     "Le studio commence vraiment à m'être familier."
     "Les ombres des instruments ne me font plus croire à des monstres ou autres."
+
     scene studio with dissolve
     "Le reflet des lumières en allumant continue par contre à attirer mon oeil vers le téléphone."
     "Je retrouve sur le bureau une note de la part de Patrick, indiquant que son groupe ne peut pas être présent aujourd'hui."
 
     "Est-ce que je vais chez les marchand pour voir s'il a des nouveautés ?"
-    # Aller chez le marchand ou non ?
+    
     menu:
         "Pourquoi pas ?":
             jump magasin
+
         "Je crois que j'en ai assez vu.":
             "Je vais me concentrer sur mon travail."
             "Le festival arrive à grands pas."
 
+
     label suite05:
+
         "C'est la dernière ligne droite."
         "Quel groupe aurait besoin d'ajustements avant le festival ?"
 
 
     "C'est la dernière session d'enregistrement avant le festival."
-    # Decision studio
     $thune=thune+200
 
     menu:
@@ -576,11 +606,14 @@ label start:
 
             if flirt_got:
                 show gotpos02
+
                 got "Allo ? [nom] ?"
                 "Moi" "Oui, j'ai une surprise qui je pense va te plaire. "
                 "Moi" "Tu peux venir faire une session de suite ?"
                 got "J'ARRIVE !"
+
                 jump date3_got
+
             else:
                 jump choix4_got
 
@@ -589,7 +622,9 @@ label start:
 
             "Moi" "Hey ! Super session comme d'habitude. "
             "Moi" "Vous vous sentez prêt pour le festival ?"
+
             show romanesmile
+
             hippie "Plus que jamais, on va tout déchirer. "
             "Moi" "Haha, super, je sens que vous êtes motivés. On se revoit là-bas ?"
             hippie "Attends ! ça te dirait de venir à ma roulotte ce soir ?"
@@ -609,12 +644,11 @@ label start:
 
 
 
-
-    # TOUS LES CHOIX
-
     # --------------------------------------------------------------------------
-    # Aller chez le marchand ou non ?
+    # --------------------------------------------------------------------------
+    # DIFFERENTES CHOIX
 
+    # Choix : Aller au magasin
     label magasin:
         scene marchand
         hide arnaudback
@@ -638,10 +672,13 @@ label start:
         hide screen pendentif
         hide arnaudmain
         hide arnaudneutre
+
         if jour == 3:
             jump suite02
+
         if jour == 4:
             jump jour3
+            
         if jour == 5:
             jump suite05
         
@@ -656,21 +693,24 @@ label start:
         if thune<200:
             hide arnaudmain
             show arnaudneutre
+
             march "Vous n'avez pas assez d'argent !"
+
             jump magasin
+
         else:
             hide arnaudmain
             show arnaudback
+
             march "Je vous attrape ça."
+
             $ thune = thune-200
             $inventaire.append(braceletOS)
-            #ligne de commande pour afficher inventaire
-            #ajouter un hide screen inventory quand on veut le cacher
+            
             show screen inventory
 
             march "Merci pour votre achat !"
             jump magasin
-        jump magasin
 
     label achat_canette:
         hide screen bracelet
@@ -678,26 +718,27 @@ label start:
         hide screen pendentif
         hide screen bouton_quitter
 
-
         if thune<200:
             hide arnaudmain
             show arnaudneutre
+
             march "Vous n'avez pas assez d'argent !"
+
             jump magasin
+
         else:
             march "Je vous attrape ça."
             hide arnaudmain
             show arnaudback
+
             $ thune = thune-200
 
             $inventaire.append(canetteP)
-            #ligne de commande pour afficher inventaire
-            #ajouter un hide screen inventory quand on veut le cacher
+            
             show screen inventory
 
             march "Merci pour votre achat !"
             jump magasin
-        jump magasin
 
     label achat_pendentif:
         hide screen bracelet
@@ -709,27 +750,28 @@ label start:
         if thune<200:
             hide arnaudmain
             show arnaudneutre
+
             march "Vous n'avez pas assez d'argent !"
+
             jump magasin
         else:
+
             hide arnaudmain
             show arnaudback
+
             march "Je vous attrape ça."
 
             $ thune = thune-200
 
             $inventaire.append(pendentifH)
-            #ligne de commande pour afficher inventaire
-            #ajouter un hide screen inventory quand on veut le cacher
+            
             show screen inventory
 
             march "Merci pour votre achat !"
             jump magasin
-        jump magasin
 
 
 
-    # --------------------------------------------------------------------------
     # --------------------------------------------------------------------------
     # Choix 1 : Interrompre les deux femmes ou non
     label choix1_oui:
@@ -744,10 +786,12 @@ label start:
         "Moi" "Je suis [nom] . J'ai été embauché en tant qu'ingé son dans ce studio. Et pour répondre à votre question, la porte était ouverte."
         "Hippie" "Hahahaha !"
         "Moi" "Pourriez vous me dire qui vous êtes ?"
+
         hide romaneangry
         show romaneneutre at right
         hide gotangry01 
         show gotneutral01 at left
+
         # On apprend leurs noms maintenant donc leurs variables Personnages sont utilisées
         hippie "Excusez moi hahaha ! Je suis Jeanne, membre du groupe \"Quatuor\", on m'a dit de venir aujourd'hui concernant un festival donc me voici !"
         hippie "C'est un plaisir de vous rencontrer"
@@ -755,12 +799,12 @@ label start:
         hide romaneneutre
         show gotneutral01
 
-        
         got "Ouais, désolée. Je m'appelle Marie-Anne et suis la guitariste de mon groupe \"Effervescence\"."
 
         "L'homme qui observait la dispute se lève et sort par la porte qui mène à l'arrière du studio."
 
         hide gotneutral01
+
         "Nous continuons à discuter jusqu'à ce que, en effet, les autres membres de chaque groupe arrivent."
         "J'ai également appris que le quatrième groupe qui devait venir ne viendrait en fait que demain, seul."
         "Un peu déçu de ne pas les voir, je me concentre tout de même sur les trois qui se trouvent en face de moi."
@@ -768,6 +812,7 @@ label start:
         "Les deux groupes sont uniques et ont leur patte qui les diffèrent de l'autre."
 
         jump suite1
+
 
     label choix1_non:
         $pasInterrompre = True
@@ -779,6 +824,8 @@ label start:
         "Gothique" "C'est pas une hippie comme toi qui va me dire quoi faire !"
 
         "Je crois qu'elles vont bientot en passer aux mains, je ferais mieux de les arrêter maintenant..."
+
+        # On les interrompt quand même, mais on a obtenu un dailogue supplémentaire !
         jump choix1_oui
 
 
@@ -810,8 +857,10 @@ label start:
         got "Et je me doute bien que c'est un hasard, t'as pas l'air d'être le genre de mec à faire des coups dans le dos comme ça."
         "Moi" "Ha ! Je prend le compliment. "
         "Moi" "Tu me sembles prompte à juger les gens en tout cas."
+
         hide gotneutral02
         show gothappy01
+
         got "Bien obligé. Par ici, un mauvais regard ça peut valoir un coup de batte dans les genoux si tu fais pas attention."
 
         "Je commence à regretter d'être sorti me balader le soir..."
@@ -823,20 +872,26 @@ label start:
 
         hide gothappy01
         show gotneutral01
+
         got "T'inquiète pas pour moi va, je sais me débrouiller. "
         got "Et puis je suis en bas de chez moi, je suis juste sortie fumer une clope."
         got "On se revoit au studio un de ces quatre, si tu décides de nous choisir pour la session. "
+
         hide gotneutral01
         show gotneutral02
+
         "Elle m'adresse un signe de la main et se retourne sans attendre de réponse de ma part."
 
         got "Ah et, te pisse pas dessus si tu vois des ombres en rentrant chez toi !"
 
         "Son exclamation me fait sursauter, et c'est en grommelant que je rentre chez moi. "
+
         hide gotneutral02
+
         "Je remarque une épicerie asiatique sur le chemin, il faudra que j'aille y faire un tour un de ces quatre."
 
         jump suite2
+
 
     label choix2_hippie:
 
@@ -847,6 +902,7 @@ label start:
         "Mais… C'est pas la fille de tout à l'heure avec une pancarte au milieu de la foule ?"
 
         show romaneangry
+
         hippie "Non ! Non ! Non à l'exploitation !"
 
         "On dirait une manifestation..."
@@ -854,6 +910,7 @@ label start:
 
         hide romaneangry
         show romanesmile
+
         hippie "Oh ! Mais tu es l'ingénieur de tout à l'heure ! Tu es venu te joindre à nous ? Comme c'est gentil !"
 
         "Trop tard, la fille aux vêtements colorés m'a vu."
@@ -866,6 +923,7 @@ label start:
             hippie "Je ne savais pas trop quoi penser de toi au studio..."
             hippie "Vu que tu ne m'avais pas laissé finir d'expliquer à cette fille que porter des crânes d'animaux n'était pas très respectueux pour ces pauvres petits écureuils."
             hippie "Mais tu as l'air sympa au final !"
+
         else:
             hippie "Ah, je suis contente de voir que tu t'intéresse au bien être animal ! "
             hippie "Ce magasin vend des produits qui abîment environnement."
@@ -880,6 +938,7 @@ label start:
 
         hide romanesmile
         show romanepouce
+
         hippie "Bah, c'est pas grave, on à l'habitude. Au pire, on se prend quelques coups, mais la cause en vaut la peine."
         "Moi" "Oui alors non. "
         "Moi" "Je comprend que cette cause vous tient à cœur, mais je ne peux permettre à une de mes artistes de se mettre en danger comme ça. "
@@ -887,6 +946,7 @@ label start:
         hippie "Oh ! Tu cherchais un magasin en fait ? Ne t'inquiète pas, je connais un super magasin si tu veux ! Viens, je te le montre !"
 
         hide romanepouce
+
         "Sans regarder si je la suit, la jeune femme rousse part en trombe dans une ruelle adjacente, laissant tomber sa pancarte au sol. "
         "Au moins elle ne se fera pas arrêter avant le festival..."
         "Je décide de la suivre cependant, intrigué par sa fougue et son esprit libre. "
@@ -895,12 +955,14 @@ label start:
         "Ironiquement, cette boutique est plus près de chez moi que l'autre magasin, mais je ne l'avais pas remarquée auparavant."
 
         show romaneneutresmile
+
         hippie "Ici tu trouvera tout ce dont tu as besoin ! Et les vendeurs sont super sympas !"
         "Moi" "Je vois. Eh bien merci je suppose."
         hippie "Pas de soucis ! Ça fait plaisir de s'entraider non ? "
         hippie "Oh, c'est presque l'heure de mon cour de yoga ! Il faut que j'y aille, on se revoit bientôt au studio j'espère !"
 
         hide romaneneutresmile
+
         "Elle part encore une fois comme une fusée, sans que je la suive cette fois. "
         "Si elle a l'air tête en l'air, elle a également l'air de ne jamais s'arrêter. Une chic fille en vrai."
         "..."
@@ -910,20 +972,24 @@ label start:
 
 
     label choix2_punk:
+
         $choix2_bar = True
 
         scene rue1 with dissolve
-
         "J'irais bien faire un tour au bar ce soir, ça pourrait m'aider à rencontrer du monde et à me familiariser avec la ville."
-        "J'entre dans un bar et m‘approche du comptoir pour commander une bière"
+        "J'entre dans un bar et m'approche du comptoir pour commander une bière"
 
         show hugoneutre
+
         punk "Hey! Le nouveau! Ramène toi!"
+
         "Est-ce que je vais le rejoindre ?"
+
         menu:
             "Oui pourquoi pas.":
                 hide hugoneutre
                 show hugohappy
+
                 punk "Je savais pas que trainais dans ce genre de trous miteux."
                 "Moi" "Il est pas si miteux ce bar."
                 punk "(a voix basse) C'est surtout le moins cher oui."
@@ -932,14 +998,17 @@ label start:
                 "Je le vois se lever et se diriger vers moi. J'aurais peut être du accepter..."
                 punk "Alors t'es timide ?"
                 "Moi" "J'avais cru comprendre que vous préfériez que je me taise."
+
                 hide hugoneutre
                 show hugoangry
+
                 punk "Alors déjà, TU, ensuite quand  on bosse tu te tais, mais là on bosse pas."
 
         if interrompre:
             hide hugoangry
             hide hugohappy
             show hugoneutre
+
             punk "Par contre, t'as merdé, fallait les laisser s'arracher les cheveux aux deux autres."
             "Moi" "C'était mon premier jour, je ne voulais pas avoir d'ennuis."
             punk "Ouais bah la prochaine fois laisse les en venir au mains, j'ai un billet sur la gothique."
@@ -956,10 +1025,12 @@ label start:
         hide hugoneutre
         hide hugohappy
         show hugoangry
+
         punk "Écoute, c'est pas que j'apprécie pas cette discussion, mais c'est bientôt l'heure ou ces tocards de droitards sortent de la fac."
         punk "J'ai bien envie de leur mettre un coup de pression."
 
         hide hugoangry
+
         "Patrick se lève et s'en va, me laissant seul face à ma bière."
         "..."
         "Bon, je vais finir ma bière et je vais rentrer."
@@ -969,7 +1040,7 @@ label start:
 
 
     # --------------------------------------------------------------------------
-    # Choix 3 : Choix session studio
+    # Choix 3 : Choix session studio, qui précède un premier rendez-vous
     label choix3_got:
 
         $choix3_cimetiere = True
@@ -979,6 +1050,7 @@ label start:
         "Chaque tonalité sonne en harmonie avec mon cœur."
 
         show gotneutral01
+
         got "Hmmmm ! Allo ?"
         "Ca a décroché !"
         "Moi" "Bonjour c'est [nom] l'ingé son d'hier, j'ai décidé de commencer à enregistrer avec votre groupe, il m'avait bien plu."
@@ -997,21 +1069,22 @@ label start:
 
         if amitie_got >= 2:
             show gotpos01
+
             got "Hé le bleu bite ! Ca te dirait de venir à notre petite soirée ?"
+
             menu:
                 "Ouais pourquoi pas.":
                     got "Allez suis nous on y va !"
+
                     jump date1_got
 
                 "Je comptais rentrer, je n'ai toujours pas fini de m'installer.":
                     "Moi" "C'est gentil d'avoir proposé ceci dit"
                     got "Boh pas grave ! Une prochaine fois."
+
                     hide gotpos01
                     jump suite3
         jump suite3
-
-
-
 
 
     label choix3_hippie:
@@ -1023,16 +1096,19 @@ label start:
         "Moi" "Bonjour, c'est à votre tour de passer pour la session d'enregistrement."
 
         show romaneneutresmile
+
         hippie "Super ! On arrive, merci beaucoup !"
         "Moi" "Hey, merci à toi ! A tout de suite !"
         hippie "Hihi, tu veux tant que ça me revoir ? "
 
         "Le groupe \"Quatuor\" passe la journée au studio et s'améliore beaucoup !"
+
         scene black with dissolve 
         scene studio
-
         "Moi" "La séance est terminée, merci beaucoup."
+
         show romanesmile
+
         hippie "Beau travail aujourd'hui !"
         "Moi" "Merci pour l'occasion, on en avait vraiment besoin…"
         hippie "Merci à toi, c'était sympa !"
@@ -1048,12 +1124,13 @@ label start:
 
             "Non, désolé...":
                 "Moi" "J'ai déjà quelque chose de prévu ce soir… Mais ça aurait été avec plaisir !"
+
                 hide romanesmile 
                 show romaneneutresmile
+
                 hippie "Pas de soucis, ça sera pour une prochaine fois !"
+
                 jump suite3
-
-
 
 
     label choix3_punk:
@@ -1061,34 +1138,51 @@ label start:
         $choix3_bagarre = True
 
         "J'appelle un des membres du groupe et leur demande de venir."
-        "blablabla"
-        #ne pas oublier d'ecrire ici"
+        "Je décide ensuite de me poser et de réécouter les dernières chansons qui ont été enregistrées."
+        "Pendant que je travaillais sur les nouvelles chansons, le groupe arrive, me saluant."
 
+        show hugoneutre
+        show punkb01 at right
+        show punkb02 at left
+
+        "Nous passons la journée à enregistrer les dernières chansons qui devraient être présentées lors du festival."
+        "La journée touche encore une fois à sa fin."
+
+        hide hugoneutre
+        hide punkb01
+        hide punkb02
+
+        "Le temps passe vite ici."
+        "J'ai l'impression d'avoir débarqué en ville seulement hier..."
+        
         if amitie_punk >= 2:
             scene black with dissolve 
             scene studio
             show hugoneutre
+
             punk "Hey [nom], tu trouvais l'autre trou pas trop mal, j't'attends à la sortie, j'vais te montrer un vrai bar."
             "C'est presque menaçant comme invitation, je me demande si je devrais avoir peur."
 
             menu:
                 "Je pense que je vais sortir par derrière, j'ai un peu peur de Patrick":
                     "..."
+
                 "Je vais sortir par devant, je ne pense pas qu'il soit dangereux.":
                     "..."
 
             # Dans tous les cas, Patrick se trouve devant la porte
             scene rue1
             show hugoneutre
+
             punk "C'est pas trop tôt, tu traines la patte dis donc !"
             "Moi" "Désolé, je devais fermer le studio."
             punk "Ouais ouais, dépêche toi."
             "Moi" "J'arrive."
-
             punk "Voilà ça c'est un super bar tu vas voir."
             punk "Allez viens on va se prendre quelques bières."
 
             "Patrick m'emmène dans des petites ruelles avant de se poser à une terrasse."
+
             punk "Je te commande un truc ?"
 
             menu:
@@ -1099,6 +1193,7 @@ label start:
                 "Je vais prendre une limonade.":
                     hide hugoneutre
                     show hugoregarddroite
+
                     punk "Ah ouais."
                     $amitie_punk -= 1
 
@@ -1112,8 +1207,10 @@ label start:
             punk "J'sais pas si t'as remarqué mais j'ai pas la dégaine classique par ici. "
             "Moi" "Si j'ai bien vu, mais tu ne m'as frappé comme quelqu'un de très préoccupé par ce que les gens pensent de lui."
             punk "C'est pas faux."
+
             hide hugohappy
             show hugoneutre
+
             punk "Bon, j'vais m'en reprendre une, tu veux quoi ?"
 
             "Oups je crois que j'ai touché un sujet sensible."
@@ -1133,8 +1230,10 @@ label start:
             punk "A part mon boulot, pas vraiment. "
             punk "Avant on allait chercher les fachos pour les tabasser, mais tout seul c'est moins marrant."
             "Moi" "Les autres ne te suivent plus ?"
+
             hide hugoneutre
             show hugoouin
+
             punk "Plus depuis..."
             punk "..."
             punk "Qu'un des nôtres s'est fait salement amocher."
@@ -1142,8 +1241,10 @@ label start:
             "Merde j'ai encore appuyé ou il fallait pas."
 
             "Moi" "Désolé d'avoir..."
+
             hide hugoouin
             show hugoneutre
+
             punk "T'excuses pas tu pouvais pas savoir."
             "Moi" "Oui... Mais du coup c'est quoi ton travail ?"
             punk "Je vends des glaces."
@@ -1161,9 +1262,9 @@ label start:
             "Moi" "Oui, j'ai écouté, tu parles des pourris au pouvoir, ..."
             "Moi" "... des pauvres gens qui se butent au boulot pour rien et de ces salopards de racistes qui se baladent dans nos rues..."
             "Moi" "... et qui seront jamais arrêtés parce que les flics sont de leur côté."
+
             hide hugoneutre
             show hugohappy
-            #punk rougit
 
             punk "Ouais... C'est l'idée. Je vais retourner en prendre une dernière, tu veux quelque chose ?"
 
@@ -1176,15 +1277,18 @@ label start:
                 "Je vais boir de l'eau pour cette fois":
                     hide hugohappy
                     show hugoangry
+
                     punk "T'es nul."
 
             hide hugoangry
             hide hugohappy
             show hugoneutre
+
             punk "Tiens."
             "Moi" "Merci."
 
             "Je regarde Patrick enfiler son verre cul-sec"
+
             if boitBiere:
                 punk "Alors ? Je t'attends là en fait."
 
@@ -1193,6 +1297,7 @@ label start:
                     "Je le suis.":
                         hide hugoneutre
                         show hugohappy
+
                         punk "Voilà ! Ça me plaît ! "
                         punk "Allez viens avec moi on va faire un tour et j'te raccompagne chez toi."
 
@@ -1203,60 +1308,73 @@ label start:
             "En passant à côté d'une ruelle sombre, deux skinhead nous alpaguent."
 
             show alanneutre at right
+
             skh "Hey mais ce serait pas ce merdeux de Patrick ?"
             "Autre Skinhead" "Je crois bien que si, hey le raté, viens par là !"
+
             show hugohappy at left
+
             punk "Je crois qu'on va bien s'amuser."
 
             hide hugohappy
             show hugofight at left
+
             "OULA ! Patrick frappe un des deux skinhead."
 
+            # Si on décide de boire de l'alcool les trois fois, on ne peut pas échapper à la bagarre
             if nbBieres == 3:
                 jump bagarre
 
             else:
                 "Je ne sais pas quoi faire..."
                 "Est-ce que je devrait aller l'aider ? Ca a tout de même l'air dangereux..."
+
                 menu:
                     "Je n'ai pas à me poser de questions, je fonce.":
                         jump bagarre
 
                     "Je préfère partir discrètement.":
                         hide hugohappy
+
                         "..."
                         "J'ai réussi à leur échapper."
                         "J'espère que Patrick aussi... "
 
         else:
             show hugoneutre
+
             punk "Beau travail aujourd'hui."
             punk "A demain peut-être."
             jump suite3
 
 
-
-    # ----- MINI-JEU BAGARRE -----
+    # --------------------------------------------------------------------------
+    # Mini-jeu 1 : Bagarre contre les skinheads
     label bagarre:
         hide hugofight
         hide alanneutre
         "Je saute dans la mélée et rejoint Patrick. Je me met face à un de ces skinheads, prèt à en découdre."
+
         jump guarde
 
     label guarde :
+
         window hide
         show screen alanGuarde
         show screen redMark
         $ renpy.pause()
 
     label coup:
+
         show screen alanCoup
         hide screen redMark
 
         $pvPerso=pvPerso-1
         $ renpy.pause()
+
         if pvPerso==0:
             jump gPerduLaBaguarre
+
         else:
             jump guarde
 
@@ -1270,6 +1388,7 @@ label start:
 
         if pvAlan==0:
             jump gGagneLaBaguarre
+
         else:
             jump guarde
 
@@ -1321,27 +1440,29 @@ label start:
         jump suite3
 
 
-
-
     # --------------------------------------------------------------------------
     # Choix 4 : Choix session studio
     label choix4_got:
 
         if amitie_got >= 5:
+
             got "Allô ?"
             "Moi" "Bonjour c'est [nom], je t'appelle pour savoir si tu avais envie de refaire une session aujourd'hui ?"
 
             # Dialogue spécial si la gothique a été choisie la veille
             if choix3_cimetiere:
-                # si choix got la veille
+                
                 show gotpos02
+
                 got "Oh oui bien sûr ! ça été hier après que je sois parti ?"
                 "Moi" "Nan tu m'as quand même laissé comme un imbécile au milieu d'un cimetière !"
                 got "Mais je suis sûre que tu t'es bien amusé nan ?"
                 "Moi" "Je peux pas dire le contraire mais je ne te ferai pas ce plaisir !"
                 got "Ah ah ! Parfait alors on arrive, à tout à l'heure !"
+
             else:
                 show gotpos02
+
                 got "OUI ! On arrive !"
 
             "Sans que je puisse répondre elle raccroche."
@@ -1358,6 +1479,7 @@ label start:
             menu:
                 "Ouais je mangerais bien un truc la.":
                     jump date2_got
+
                 "Je me suis déjà préparé un repas à me réchauffer désolé...":
                     hide gotpos02
                     jump badEnding_1
@@ -1367,9 +1489,11 @@ label start:
 
 
     label choix4_punk:
+
         scene black with dissolve 
         scene studio
         show hugohappy
+
         "Le groupe arrive au studio et passe l'après-midi à enregistrer avec moi."
         "C'est fou comme ils s'améliorent de jour en jour..."
         "La journée est passée à une vitesse, je ne m'en étais pas rendue compte mais le soleil est déjà presque couché."
@@ -1391,6 +1515,7 @@ label start:
 
                     hide hugohappy
                     show hugopieddebiche1
+
                     "Il attrape un sac au sol que je n'avais pas vu et me met un pied de biche dans les mains après en avoir attrapé un pour lui."
 
                     punk "C'est parti, on va les démolir."
@@ -1403,25 +1528,27 @@ label start:
 
                     "Il me pointe du nez le pied de biche que j'ai entre les mains. Je crois qu'il est vraiment résolu à y aller..."
                     "Je ne sais pas si je l'accompagne ou pas, ça a tout de même l'air dangereux."
+
                     menu:
                         "Ecoute, je pense que c'est vraiment pas une bonne idée, viens avec moi.":
                             jump date1_punk
 
                         "Je ne vais pas le laisser seul.":
                             jump badEnding_3
+
                         "Je préfere vraiment rentrer chez moi et éviter tout problème...":
                             jump badEnding_4
 
                     # si reussite
 
-
-
                 "J'ai trop peur de me faire démolir. Je n'y vais pas.":
                     $amitie_punk -= 3
 
                     "Moi" "Ce sera sans moi haha..."
+
                     hide hugohappy
                     show hugoangry
+
                     punk "Mauviette ! "
                     punk "Allez dégage, j'y vais moi !"
 
@@ -1434,7 +1561,6 @@ label start:
 
 
     # --------------------------------------------------------------------------
-    # --------------------------------- DATES  ---------------------------------
     # Date 1 :
     label date1_got:
 
@@ -1442,20 +1568,22 @@ label start:
         $flirt_got = True
 
         scene bgcnchemin01 with dissolve
+
         "Après un bon moment à les suivre, nous arrivons devant une grande grille."
         "\"Cimetière de ...\""
-        #scene bg cimetiere5
 
         "Moi" "Mais qu'est-ce qu'on fait la !?"
+
         show gotpos02
+
         got "Bah notre soirée pourquoi ?"
 
         hide gotpos02
+
         "Je commence légèrement à regretter d'être venu."
         "Qui fait une soirée dans un cimetière sérieux."
-
         "Le groupe reprend leur marche après avoir poussé dans un long grincement le portail."
-        #scene bg cimetiere2
+        
         scene bgcn03 with dissolve
         "Après quelques instants, ils s'asseoient sur des tombes en ruine et allument leur enceinte."
         "Complètement ahuri, je contemple cette scène."
@@ -1463,31 +1591,37 @@ label start:
         "Mais où est-ce que je suis tombé ???"
 
         show gotneutral01
+
         got "Tu comptes rester debout comme un poteau ?"
         "Moi" "Nan, je suis juste un peu surpris du déroulement de la soirée."
+
         hide gotneutral01
         show gothappy01
 
         "M'aggripant le bras, Marie-Anne commence à danser avec moi."
         "Plusieurs faisceau lumineux cassent le ciel et l'ambiance sombre du cimetière."
+
         show gotchock01
+
         "Marie-Anne écarquille les yeux et attrape l'enceinte."
         "Sans me lâcher le bras, elle et ses amis commencent à courir."
 
         got "Les flics ! Cours !"
+
         hide gotchock01
 
-        # ----- Mini jeu course poursuite -----
+        # Mini-jeu 2 : Course poursuite contre les policiers
         # SI REUSSITE
         $amitie_got += 1
 
-        #scene bg cimetiere3
         "J'ai perdu les membres du groupe et j'ai l'impression que je suis le seul à être poursuivi."
         "En passant un angle entre plusieurs tombes, une main sort d'entre deux plaques marbrées et m'attire."
         "Marie-Anne me tient fermement et me plaque contre elle"
 
         "Moi" "Qu'est-ce que-"
+
         show gotangry01
+
         got "Ferme la putain !"
         "..."
         "..."
@@ -1495,10 +1629,12 @@ label start:
 
         hide gotangry01
         show gothappy01
+
         got "Ah Ah Ah ! Si tu avais pu voir ta gueule pendant que les flics te courraient après ! C'était à mourir de rire !"
         "Moi" "Moi ça me fais pas rire. J'aurais fait quoi si j avais été arrêté ?"
         got "T'aurais passé la nuit dans une cellule, rien de grave c'est bon."
         got "Allez il faut que je retrouve les autres. C'etait sympa à plus."
+
         hide gothappy01
 
         "Marie-Anne se remet à courir et disparaît dans le fond du cimetière me laissant seul dans cet endroit lugubre."
@@ -1541,14 +1677,87 @@ label start:
             "Je préfererai essayer le diabolo.":
                 hide romanesmile
                 show romanepouce
+
                 hippie "Super ! Le principe, c'est de tirer sur tes bâtons, et de faire retomber le diabolo entre elles, sur la ficelle. "
                 hippie "Ça à l'air impressionnant, mais c'est assez simple. "
                 hippie "Forcément, tu ne fera pas tout de suite des figures, mais avec un peu d'entrainement tu pourras sûrement y arriver !"
 
                 "L'enthousiasme de Jeanne était communicatif, aussi j'attrapa les bâtons qu'elle me tendait avec empressement."
+
                 hide romanepouce
 
-                jump diaboloGame
+                # Mini-jeu 3 : Jouer au diabolo
+                $reussite_diabolo = True
+
+                if reussite_diabolo:
+                    show romanedegeu
+
+                    hippie "Ouah, t'as pris le coup super vite, c'était incroyable !"
+
+                    "Portée par l'ambiance chaleureuse de la foule, et par sa joie de me voir réussir, Jeanne me prend dans ses bras et me serre contre elle."
+
+                    hippie "Tu es incroyable comme gars, c'est vraiment super de t'avoir comme ami ! D'ailleurs je..."
+
+                    hide romanedegeu
+                    show romaneneutre
+
+                    "Jeanne réalise finalement la position dans laquelle nous sommes, et se recule précipitamment, les joues rouges comme des pivoines."
+                    "Elle se dandine d'un pied sur l'autre, gênée. "
+                    "Plusieurs fois elle semble vouloir dire quelque chose, avant de se raviser. "
+
+                    if (amitie_hippie >= 4):
+                        "..."
+
+                        menu:
+                            "J'aimerai bien me rapprocher d'elle.":
+                                $amitie_hippie += 1
+                                $flirt_hippie = True
+
+                                "Suivant mon instinct, je fais un pas en avant vers elle avant qu'elle ne puisse reprendre la parole."
+
+                                "Moi" "Ça ne me dérangeait pas tu sais. Un câlin par une aussi jolie fille, ça ne se refuse pas..."
+
+                                "Aaaaaah, mais qu'est ce que je raconte ? Non mais ça va pas ? "
+                                "Elle va me coller une baffe et je vais me faire virer pour avoir fait des avances malpolies à une de mes artistes !"
+
+                                hippie "Vraiment ?"
+
+                                hide romaneneutre
+                                show romaneneutresmile
+
+                                "Un sourire malicieux pointe le bout de son nez sur le visage de Jeanne. "
+                                "Elle semble avoir retrouvé cette assurance optimiste qui la définissait si bien."
+
+                                hippie "Et donc si je fais ça, cela ne te gêne pas non plus ?"
+
+                                "Jeanne passe son doigt sous mon menton..."
+                                "... avant de s'enfuir en riant."
+                                "C'est à mon tour de me retrouver à rougir, regardant Jeanne partir danser avec des enfants en sautillant. "
+                                "Cette fille a vraiment le cœur sur la main. "
+                                "Je la rejoins, et nous finissons ainsi la journée, à s'amuser avec toutes les autres personnes ici, tout en s'échangeant des regards complices."
+
+                                hippie "On se revoit bientôt au studio !"
+
+                                "Je rentre seul chez moi, en ayant cependant promis de se revoir bientôt."
+
+                            "Je préfere garder mes distances.":
+                                "Un moment de silence un peu gênant s'installa entre nous, avant que nous reprenions les exercices, essayant de faire comme si rien ne s'était passé. "
+                                "J'aurais peut-être dû dire quelque chose ?"
+                                "La journée arriva à sa fin sans autre incident notable, et je fini par rentrer chez moi, seul."
+
+                else:
+                    show romanesmile
+
+                    hippie "Ne t'inquiète pas, tout le monde ne réussit pas du premier coup, c'est normal. "
+                    hippie "On pourra recommencer une prochaine fois si tu veux."
+                    '...'
+                    hippie "Mais pour l'instant il commence à se faire tard, on devrait rentrer. A une prochaine fois !"
+
+                    hide romanesmile
+
+                    "Déçu, je rentre chez moi, pour me préparer à une nouvelle journée de travail le lendemain."
+
+                    jump date1_done
 
             "Les balles de jonglage me tentent un peu plus !":
                 "Jeanne me met dans les mains trois petites balles colorées remplies de sable."
@@ -1705,8 +1914,8 @@ label start:
         jump rePositionPerso
 
     label date1_punk:
-
         show hugopieddebiche1
+
         punk "T'as raison on ferait mieux de pas faire ça."
         punk "J'suis désolé de t'avoir embarqué là-dedans."
         "Moi" "C'est pas grave."
@@ -1732,6 +1941,7 @@ label start:
 
         hide hugopieddebiche1
         show hugoneutre
+
         "Je le vois jeter son pied de biche par terre et commencer à s'en aller puis faire brusquement demi-tour."
 
         punk "C'est pour ça que j'ai la rage contre tout et tout le monde! "
@@ -1740,17 +1950,18 @@ label start:
 
         hide hugoneutre
         show hugocry
+
         "Il commence à fondre en larmes."
 
-        #cut sur fond noir
         scene black with dissolve 
         scene studio
+
         "Je l'ai raccompagné chez lui, et sur le chemin nous avons longuement échangé sur le sujet. "
         "J'ai pu lui dire que moi même je n'étais pas sûr d'être à cent pour cent hétérosexuel, et je lui ai promis de garder le secret."
 
-        #cut sur ruelle avec skinhead
         scene bgchemin02 with dissolve
         show alanmachiavelique
+
         skh "Et bien dis donc, Patrick est un pd, voilà qui change tout…"
         
         scene apt with dissolve
@@ -1769,30 +1980,35 @@ label start:
         "J'espère qu'il ne lui est rien arrivé de grave."
 
         "Je devrais peut-être contacter les autres groupes pour voir s'ils arrivent à le contacter..."
+
         menu:
             "Non. Je vais aller directement chez lui.":
                 jump goodEnding_3
 
-
-
             "Allez, je les appelle.":
                 "J'ai appelé les autres groupes et leur ai expliqué que Patrick ne répondait pas et que je m'inquiétais pour lui. "
                 "Jeanne et Marie-Anne ont accepté de m'aider à le chercher."
+
                 scene rue1 with dissolve
                 "Après s'être séparés et avoir cherché dans les coins de la ville où je savais qu'il avait l'habitude d'aller, nous nous sommes retrouvés devant chez lui."
-                #toc toc
+                
                 "Faites qu'il ouvre."
-                # il ouvre la porte
+
+                show hugoneutre
+
                 "Dieu soit loué il va bien, même s'il n'a pas l'air dans son assiette."
 
                 "Moi" "Dieu merci tu vas bien, je m'inquiétais pour toi on t'a cherché partout."
-                show hugoneutre
                 punk "Ouais... Désolé..."
+
+                show gotangry01 at right
+
                 got "Ça va pas de disparaître comme ça ?"
                 punk "J'ai dit, désolé. "
                 punk "Et pis qu'est-ce que vous faites là ?"
-                show hugoneutre at left
+
                 show romaneneutre at left
+
                 hippie "On est venu prêter main forte à [nom]."
                 hippie "Il se faisait un sang d'encre pour toi et par extension nous aussi."
                 "Moi" "Qu'est-ce qu'il t'arrive ?"
@@ -1804,12 +2020,15 @@ label start:
                 "Après un moment, j'ose enfin briser l'assourdissant silence qui était tombé sur la pièce."
 
                 "Moi" "Dis nous tout. Qu'est-ce qu'il se passe ?"
-                show hugoneutre at left
+
                 punk "Bah c'est vraiment très simple, tu te souviens de l'autre soir, quand je t'ai parlé de mon secret ?"
                 "Moi" "Oui, comme si c'était hier."
+
+                hide gotangry01
                 show gotneutral01 at right
+
                 got "Comment ça ?"
-                show romaneneutre
+                
                 hippie "Quel secret ?"
                 "Moi" "Ce n'est pas…"
                 punk "Pas vos oignons."
@@ -1828,11 +2047,14 @@ label start:
                 "Alors que Jeanne et Marie-Anne sont bouche bée, je sens mon cœur se serrer dans ma poitrine."
                 "Je n'avais jamais envisagé avoir des sentiments envers un autre homme et pourtant à cet instant rien ne m'importe plus que lui."
 
+                hide hugoneutre
+                hide gotneutral01
+                hide romaneneutre
+
                 if flirt_got and flirt_hippie:
                     jump goodEnding_4
                 else:
                     jump goodEnding_5
-
 
 
     # DATE 2 :
@@ -1841,6 +2063,7 @@ label start:
         got "On se dit rendez-vous dans 30 min ? Je dois aller récuperer des choses chez moi."
 
         hide gotpos02
+
         "A peine le temps d'acquiescer que je la vois disparaître derrière la porte du studio."
         "En regardant ce qu'elle m'a donné, je comprends qu'il s'agit d'une adresse."
         "J'imagine que c'est là où je dois aller."
@@ -1851,6 +2074,7 @@ label start:
         "Elle y place plusieurs boites et quelques boissons."
 
         show gotpos01
+
         got "Oh ! t'es deja la !"
         got "Viens j'ai préparé quelques trucs."
 
@@ -1867,10 +2091,12 @@ label start:
         got "Pas vraiment le faire."
         got "J'ai plein de trucs dans mes boites, et je veux que tu fasses un bon mélange."
         "Moi" "Heu... ok je peux essayer."
+
         hide gotpos01
-        # MINI JEU NOURRITURE
         jump prepaBouffe
 
+
+    # Mini-jeu 4 : Préparation de repas pour la gothique
     label prepaBouffe:
         "Preparez un delicieux repas."
         window hide
@@ -1882,6 +2108,7 @@ label start:
 
         if chance==1:
             show screen poison
+
         elif(1<chance<5):
             show screen nourriture
 
@@ -1894,7 +2121,6 @@ label start:
         hide screen poison
         hide screen nourriture
 
-
         $points=points-1
 
         "vous avez [points] points"
@@ -1903,15 +2129,14 @@ label start:
 
         if points<0:
             jump finNeg
+
         else:
             jump montreObjet
 
     label positif : 
 
-
         hide screen nourriture
         hide screen poison
-
 
         $points=points+1
 
@@ -1921,26 +2146,19 @@ label start:
 
         if points>=5:
             jump finPos
+
         else:
             jump montreObjet
 
-
-
-
-        
-
+    # Si le mini-jeu est perdu
     label finNeg :
         "C'est perdu"
         $ renpy.pause()
 
-
-
-
-        #--- si minijzu perdu ---
-
         "Après quelques bouchées son regard vient croiser le mien."
 
         show gotneutral01
+
         got "C'est original on va dire."
 
         "Je goûte ma création et je me rends bien compte que tout cela n'est pas spécialement fameux."
@@ -1960,8 +2178,10 @@ label start:
         "Moi" "Les gens te..."
 
         "Je n'ai pas le temps de finir ma phrase que je vois le visage crispé de Marie-Anne. "
+
         show gotangry01
-        "Elle me regarde avec un regard de haine, s'avance vers moi et m'attrape par le col."
+
+        "Elle me regarde avec un regard haineux, s'avance vers moi et m'attrape par le col."
 
         got "T'as mis quoi dans le repas du con ?"
 
@@ -1980,14 +2200,17 @@ label start:
         "Son visage me montre une vive douleur coupant sa phrase."
         "Elle lève de nouveau sa main vers moi et par réflexe je ferme les yeux."
         "Sans surprise elle me frappe."
+
         hide gotangry01
+
         "En rouvrant les yeux je la vois au loin, j'imagine que cela ne sert a rien de la rattraper."
         "Je devrais rentrer et lui reparler une prochaine fois."
 
+    # Si le mini-jeu est réussi
     label finPos :
         "Cela me semble parfait !"
         $ renpy.pause()
-        #---si minijeu reussi---
+
         $flirt_got = True
 
         "J'essaye tant bien que mal à préparer quelque chose en faisant abstraction de l'environnement qui m'entoure."
@@ -1996,12 +2219,14 @@ label start:
         "Après quelques bouchées je vois un sourire commencer à s'afficher sur son visage."
 
         show gothappy01
+
         got "C'est trop bon !"
 
         "Elle me regarde avec de grands yeux comme une enfant qui découvre quelque chose de nouveau."
 
         hide gothappy01
         show gotpos02
+
         got "Hey je me demandais... "
         got "Pourquoi tu as accepté de venir ce soir avec moi ?"
         "Moi" "Je suis nouveau dans le coin et tu es l'une des premières personnes que je connais à me proposer de faire des choses en dehors de travail."
@@ -2020,13 +2245,12 @@ label start:
         got "Hmmmm, j'aurais jamais imaginé que tu puisses faire quelque chose d'aussi bon !"
         "Moi" "Merci, j'ai essayé de me creuser la tête pour faire quelque chose qui pourrait te plaire."
         got "Juste pour me plaire ?"
-
-        #rougit
         got "..."
         got "Et toi tu aimes ?"
 
         hide gotpos02
         show gotneutral02
+
         "Apres ces mots j'attrape une fourchette et prend une petite part dans son assiette."
         "J'approche mon visage de ma fourchette et met ma main en dessous puis goûte ma création."
         "Et bah on peut dire que j'ai réussi quelque chose de vraiment bon..."
@@ -2073,15 +2297,18 @@ label start:
         got "Mer… Merci pour la soirée, heu, heu... Bonne nuit."
 
         "Je la regarde sans bouger partir au loin, repensant à ce qu'il vient de se passer et rigolant."
-        hide gotneutral02
-        "Je me retourne vers notre table de fortune et range tout ce qui se trouve au sol avant de rentrer chez moi dans une certaine joie."
 
+        hide gotneutral02
+
+        "Je me retourne vers notre table de fortune et range tout ce qui se trouve au sol avant de rentrer chez moi dans une certaine joie."
 
         jump suite4
 
 
+    # Date 2 :
     label date2_hippie:
         hippie "Super ! Je t'attendrai avec impatience !"
+
         hide romaneneutresmile
 
         scene black with dissolve 
@@ -2091,6 +2318,7 @@ label start:
         "Je comprends pourquoi elle voulait qu'on se retrouve ici cependant, avec le coucher du soleil sur les arbres et la multitude de fleurs dans les hautes herbes, l'ambiance est presque atypique."
 
         show romanesmile
+
         hippie "Coucou, je t'ai fait attendre ?"
 
         "Jeanne arrive par derrière moi et me fait sursauter. "
@@ -2108,6 +2336,7 @@ label start:
         "Juste au moment où je tourne la tête vers Jeanne pour lui demander ce que nous allons faire ensuite, elle pousse un cri."
 
         show romaneneutresmile
+
         hippie "Regarde, ça commence !"
 
         "Relevant les yeux vers le ciel, je vois les étoiles de la voûte céleste s'allumer les unes après les autres. "
@@ -2147,13 +2376,17 @@ label start:
         jump suite4
 
 
+    # Date 3 : 
     label date3_got:
         hide gotpos02
+
         "Comme d'habitude, elle ne me laisse pas de temps avant de raccrocher."
         "Il lui aura fallu seulement une dizaine de minutes pour arriver au studio."
 
         "Moi" "Tu as fais vite."
+
         show gotneutral02
+
         got "J'étais juste à côté."
 
         "Vu comment elle est essoufflée, j'ai un peu de mal à y croire."
@@ -2168,15 +2401,13 @@ label start:
         "Moi" "Avec le festival il passait dans le coin et j'ai déjà travaillé avec lui."
         "Moi" "J'ai envie de te proposer de fare une collab avec lui pendant le festival !"
 
-        # CONTINUER ICI
         if amitie_got >= 4:
             jump goodEnding_1
+
         else:
             jump neutralEnding_1
 
         
-
-
     label date3_hippie:
         "Moi" "ça commence à faire beaucoup de manifestations non ?"
         "Moi" " M'enfin, ça reste une invitation à laquelle je répondrais avec plaisir oui. A ce soir alors !"
@@ -2188,7 +2419,9 @@ label start:
         "Mais quelque chose ne va pas. Est ce qu'elle est...  Oh bon sang !"
 
         "Moi" "Mais tu es blessée ! Est-ce que ça va ? Qu'est ce qui s'est passé ?"
+
         show romanepouce
+
         hippie "Ne t'inquiète pas, c'est juste une petite coupure au front, c'est impressionnant parce que ça saigne beaucoup, mais ce n'est vraiment pas grave."
         "Moi" "Mais comment tu t'es fait ça ? "
         "Moi" "C'est la manifestation de cet après-midi ? Je pensais que c'était un truc tranquille !"
@@ -2213,12 +2446,14 @@ label start:
         
         hide romanepouce
         show romaneneutre
+
         "Le silence s'installe un moment."
 
         menu:
             "On va dans ta roulotte ?":
                 hide romaneneutre
                 show romaneneutresmile
+
                 hippie "... Oui."
 
                 "Il se passe ce qu'il se passe."
@@ -2234,7 +2469,7 @@ label start:
 
 
     # --------------------------------------------------------------------------
-    # -------------------------------- FINS  -----------------------------------
+    # DIFFERENTES FINS DU JEU : MAUVAISES NEUTRES ET HEUREUSES
 
 
     # MAUVAISE FIN : GOTHIQUE EN PRISON - FESTIVAL AVEC SKINHEADS
@@ -2242,6 +2477,7 @@ label start:
         got "Ah. Dommage."
 
         hide gotpos02
+
         "Visiblement déçue par ma réponse, elle quitte le studio en claquant la porte."
         "Les deux autres membres la suivent, sans oublier de me jeter un regard noir avant de quitter la pièce."
 
@@ -2263,13 +2499,13 @@ label start:
         "C'est le bassiste d'\"Effervescence\" !"
 
         show gotb01 at right
+
         "Après m'avoir vu, il se dirige rapidement vers moi puis lève sa main pour me la claquer au visage."
         "Qu'est-ce qu'ils ont dans ce groupe à tous vouloir me frapper..."
 
         
         "Bassiste" "Tout est de ta faute !"
         "Bassiste" "C'est de ta faute !"
-        show gotb02 at right
         "Bassiste" "Tu vas payer !"
 
         "Je ne comprends vraiment pas de quoi il veut parler."
@@ -2279,9 +2515,10 @@ label start:
 
         "Sous le choc, je rentre chez moi, bras ballants. Ne sachant pas quoi faire pour pouvoir l'aider."
         "J'aurais dû accepter sa proposition de rencard..."
+
         hide gotb01
-        hide gotb02
         scene apt with dissolve
+
         "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
         "Quelques jours après le festival, je reçois une lettre de Jeanne."
 
@@ -2301,7 +2538,7 @@ label start:
         hide gotjail03 with dissolve
         show gotjail01 with dissolve
         hide gotjail01 with dissolve
-        # photo mugshot gothioque
+        
         "----- MAUVAISE FIN 01 -----"
 
         jump end
@@ -2329,12 +2566,12 @@ label start:
         "C'est le guitariste de \"Quatuor\" !"
 
         show hib01 at right
+
         "Après m'avoir vu, il se dirige rapidement vers moi puis me frappe le visage."
         "Choqué que cet homme aussi gentil lève la main sur moi, j'attends ses explications..."
 
         "Guitariste" "Tout est de ta faute !"
         "Guitariste" "C'est de ta faute !"
-        show hib02 at left
         "Guitariste" "Tu vas payer !"
 
         "Je ne comprends vraiment pas de quoi il veut parler."
@@ -2342,9 +2579,11 @@ label start:
         "Alors qu'il passait par chez elle lui emprunter son diabolo, il l'a retrouvée inanimée dans son lit."
         "Elle a apparemment été emportée à l'hôpital sur le champ, mais il était déjà trop tard."
 
+        hide hib01
 
         "Sous le choc, je rentre chez moi, bras ballants. Ne sachant plus quoi faire car je n'ai pas pu l'aider."
         "J'aurais dû accepter sa proposition de rencard..."
+
         scene apt with dissolve
         "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
         "Quelques jours après le festival, je reçois une lettre de Marie-Anne."
@@ -2366,6 +2605,7 @@ label start:
 
     # MAUVAISE FIN : LE JOUEUR PRINCIPAL MEURT AVEC PUNK
     label badEnding_3:
+
         "Moi" "Bon on y va ?"
         punk "J'aime ta motivation petit."
 
@@ -2373,8 +2613,11 @@ label start:
         "Il me guide jusqu'au centre-ville, puis me traîne dans des petites ruelles dont j'ignorais l'existence."
         
         show alanfight
+
         skh "Alors Patrick, on ramène son petit copain pour la castagne ?"
+
         show hugopieddebiche1
+
         punk "Ouais et alors ? Va te faire foutre putain de nazi."
 
         "Son petit copain ??? Je..."
@@ -2382,19 +2625,27 @@ label start:
 
         hide alanfight
         show alantakehit
+
         punk "Eh beh [nom] ! Je ne t'imaginais pas aussi aggressif."
         "Moi" "Je ne suis pas aggressif. J'ai juste envie de proteger celui que j'aime."
+
         hide alantakehit
         show alanfight
+        hide hugopieddebiche1
+        show hugohappy
 
-        #punk sourit
         "Je n'ai jamais vu Patrick autant sourire."
+
         hide alanfight
         show alanrepost
+        hide hugohappy
+        show hugoback
+
         "Jusqu'à ce qu'il se prenne un coup, puis un deuxième."
         "Il se fait pousser à terre par deux personnes du groupe opposé."
         # mc se fait pousser lui aussi, jsp si c'est clair
         "Je me sens perdre équilibre."
+
         scene black with dissolve
         scene rue1
         "Mes sens perdus, j'ai du mal à distinguer où je suis."
@@ -2422,6 +2673,7 @@ label start:
         punk "Taffiole."
 
         "Je regarde Patrick me tourner le dos puis partir en direction du centre-ville."
+
         scene apt with dissolve
         "Je décide de ne pas le suivre et de rentrer chez moi directement pour éviter de me faire ennyuer."
         "J'espère tout de même que Patrick va bien..."
@@ -2446,7 +2698,6 @@ label start:
 
         "Guitariste" "Tout est de ta faute !"
         "Guitariste" "C'est de ta faute !"
-        show punkb02 at left
         "Guitariste" "Tu vas payer !"
 
         "Je ne comprends vraiment pas de quoi il veut parler."
@@ -2455,6 +2706,7 @@ label start:
         "Il a apparemment été laissé pour mort dans la rue, jusqu'à ce qu'un passant appelle les secours, plusieurs minutes après les faits."
         "Il était déjà trop tard."
 
+        hide punkb01
 
         "Sous le choc, je rentre chez moi, bras ballants. Ne sachant plus quoi faire car je n'ai pas pu l'aider."
         "J'aurais dû le suivre ou même réussir à le convaincre de ne pas y aller..."
@@ -2483,13 +2735,14 @@ label start:
     label goodEnding_1:
         hide gotneutral02
         show gotchock01
+
         got "Tu te fous de ma gueule ?"
-        #got "C'est le vrai ?"
-        # changer ici la phrase est bizarre ptdr
+        got "C'est le vrai ?"
         "Guitariste" "Je suis le guitariste de \"The cure\"."
-        "Moi" "Nan c'est une statue."
+
         hide gotchock01
         show gothappy01
+
         got "Comment t'as fait pour le faire venir ?"
         "Moi" "J'ai déjà travaillé avec lui, et je lui ai demandé si il pouvait venir jouer pour\"Effervescence\" lors du festival de ce soir."
         got "Attend, attend..."
@@ -2500,9 +2753,11 @@ label start:
 
         "Son regard brille de mille feu."
         "Elle me lance un regard enivrant avant de disparaître dans la salle de répétition."
+
         hide gothappy01
         scene black with dissolve 
         scene studio
+
         "Après plusieurs heures de répétition intensive, je les arrête avant qu'ils ne s'écroulent de fatigue."
 
         "Moi" "Hey ! Allez vous reposer pour ce soir !"
@@ -2514,10 +2769,13 @@ label start:
         "Son visage est empourpré, mais je ne crois pas que ce soit de la gêne."
 
         show gotpos01
+
         got "Tu sais que ça fait un moment que j'attend ça ? "
         got "Et là aujourd'hui tu m'as fait comprendre que je ne voulais plus attendre plus longtemps."
+
         hide gotpos01
         show gotneutral02
+
         "Moi" "Je crois que je sais ce dont tu vas parler."
         "Moi" "Est-cce que je peux te demander quelque chose avant ?"
 
@@ -2529,9 +2787,12 @@ label start:
 
         "A l'entente de cette phrase je reprends mes esprits."
         "J'attrape ses épaules, puis fais reculer son buste avant d'attraper son visage d'une main."
+
         show gotkiss01
+
         "De mon bras libre j'entoure ses hanches et l'embrasse."
         "En me reculant pour la regarder je vois son visage complètement rouge."
+
         hide gotkiss01
         show gothappy01
 
@@ -2543,9 +2804,9 @@ label start:
         "Marie-Anne se lève et attrape mon bras pour me relever, mais m'embrasse puis me repousse sur les fauteuils."
 
         got "Je vais aller me reposer. T'as intérêt à être là ce soir !"
+
         hide gothappy01
 
-        #fondu noir vers festival
         scene black with dissolve 
         scene fest
         "Le festival se déroule agréablement..."
@@ -2563,6 +2824,7 @@ label start:
     label goodEnding_2:
         scene black with dissolve
         scene fest
+
         "Le festival bat son plein. "
         "C'est un succès retentissant, réunissant un public de tous horizons venu découvrir la culture hippie. "
         "Le groupe \"Quatuor\" est clairement la plus grande réussite, faisant déborder la prairie dans laquelle se déroule l'événement."
@@ -2584,12 +2846,11 @@ label start:
     label goodEnding_3:
         scene rue1
         "Faites qu'il ouvre."
-        # Patrick ouvre la porte
+        show hugoneutre
         "Dieu soit loué il va bien."
         "Il n'as pas tout de même pas l'air dans son assiette."
 
         "Moi" "Dieu merci tu vas bien. J'étais inquiet quand tu ne m'as pas répondu au téléphone."
-        show hugoneutre
         punk "(soupir)  Ouais... Désolé."
         "Moi" "Ca n'a pas l'air d'aller."
         punk "Ouais, pas terrible."
@@ -2652,12 +2913,12 @@ label start:
 
         "Je me lève et l'attrapant par le col, l'embrasse passionnément. "
         "Il me rend mon baiser. "
+
         hide hugoneutre
         show hugohappy
-        # fondu noir
-
         scene black with dissolve
         scene apt02
+
         "Patrick et moi avons continué à nous voir, discrètement, presque en secret."
         "Malgré tout, il à continué à faire de la musique, et les membres de son groupe ont fini par venir lui présenter leurs excuses."
         "Quant à moi, j'ai continué de travailler dans le studio pendant les quelques années qui suivirent cet évenement."
@@ -2676,9 +2937,12 @@ label start:
 
         hide gotneutral01 
         show gotangry01 at right
+
         got "On les emmerde ces fachos, moi j'en ai rien a faire. "
+
         hide romaneneutre
         show romanepouce
+
         hippie "Entièrement d'accord avec elle."
         "Moi" "Je suis avec elles la dessus."
         "Moi" "Si ça leur suffit pour couper les ponts avec toi, ce sont des abrutis qui ne méritaient pas de rester dans ta vie."
@@ -2695,11 +2959,15 @@ label start:
 
         "Moi" "Non. On se reverra, c'est une promesse."
         "Moi" "Je ferai tout ce que je peux pour continuer à te voir."
+
         hide gotangry01
         show gotneutral02 at right
+
         got "Bah dis donc, tu n'y vas pas de main morte toi."
+
         hide romanepouce
         show romaneneutresmile
+
         hippie "Shhhh, je crois que ça ressemble à une déclaration ça. "
 
         "Mes joues prennent instantanément une teinte pourpre."
@@ -2719,11 +2987,15 @@ label start:
         got "RIEN!"
         punk "Attends, vous êtes en train de me dire que tu sortais avec nous trois en même temps [nom] ?"
         "Moi" "Alors, je peux tout expliquer."
+
         hide gotneutral02 
         show gotneutral01 at right
+
         got "Ouais."
+
         hide romaneneutresmile
         show romaneneutre
+
         hippie "Hmmmm."
         punk "On aimerait bien."
         "Moi" "Pour faire court, au début je voulais juste rencontrer des gens, dans une nouvelle ville. "
@@ -2737,10 +3009,13 @@ label start:
 
         hide romaneneutre
         show romaneneutresmile
+
         hippie "Calmez vous un peu, le cœur à ses raisons que la raison ignore, moi je comprends."
         hippie "Et si vous y êtes ouverts, on pourrait tous être avec lui, rien ne nous empêche de le voir tous en parallèle."
+
         hide gotneutral01
         show gotneutral02 at right
+
         punk "De toute façon c'est pas comme si on pouvait être ensemble en public. J'suis pas contre."
         got "Après tout pourquoi pas, après tout les gens nous regardent déjà tous bizarrement, on est pas à ça près."
 
@@ -2762,9 +3037,12 @@ label start:
 
         hide gotneutral01 
         show gotangry01 at right
+
         got "On les emmerde ces fachos, moi j'en ai rien a faire. "
+
         hide romaneneutre
         show romanepouce
+
         hippie "Entièrement d'accord avec elle."
         "Moi" "Je suis avec elles la dessus."
         "Moi" "Si ça leur suffit pour couper les ponts avec toi, ce sont des abrutis qui ne méritaient pas de rester dans ta vie."
@@ -2780,11 +3058,15 @@ label start:
 
         "Moi" "Non. On se reverra, c'est une promesse."
         "Moi" "Je ferai tout ce que je peux pour continuer à te voir."
+
         hide gotangry01
         show gotneutral02 at right
+
         got "Bah dis donc, tu n'y vas pas de main morte toi."
+
         hide romanepouce
         show romaneneutresmile
+
         hippie "Shhhh, je crois que ça ressemble à une déclaration ça. "
 
         "Mes joues prennent instantanément une teinte pourpre."
@@ -2809,8 +3091,10 @@ label start:
 
         "Je me lève et l'attrapant par le col, l'embrasse passionnément."
         "Il me rend mon baiser."
+
         hide hugoneutre 
         show hugohappy
+
         "Les filles restent silencieuses et détournent le regard pour ne pas nous gêner mais je m'en fous."
         "Rien n'entachera ce moment."
 
@@ -2845,7 +3129,9 @@ label start:
         "La session se termine, je laisse les membres du groupe partir et retient Marie-Anne."
 
         "Moi" "Marie-Anne j'ai quelque chose à te dire."
+
         show gotneutral01
+
         got "..."
         "Moi" "Depuis nos petites aventures, les rendez vous dans le cimetière,..."
         "Moi" "... j'ai l'impression que l'on s'entend vraiment bien et j'aimerais savoir si tu voulais sortir avec moi ?"
@@ -2856,8 +3142,6 @@ label start:
         "Moi" "Salut..."
 
         "Sans attendre une réponse je pars du studio laissant Marie-Anne derrière moi."
-
-        # fondu noir annoncant un changement de jour ?
 
         scene black with dissolve
         scene fest
@@ -2873,13 +3157,14 @@ label start:
 
     # FIN NEUTRE : FESTIVAL AVEC HIPPIE
     label neutralEnding_2:
-        # scene festival
+        
         scene black with dissolve
         scene fest
         "Nous arrivons ensemble sur la plaine où va se dérouler le festival."
         "Quelques régisseurs sont en train de monter la scène sur laquelle \"Quatuor\" va se produire dans maintenant quelques heures."
 
         show romaneneutresmile
+
         hippie "J'ai tellement hâte de chanter sur cette scène."
         hippie "Tout ça c'est grâce à toi. J'aimerais que tu saches que je te suis extrêmement reconnaissante."
         hippie "Merci pour tout."
@@ -2891,13 +3176,10 @@ label start:
         
         "Jeanne baisse la tête un sourire aux lèvres. Je vois bien qu'elle essaie de cacher les quelques larmes qui coulent sur ces joues."
 
-        # image hippie tres souriante
         hide romaneneutresmile
         show romanesmile
         hippie "J'espère que tu as raison. On va leur montrer ce soir !"
 
-        # fondu noir
-        #scene festival nuit
         scene black with dissolve
         scene fest
         "Ils annoncent au micro que le prochain groupe à jouer est \"Quatuor\"."
