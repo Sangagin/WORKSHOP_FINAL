@@ -1,4 +1,11 @@
-
+##### ETPA - WORK SHOP 2 #####
+# DE L'AMOUR ENTRE LES NOTES #
+# ----- BODERE Bastien ----- #
+# ----- CATTIN Solenn ------ #
+# ------ DAMON Romane ------ #
+# ----- MARTIN Achille ----- #
+# ------ PIERRE Hugo ------- #
+# ------- TU Arnaud -------- #
 
 # --------------------------------------------------------------------------
 # -------------------------------- IMAGES ----------------------------------
@@ -23,6 +30,9 @@ image studio = "images/bgjour/studio.jpg"
 image apt = "images/bgjour/apt.jpg"
 image apt02 = "images/bgjour/apt02.jpg"
 image marchand = "images/bgjour/marchand.jpg" 
+image bgcj01 = "images/bgjour/cimetierealle1.jpg"
+image bgprison = "images/bgjour/bgprison.jpg"
+
 
 # ----- nuit -----
 image bar01 = "images/bgn/bar01.jpg"
@@ -138,7 +148,7 @@ image persoRatrappe = "images/props/diabolo.png"
 
 # ----- fin -----
 
-image ecrandefin = "images/ecrandefin"
+image ecrandefin = "images/ecrandefin.png"
 
 # --------------------------------------------------------------------------
 # ----------------------------- PERSONNAGES --------------------------------
@@ -855,9 +865,13 @@ label start:
         $choix2_balade = True
 
         "Autant aller découvrir le quartier."
+        scene bgchemin02
+
         "J'ai vu un super parc en arrivant, je vais aller passer un moment là bas, prendre un petit peu l'ambiance du quartier."
         "Après quelques minutes de marche, j'arrive enfin devant l'entrée de celui-ci."
         "Le quartier est sympathique, même de nuit."
+        scene bge02
+
         "La lumière de l'éclairage urbain donne une ambiance toute particulière aux vieux bâtiments, c'est très joli. Ce petit parc l'est également d'ailleurs."
         "Mais… Est ce que ça ne serait pas Marie-Anne ? "
         "Je ne savais pas qu'elle habitait dans le coin."
@@ -899,6 +913,8 @@ label start:
 
         "Son exclamation me fait sursauter, et c'est en grommelant que je rentre chez moi. "
         hide gotneutral02
+        scene bgchemin02
+
         "Je remarque une épicerie asiatique sur le chemin, il faudra que j'aille y faire un tour un de ces quatre."
 
         jump suite2
@@ -1507,20 +1523,22 @@ label start:
         $flirt_got = True
 
         scene bgcnchemin01 with dissolve
+
         "Après un bon moment à les suivre, nous arrivons devant une grande grille."
         "\"Cimetière de ...\""
-        #scene bg cimetiere5
 
         "Moi" "Mais qu'est-ce qu'on fait la !?"
+
         show gotpos02
+
         got "Bah notre soirée pourquoi ?"
 
         hide gotpos02
+
         "Je commence légèrement à regretter d'être venu."
         "Qui fait une soirée dans un cimetière sérieux."
-
         "Le groupe reprend leur marche après avoir poussé dans un long grincement le portail."
-        #scene bg cimetiere2
+        
         scene bgcn03 with dissolve
         "Après quelques instants, ils s'asseoient sur des tombes en ruine et allument leur enceinte."
         "Complètement ahuri, je contemple cette scène."
@@ -1528,31 +1546,43 @@ label start:
         "Mais où est-ce que je suis tombé ???"
 
         show gotneutral01
+
         got "Tu comptes rester debout comme un poteau ?"
         "Moi" "Nan, je suis juste un peu surpris du déroulement de la soirée."
+
         hide gotneutral01
         show gothappy01
 
         "M'aggripant le bras, Marie-Anne commence à danser avec moi."
         "Plusieurs faisceau lumineux cassent le ciel et l'ambiance sombre du cimetière."
+
         show gotchock01
+
         "Marie-Anne écarquille les yeux et attrape l'enceinte."
         "Sans me lâcher le bras, elle et ses amis commencent à courir."
 
         got "Les flics ! Cours !"
+
         hide gotchock01
+        hide gothappy01
+        show policegeule
+
+        "Policier" "HEY ARRETEZ VOUS !!!"
+
+        hide policegeule
 
         # ----- Mini jeu course poursuite -----
         # SI REUSSITE
         $amitie_got += 1
 
-        #scene bg cimetiere3
         "J'ai perdu les membres du groupe et j'ai l'impression que je suis le seul à être poursuivi."
         "En passant un angle entre plusieurs tombes, une main sort d'entre deux plaques marbrées et m'attire."
         "Marie-Anne me tient fermement et me plaque contre elle"
 
         "Moi" "Qu'est-ce que-"
+
         show gotangry01
+
         got "Ferme la putain !"
         "..."
         "..."
@@ -1560,10 +1590,12 @@ label start:
 
         hide gotangry01
         show gothappy01
+
         got "Ah Ah Ah ! Si tu avais pu voir ta gueule pendant que les flics te courraient après ! C'était à mourir de rire !"
         "Moi" "Moi ça me fais pas rire. J'aurais fait quoi si j avais été arrêté ?"
         got "T'aurais passé la nuit dans une cellule, rien de grave c'est bon."
         got "Allez il faut que je retrouve les autres. C'etait sympa à plus."
+
         hide gothappy01
 
         "Marie-Anne se remet à courir et disparaît dans le fond du cimetière me laissant seul dans cet endroit lugubre."
@@ -2334,7 +2366,7 @@ label start:
         
         "Bassiste" "Tout est de ta faute !"
         "Bassiste" "C'est de ta faute !"
-        show gotb02 at right
+        show gotb02 at left
         "Bassiste" "Tu vas payer !"
 
         "Je ne comprends vraiment pas de quoi il veut parler."
@@ -2359,13 +2391,12 @@ label start:
         hide romaneneutre
 
         "Affalé sur mon lit, je laisse tomber la lettre à terre pendant qu'une larme coule sur mon visage."
-
+        scene bgprison
         show gotjail02 
         hide gotjail02 with dissolve
         show gotjail03 with dissolve
         hide gotjail03 with dissolve
         show gotjail01 with dissolve
-        hide gotjail01 with dissolve
         # photo mugshot gothioque
         "----- MAUVAISE FIN 01 -----"
 
