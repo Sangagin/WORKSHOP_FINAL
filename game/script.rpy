@@ -21,6 +21,7 @@ image barPunk = "images/bgjour/barpunk.jpg"
 image barPunk2 = "images/bgjour/barpunk2.jpg"
 image studio = "images/bgjour/studio.jpg"
 image apt = "images/bgjour/apt.jpg"
+image apt02 = "images/bgjour/apt02.jpg"
 image marchand = "images/bgjour/marchand.jpg" 
 
 # ----- nuit -----
@@ -569,6 +570,7 @@ label start:
 
             "Moi" "Hey ! Super session comme d'habitude. "
             "Moi" "Vous vous sentez prêt pour le festival ?"
+            show romanesmile
             hippie "Plus que jamais, on va tout déchirer. "
             "Moi" "Haha, super, je sens que vous êtes motivés. On se revoit là-bas ?"
             hippie "Attends ! ça te dirait de venir à ma roulotte ce soir ?"
@@ -1088,7 +1090,7 @@ label start:
             punk "J'sais pas si t'as remarqué mais j'ai pas la dégaine classique par ici. "
             "Moi" "Si j'ai bien vu, mais tu ne m'as frappé comme quelqu'un de très préoccupé par ce que les gens pensent de lui."
             punk "C'est pas faux."
-            hide hugoneutre
+            hide hugohappy
             show hugoneutre
             punk "Bon, j'vais m'en reprendre une, tu veux quoi ?"
 
@@ -1326,10 +1328,10 @@ label start:
                 "Ouais je mangerais bien un truc la.":
                     jump date2_got
                 "Je me suis déjà préparé un repas à me réchauffer désolé...":
-                    hide gotpos02
-                    "fin de journee"
-                    "tu apprends que la goth est en prison"
-                    "----- BAD ENDING 1 -----"
+                    
+                    #"fin de journee"
+                    #"tu apprends que la goth est en prison"
+                    #"----- BAD ENDING 1 -----"
                     jump badEnding_1
         else:
             jump choix3_got
@@ -1643,7 +1645,8 @@ label start:
         scene bgchemin02 with dissolve
         show alanmachiavelique
         skh "Et bien dis donc, Patrick est un pd, voilà qui change tout…"
-
+        
+        scene apt with dissolve
         "Une fois rentré, je m'allonge dans mon lit, épuisé par la journée que je viens de passer."
         "Je suis tellement fatigué mais n'arrive pas à fermer l'oeil. Je n'arrive pas à me sortir Patrick de la tête."
         "Après plusieurs heures à cogiter, j'ai réussi à m'endormir..."
@@ -1668,6 +1671,7 @@ label start:
             "Allez, je les appelle.":
                 "J'ai appelé les autres groupes et leur ai expliqué que Patrick ne répondait pas et que je m'inquiétais pour lui. "
                 "Jeanne et Marie-Anne ont accepté de m'aider à le chercher."
+                scene rue1 with dissolve
                 "Après s'être séparés et avoir cherché dans les coins de la ville où je savais qu'il avait l'habitude d'aller, nous nous sommes retrouvés devant chez lui."
                 #toc toc
                 "Faites qu'il ouvre."
@@ -1675,23 +1679,30 @@ label start:
                 "Dieu soit loué il va bien, même s'il n'a pas l'air dans son assiette."
 
                 "Moi" "Dieu merci tu vas bien, je m'inquiétais pour toi on t'a cherché partout."
+                show hugoneutre
                 punk "Ouais... Désolé..."
                 got "Ça va pas de disparaître comme ça ?"
                 punk "J'ai dit, désolé. "
                 punk "Et pis qu'est-ce que vous faites là ?"
+                show hugoneutre at left
+                show romaneneutre at left
                 hippie "On est venu prêter main forte à [nom]."
                 hippie "Il se faisait un sang d'encre pour toi et par extension nous aussi."
                 "Moi" "Qu'est-ce qu'il t'arrive ?"
                 punk "Restez pas plantés là, entrez. "
 
+                scene apt02 with dissolve
                 "Après être entrés, nous nous sommes installés dans son salon."
                 "Nous sommes restés silencieux un bon moment, la tension dans l'air presque palpable."
                 "Après un moment, j'ose enfin briser l'assourdissant silence qui était tombé sur la pièce."
 
                 "Moi" "Dis nous tout. Qu'est-ce qu'il se passe ?"
+                show hugoneutre at left
                 punk "Bah c'est vraiment très simple, tu te souviens de l'autre soir, quand je t'ai parlé de mon secret ?"
                 "Moi" "Oui, comme si c'était hier."
+                show gotneutral01 at right
                 got "Comment ça ?"
+                show romaneneutre
                 hippie "Quel secret ?"
                 "Moi" "Ce n'est pas…"
                 punk "Pas vos oignons."
@@ -2063,11 +2074,14 @@ label start:
         "Moi" "ça commence à faire beaucoup de manifestations non ?"
         "Moi" " M'enfin, ça reste une invitation à laquelle je répondrais avec plaisir oui. A ce soir alors !"
 
+        scene black with dissolve
+        scene bgchemin02
         "Le soir venu..."
         "Après quelques minutes à attendre, je vois enfin Jeanne qui arrive. "
         "Mais quelque chose ne va pas. Est ce qu'elle est...  Oh bon sang !"
 
         "Moi" "Mais tu es blessée ! Est-ce que ça va ? Qu'est ce qui s'est passé ?"
+        show romanepouce
         hippie "Ne t'inquiète pas, c'est juste une petite coupure au front, c'est impressionnant parce que ça saigne beaucoup, mais ce n'est vraiment pas grave."
         "Moi" "Mais comment tu t'es fait ça ? "
         "Moi" "C'est la manifestation de cet après-midi ? Je pensais que c'était un truc tranquille !"
@@ -2089,11 +2103,15 @@ label start:
         "Moi" "L'important c'est qu'on fasse un effort pour se comprendre l'un l'autre, que chacun fasse un pas vers les autres pour essayer de les comprendre."
         hippie "Sauf les nazis."
         "Moi" "Ouais, sauf les nazis."
-
+        
+        hide romanepouce
+        show romaneneutre
         "Le silence s'installe un moment."
 
         menu:
             "On va dans ta roulotte ?":
+                hide romaneneutre
+                show romaneneutresmile
                 hippie "... Oui."
 
                 "Il se passe ce qu'il se passe."
@@ -2116,6 +2134,7 @@ label start:
     label badEnding_1:
         got "Ah. Dommage."
 
+        hide gotpos02
         "Visiblement déçue par ma réponse, elle quitte le studio en claquant la porte."
         "Les deux autres membres la suivent, sans oublier de me jeter un regard noir avant de quitter la pièce."
 
@@ -2136,11 +2155,14 @@ label start:
         "Arrivant devant les grilles, je me fais interpeller par un homme que je reconnais."
         "C'est le bassiste d'\"Effervescence\" !"
 
+        show gotb01 at right
         "Après m'avoir vu, il se dirige rapidement vers moi puis lève sa main pour me la claquer au visage."
         "Qu'est-ce qu'ils ont dans ce groupe à tous vouloir me frapper..."
 
+        
         "Bassiste" "Tout est de ta faute !"
         "Bassiste" "C'est de ta faute !"
+        show gotb02 at right
         "Bassiste" "Tu vas payer !"
 
         "Je ne comprends vraiment pas de quoi il veut parler."
@@ -2150,17 +2172,28 @@ label start:
 
         "Sous le choc, je rentre chez moi, bras ballants. Ne sachant pas quoi faire pour pouvoir l'aider."
         "J'aurais dû accepter sa proposition de rencard..."
+        hide gotb01
+        hide gotb02
+        scene apt with dissolve
         "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
         "Quelques jours après le festival, je reçois une lettre de Jeanne."
 
+        show romaneneutre
         hippie "[nom], je vais commencer ma lettre en te disant que je ne t'en veux pas pour ce qui est arrivé à Marie-Anne et pour nous avoir lâchés au festival."
         hippie "J'ai appris par les musiciens d'\"Effervescence\" que Marie-Anne va bientôt être incarcerée pour les torts qu'elle a commis."
         hippie "J'aimerais également que tu saches aussi que ce sont les \"Plus Plus Plan\" qui ont pu performer au festival. C'était vraiment pas cool de ta part de nous lâcher ainsi..."
         hippie "J'espère quand même te revoir au studio un jour."
         hippie "De Jeanne."
+        hide romaneneutre
 
         "Affalé sur mon lit, je laisse tomber la lettre à terre pendant qu'une larme coule sur mon visage."
 
+        show gotjail02 
+        hide gotjail02 with dissolve
+        show gotjail03 with dissolve
+        hide gotjail03 with dissolve
+        show gotjail01 with dissolve
+        hide gotjail01 with dissolve
         # photo mugshot gothioque
         "----- MAUVAISE FIN 01 -----"
 
@@ -2170,6 +2203,7 @@ label start:
     # MAUVAISE FIN : OVERDOSE HIPPIE - FESTIVAL AVEC SKINHEADS
     label badEnding_2:
 
+        scene apt with dissolve
         "Je décide de rentrer chez moi directement."
         "J'aurais peut-être du être plus doux avec Jeanne..."
 
@@ -2187,11 +2221,13 @@ label start:
         "Arrivant devant l'entrée du parc, je me fais interpeller par un homme que je reconnais."
         "C'est le guitariste de \"Quatuor\" !"
 
+        show hib01 at right
         "Après m'avoir vu, il se dirige rapidement vers moi puis me frappe le visage."
         "Choqué que cet homme aussi gentil lève la main sur moi, j'attends ses explications..."
 
         "Guitariste" "Tout est de ta faute !"
         "Guitariste" "C'est de ta faute !"
+        show hib02 at left
         "Guitariste" "Tu vas payer !"
 
         "Je ne comprends vraiment pas de quoi il veut parler."
@@ -2202,14 +2238,17 @@ label start:
 
         "Sous le choc, je rentre chez moi, bras ballants. Ne sachant plus quoi faire car je n'ai pas pu l'aider."
         "J'aurais dû accepter sa proposition de rencard..."
+        scene apt with dissolve
         "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
         "Quelques jours après le festival, je reçois une lettre de Marie-Anne."
 
+        show gotneutral01
         got "[nom], je vais commencer ma lettre en te disant que je t'en veux pour ce qui est arrivé à Jeanne et pour nous avoir lâchés au festival."
         got "Ses funérailles se passent dans quelques jours, tu n'es évidemment pas invité."
         got "J'aimerais également que tu saches aussi que ce sont les \"Plus Plus Plan\" qui ont pu performer au festival. C'était vraiment merdique de ta part de nous lâcher comme ça."
         got "J'espère ne jamais te revoir au studio."
         got "De Marie-Anne."
+        hide gotneutral01
 
         "Affalé sur mon lit, je laisse tomber la lettre a terre pendant qu'une larme coule sur mon visage."
 
@@ -2223,25 +2262,38 @@ label start:
         "Moi" "Bon on y va ?"
         punk "J'aime ta motivation petit."
 
+        scene rue1 with dissolve
         "Il me guide jusqu'au centre-ville, puis me traîne dans des petites ruelles dont j'ignorais l'existence."
         
+        show alanfight
         skh "Alors Patrick, on ramène son petit copain pour la castagne ?"
+        show hugopieddebiche1
         punk "Ouais et alors ? Va te faire foutre putain de nazi."
 
         "Son petit copain ??? Je..."
         "Je me sens rougir mais je ne dois pas me laisser emporter par mes émotions, je donne le premier coup au chauve en face de moi avant même qu'il ne puisse le voir arriver."
 
+        hide alanfight
+        show alantakehit
         punk "Eh beh [nom] ! Je ne t'imaginais pas aussi aggressif."
         "Moi" "Je ne suis pas aggressif. J'ai juste envie de proteger celui que j'aime."
+        hide alantakehit
+        show alanfight
 
         #punk sourit
         "Je n'ai jamais vu Patrick autant sourire."
+        hide alanfight
+        show alanrepost
         "Jusqu'à ce qu'il se prenne un coup, puis un deuxième."
         "Il se fait pousser à terre par deux personnes du groupe opposé."
         # mc se fait pousser lui aussi, jsp si c'est clair
         "Je me sens perdre équilibre."
+        scene black with dissolve
+        scene rue1
         "Mes sens perdus, j'ai du mal à distinguer où je suis."
         "J'ai mal à la tête, mal aux côtes."
+        scene black with dissolve
+        scene rue1
         "Je crois que je suis en train de me prendre des coups."
         "En relevant les yeux, je vois Patrick, gisant au sol."
         "Ses yeux inanimés me blessent plus que tous les coups que je me prends."
@@ -2249,7 +2301,7 @@ label start:
         "Le sol est si froid."
         "J'ai mal à la tête."
         "Je suis fatigué."
-
+        scene black
 
         "----- MAUVAISE FIN 03 -----"
 
@@ -2263,6 +2315,7 @@ label start:
         punk "Taffiole."
 
         "Je regarde Patrick me tourner le dos puis partir en direction du centre-ville."
+        scene apt with dissolve
         "Je décide de ne pas le suivre et de rentrer chez moi directement pour éviter de me faire ennyuer."
         "J'espère tout de même que Patrick va bien..."
 
@@ -2280,11 +2333,13 @@ label start:
         "Arrivant devant le, je me fais interpeller par un homme que je reconnais."
         "C'est le guitariste des \"Perruquiers noirs\" !"
 
+        show punkb01 at right
         "Après m'avoir vu, il se dirige rapidement vers moi puis me colle son poing au visage."
         "Je ne comprends pas pourquoi il m'en veut. Je devrais être celui qui le frappe, vu le mal qu'il fait à mon ami."
 
         "Guitariste" "Tout est de ta faute !"
         "Guitariste" "C'est de ta faute !"
+        show punkb02 at left
         "Guitariste" "Tu vas payer !"
 
         "Je ne comprends vraiment pas de quoi il veut parler."
@@ -2296,14 +2351,17 @@ label start:
 
         "Sous le choc, je rentre chez moi, bras ballants. Ne sachant plus quoi faire car je n'ai pas pu l'aider."
         "J'aurais dû le suivre ou même réussir à le convaincre de ne pas y aller..."
+        scene apt with dissolve
         "De tous les jours qui ont suivi, je n'ai pas réussi à me lever pour aller travailler."
         "Quelques jours après le festival, je reçois une lettre de Marie-Anne."
 
+        show gotneutral01
         got "[nom], je vais commencer ma lettre en te disant que je t'en veux pour ce qui est arrivé à Patrick et pour nous avoir lâchés au festival."
         got "Ses funérailles se passent dans quelques jours, tu n'es évidemment pas invité."
         got "J'aimerais également que tu saches aussi que ce sont les \"Plus Plus Plan\" qui ont pu performer au festival. C'était vraiment merdique de ta part de nous lâcher comme ça."
         got "J'espère ne jamais te revoir au studio."
         got "De Marie-Anne."
+        hide gotneutral01
 
         "Affalé sur mon lit, je laisse tomber la lettre a terre pendant qu'une larme coule sur mon visage."
 
@@ -2382,7 +2440,7 @@ label start:
 
         #fondu noir vers festival
         scene black with dissolve 
-        scene bar03
+        scene fest
         "Le festival se déroule agréablement..."
         "Quelques minutes avant que Marie-Anne ne passe sur scène, je me dirige en backstage pour la voir."
         "Je la trouve et lui fais un signe de la main qu'elle me rend."
@@ -2396,6 +2454,8 @@ label start:
 
     # FIN HEUREUSE : FESTIVAL AVEC HIPPIE EN COUPLE
     label goodEnding_2:
+        scene black with dissolve
+        scene fest
         "Le festival bat son plein. "
         "C'est un succès retentissant, réunissant un public de tous horizons venu découvrir la culture hippie. "
         "Le groupe \"Quatuor\" est clairement la plus grande réussite, faisant déborder la prairie dans laquelle se déroule l'événement."
@@ -2422,15 +2482,18 @@ label start:
         "Il n'as pas tout de même pas l'air dans son assiette."
 
         "Moi" "Dieu merci tu vas bien. J'étais inquiet quand tu ne m'as pas répondu au téléphone."
+        show hugoneutre
         punk "(soupir)  Ouais... Désolé."
         "Moi" "Ca n'a pas l'air d'aller."
         punk "Ouais, pas terrible."
         "Moi" "Tu veux en parler ?"
         punk "Pas sur que ça arrange la situation, mais si t'y tiens. Entre."
 
+        scene apt02 with dissolve
         "Il me fait entrer dans son petit appartement, me mène jusqu'au salon et s'affale dans un fauteuil."
         "Il me pointe du doigt le fauteuil en face du sien."
 
+        show hugoneutre
         punk "Reste pas planté là assieds toi."
 
         "Je m'exécute et m'assieds."
@@ -2482,9 +2545,12 @@ label start:
 
         "Je me lève et l'attrapant par le col, l'embrasse passionnément. "
         "Il me rend mon baiser. "
-
+        hide hugoneutre
+        show hugohappy
         # fondu noir
 
+        scene black with dissolve
+        scene apt02
         "Patrick et moi avons continué à nous voir, discrètement, presque en secret."
         "Malgré tout, il à continué à faire de la musique, et les membres de son groupe ont fini par venir lui présenter leurs excuses."
         "Quant à moi, j'ai continué de travailler dans le studio pendant les quelques années qui suivirent cet évenement."
@@ -2501,7 +2567,11 @@ label start:
         "Est-ce que je suis tombé amoureux de trois personnes d'un coup ?"
         "Mon introspection se retrouve soudainement interrompue."
 
+        hide gotneutral01 
+        show gotangry01 at right
         got "On les emmerde ces fachos, moi j'en ai rien a faire. "
+        hide romaneneutre
+        show romanepouce
         hippie "Entièrement d'accord avec elle."
         "Moi" "Je suis avec elles la dessus."
         "Moi" "Si ça leur suffit pour couper les ponts avec toi, ce sont des abrutis qui ne méritaient pas de rester dans ta vie."
@@ -2518,7 +2588,11 @@ label start:
 
         "Moi" "Non. On se reverra, c'est une promesse."
         "Moi" "Je ferai tout ce que je peux pour continuer à te voir."
+        hide gotangry01
+        show gotneutral02 at right
         got "Bah dis donc, tu n'y vas pas de main morte toi."
+        hide romanepouce
+        show romaneneutresmile
         hippie "Shhhh, je crois que ça ressemble à une déclaration ça. "
 
         "Mes joues prennent instantanément une teinte pourpre."
@@ -2538,7 +2612,11 @@ label start:
         got "RIEN!"
         punk "Attends, vous êtes en train de me dire que tu sortais avec nous trois en même temps [nom] ?"
         "Moi" "Alors, je peux tout expliquer."
+        hide gotneutral02 
+        show gotneutral01 at right
         got "Ouais."
+        hide romaneneutresmile
+        show romaneneutre
         hippie "Hmmmm."
         punk "On aimerait bien."
         "Moi" "Pour faire court, au début je voulais juste rencontrer des gens, dans une nouvelle ville. "
@@ -2550,11 +2628,17 @@ label start:
         "Je suis écarlate à ce moment, quel idiot j'ai été."
         "Aucun d'entre eux ne va plus jamais m'adresser la parole."
 
+        hide romaneneutre
+        show romaneneutresmile
         hippie "Calmez vous un peu, le cœur à ses raisons que la raison ignore, moi je comprends."
         hippie "Et si vous y êtes ouverts, on pourrait tous être avec lui, rien ne nous empêche de le voir tous en parallèle."
+        hide gotneutral01
+        show gotneutral02 at right
         punk "De toute façon c'est pas comme si on pouvait être ensemble en public. J'suis pas contre."
         got "Après tout pourquoi pas, après tout les gens nous regardent déjà tous bizarrement, on est pas à ça près."
 
+
+        scene fest with dissolve
         "Pour que Patrick puisse participer au festival, Jeanne et Marie-Anne ont proposé de l'accompagner sur scène à la place de son groupe."
         "Au final même si leurs méthodes étaient différentes leurs messages restaient très similaires."
         "Il s'agissait principalement de vivre sa vie et de laisser les autres vivre la leur."
@@ -2569,7 +2653,11 @@ label start:
     # FIN HEUREUSE : COUPLE AVEC PUNK ET FESTIVAL MULTI-GROUPE
     label goodEnding_5:
 
+        hide gotneutral01 
+        show gotangry01 at right
         got "On les emmerde ces fachos, moi j'en ai rien a faire. "
+        hide romaneneutre
+        show romanepouce
         hippie "Entièrement d'accord avec elle."
         "Moi" "Je suis avec elles la dessus."
         "Moi" "Si ça leur suffit pour couper les ponts avec toi, ce sont des abrutis qui ne méritaient pas de rester dans ta vie."
@@ -2585,7 +2673,11 @@ label start:
 
         "Moi" "Non. On se reverra, c'est une promesse."
         "Moi" "Je ferai tout ce que je peux pour continuer à te voir."
+        hide gotangry01
+        show gotneutral02 at right
         got "Bah dis donc, tu n'y vas pas de main morte toi."
+        hide romanepouce
+        show romaneneutresmile
         hippie "Shhhh, je crois que ça ressemble à une déclaration ça. "
 
         "Mes joues prennent instantanément une teinte pourpre."
@@ -2593,7 +2685,6 @@ label start:
         "Moi" "Je... Heu... Ouais... Peut-être."
 
         "Patrick est tout aussi rouge que moi."
-
         punk "Ha... Ha... Ouais... Hahaha..."
         "Moi" "Je suis on ne peut plus sérieux."
         punk "Je sais bien, mais c'est compliqué."
@@ -2611,9 +2702,12 @@ label start:
 
         "Je me lève et l'attrapant par le col, l'embrasse passionnément."
         "Il me rend mon baiser."
+        hide hugoneutre 
+        show hugohappy
         "Les filles restent silencieuses et détournent le regard pour ne pas nous gêner mais je m'en fous."
         "Rien n'entachera ce moment."
 
+        scene fest with dissolve
         "Pour que Patrick puisse participer au festival, Jeanne et Marie-Anne ont proposé de l'accompagner sur scène à la place de son groupe."
         "Au final même si leurs méthodes étaient différentes leurs messages restaient très similaires."
         "Il s'agissait principalement de vivre sa vie et de laisser les autres vivre la leur."
@@ -2639,9 +2733,12 @@ label start:
         got "Vraiment réfléchis avant de faire ce genre de choses. "
         got "Bon on la fait cette session ?"
 
+        scene black with dissolve
+        scene studio
         "La session se termine, je laisse les membres du groupe partir et retient Marie-Anne."
 
         "Moi" "Marie-Anne j'ai quelque chose à te dire."
+        show gotneutral01
         got "..."
         "Moi" "Depuis nos petites aventures, les rendez vous dans le cimetière,..."
         "Moi" "... j'ai l'impression que l'on s'entend vraiment bien et j'aimerais savoir si tu voulais sortir avec moi ?"
@@ -2655,6 +2752,8 @@ label start:
 
         # fondu noir annoncant un changement de jour ?
 
+        scene black with dissolve
+        scene fest
         "Le festival se déroule devant moi, me laissant seul devant les différentes scènes."
         "Au loin j'entend Marie-Anne commencer à jouer avec son groupe."
         "J'aime sa musique mais je ne me sens pas d'aller la voir, je préfère l'écouter d'ici..."
@@ -2668,9 +2767,12 @@ label start:
     # FIN NEUTRE : FESTIVAL AVEC HIPPIE
     label neutralEnding_2:
         # scene festival
+        scene black with dissolve
+        scene fest
         "Nous arrivons ensemble sur la plaine où va se dérouler le festival."
         "Quelques régisseurs sont en train de monter la scène sur laquelle \"Quatuor\" va se produire dans maintenant quelques heures."
 
+        show romaneneutresmile
         hippie "J'ai tellement hâte de chanter sur cette scène."
         hippie "Tout ça c'est grâce à toi. J'aimerais que tu saches que je te suis extrêmement reconnaissante."
         hippie "Merci pour tout."
@@ -2683,10 +2785,14 @@ label start:
         "Jeanne baisse la tête un sourire aux lèvres. Je vois bien qu'elle essaie de cacher les quelques larmes qui coulent sur ces joues."
 
         # image hippie tres souriante
+        hide romaneneutresmile
+        show romanesmile
         hippie "J'espère que tu as raison. On va leur montrer ce soir !"
 
         # fondu noir
         #scene festival nuit
+        scene black with dissolve
+        scene fest
         "Ils annoncent au micro que le prochain groupe à jouer est \"Quatuor\"."
         "Quelques minutes passent avant que j'apperçoive Jeanne débarquer sur scène et les deux autres membres du groupe."
         "Ils commencent à jouer les chansons que nous avons préparées ensemble ces derniers jours. "
@@ -2699,7 +2805,7 @@ label start:
 
     label end:
 
-        scene ecrandefin
+        scene ecrandefin with dissolve
 
         "MERCI D'AVOIR JOUE A \"DE L'AMOUR ENTRE LES NOTES\" !"
 
