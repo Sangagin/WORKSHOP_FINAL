@@ -188,9 +188,9 @@ label start:
 
     # Declaration varaibles inventaire
     $ inventaire = []
-    $ braceletOS = Item("Bracelet en Os", "bracelet.png")
-    $ pendentifH = Item("Un pendentif cliché", "pendentif.png")
-    $ canetteP = Item("Une canette de maximator", "canette.png")
+    $ braceletOS = Item("Bracelet en Os", "images/props/bracelet.png")
+    $ pendentifH = Item("Un pendentif cliché", "images/props/collier.png")
+    $ canetteP = Item("Une canette de maximator", "images/props/canette.png")
 
 
     # Declaration booleens de verification
@@ -1218,6 +1218,7 @@ label start:
             show hugoneutre
             punk "Beau travail aujourd'hui."
             punk "A demain peut-être."
+            jump suite3
 
 
 
@@ -1381,17 +1382,22 @@ label start:
 
                     "Moi" "Tu ne penses pas que c'est trop dangereux tout de même ?"
                     punk "Si on est armés, ils ne feront pas le poids."
+                    "Moi" "Mais tu penses pas qu'avec la baguarre de l'autre jour, ils vont venir en force ?"
+                    punk "T'as peur ?"
+
 
                     "Il me pointe du nez le pied de biche que j'ai entre les mains. Je crois qu'il est vraiment résolu à y aller..."
                     "Je ne sais pas si je l'accompagne ou pas, ça a tout de même l'air dangereux."
                     menu:
+                        "Ecoute, je pense que c'est vraiemnt pas une bonne idée, viens avec moi."
+                            jump date1_punk
+
                         "Je ne vais pas le laisser seul.":
                             jump badEnding_3
                         "Je préfere vraiment rentrer chez moi et éviter tout problème...":
                             jump badEnding_4
 
                     # si reussite
-                    jump date1_punk
 
 
 
