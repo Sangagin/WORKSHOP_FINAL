@@ -299,6 +299,32 @@ screen inventory:
 
 
 
+
+screen poison:
+    imagebutton:
+        xpos renpy.random.randint(0,1000)
+        ypos renpy.random.randint(0,600)
+        idle "images/props/truc.png"
+        action Jump("negatif")
+        at custom_zoom5
+
+screen nourriture:
+    imagebutton:
+        xpos renpy.random.randint(0,1000)
+        ypos renpy.random.randint(0,600)
+        idle "images/props/food.png"
+        action Jump("positif")
+        at custom_zoom3
+
+transform custom_zoom3:
+    zoom 1
+
+transform custom_zoom5:
+    zoom 0.5
+
+
+
+
 screen choice(items):
     style_prefix "choice"
 
