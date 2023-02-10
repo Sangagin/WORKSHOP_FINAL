@@ -184,9 +184,9 @@ label start:
 
     # Declaration varaibles inventaire
     $ inventaire = []
-    $ braceletOS = Item("Bracelet en Os", "bracelet.png")
-    $ pendentifH = Item("Un pendentif cliché", "pendentif.png")
-    $ canetteP = Item("Une canette de maximator", "canette.png")
+    $ braceletOS = Item("Bracelet en Os", "images/props/bracelet.png")
+    $ pendentifH = Item("Un pendentif cliché", "images/props/collier.png")
+    $ canetteP = Item("Une canette de maximator", "images/props/canette.png")
 
 
     # Declaration booleens de verification
@@ -459,12 +459,13 @@ label start:
         "Je me suis ensuite rappelé que j'ai deux autres groupes à gérer, il ne faudrait pas que je les oublie non plus."
         "Mais je verrais tout cela demain, pour le moment, je mérite une bonne nuit de sommeil."
 
+        $thune=thune+200
 
     # --------------------------------------------------------------------------
     # JOURNEE 4 
 
     $jour += 1
-
+    label jour3:
     "Dans le noir, le studio a une allure terifiante."
     "Les ombres des instruments peuvent ressembler à des créatures tapies dans la pénombre."
     "Mais il me suffit d'un seul bouton pour les faire disparaître."
@@ -550,13 +551,15 @@ label start:
 
         "Une fois dans mon petit appartemment, je repense à la journée que je viens de passer."
         "Je me glisse sous mes draps, sans pouvoir pour autant fermer l'oeil de la nuit."
+        $thune=thune+200
+
         
 
     # --------------------------------------------------------------------------
     # JOURNEE 5 
 
     $jour += 1
-
+    label jour5:
     "Mon réveil me sort de ma somnolence, je n'arrive pas à croire que la nuit soit déjà passée..."
     "Je dois retourner au studio travailler avec mes groupes, en espérant que les membres aient plus dormi que moi."
     "Le studio commence vraiment à m'être familier."
@@ -584,6 +587,11 @@ label start:
 
 
     "C'est la dernière session d'enregistrement avant le festival."
+<<<<<<< HEAD
+=======
+    # Decision studio
+    $thune=thune+200
+>>>>>>> 9b58726a3037e76d1c3c8c8f5b7caec013fd3225
 
     menu:
         "Le groupe \"Effervescence\" me plait bien.":
@@ -662,10 +670,15 @@ label start:
             jump suite02
 
         if jour == 4:
+<<<<<<< HEAD
             jump suite3
 
+=======
+            jump jour3
+>>>>>>> 9b58726a3037e76d1c3c8c8f5b7caec013fd3225
         if jour == 5:
-            jump suite4
+            jump suite05
+        
 
 
     label achat_bracelet:
@@ -1068,6 +1081,7 @@ label start:
 
                     hide gotpos01
                     jump suite3
+        jump suite3
 
 
     label choix3_hippie:
@@ -1328,12 +1342,14 @@ label start:
 
             punk "Beau travail aujourd'hui."
             punk "A demain peut-être."
+            jump suite3
 
 
     # --------------------------------------------------------------------------
     # Mini-jeu 1 : Bagarre contre les skinheads
     label bagarre:
-
+        hide hugofight
+        hide alanneutre
         "Je saute dans la mélée et rejoint Patrick. Je me met face à un de ces skinheads, prèt à en découdre."
 
         jump guarde
@@ -1503,11 +1519,17 @@ label start:
 
                     "Moi" "Tu ne penses pas que c'est trop dangereux tout de même ?"
                     punk "Si on est armés, ils ne feront pas le poids."
+                    "Moi" "Mais tu penses pas qu'avec la baguarre de l'autre jour, ils vont venir en force ?"
+                    punk "T'as peur ?"
+
 
                     "Il me pointe du nez le pied de biche que j'ai entre les mains. Je crois qu'il est vraiment résolu à y aller..."
                     "Je ne sais pas si je l'accompagne ou pas, ça a tout de même l'air dangereux."
 
                     menu:
+                        "Ecoute, je pense que c'est vraiment pas une bonne idée, viens avec moi.":
+                            jump date1_punk
+
                         "Je ne vais pas le laisser seul.":
                             jump badEnding_3
 
@@ -1515,7 +1537,6 @@ label start:
                             jump badEnding_4
 
                     # si reussite
-                    jump date1_punk
 
                 "J'ai trop peur de me faire démolir. Je n'y vais pas.":
                     $amitie_punk -= 3
@@ -2689,7 +2710,7 @@ label start:
 
     # FIN HEUREUSE : FESTIVAL AVEC PUNK EN COUPLE
     label goodEnding_3:
-
+        scene rue1
         "Faites qu'il ouvre."
         show hugoneutre
         "Dieu soit loué il va bien."
