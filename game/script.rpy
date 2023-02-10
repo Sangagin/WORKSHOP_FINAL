@@ -1224,7 +1224,8 @@ label start:
 
     # ----- MINI-JEU BAGARRE -----
     label bagarre:
-
+        hide hugofight
+        hide alanneutre
         "Je saute dans la mélée et rejoint Patrick. Je me met face à un de ces skinheads, prèt à en découdre."
         jump guarde
 
@@ -1389,7 +1390,7 @@ label start:
                     "Il me pointe du nez le pied de biche que j'ai entre les mains. Je crois qu'il est vraiment résolu à y aller..."
                     "Je ne sais pas si je l'accompagne ou pas, ça a tout de même l'air dangereux."
                     menu:
-                        "Ecoute, je pense que c'est vraiemnt pas une bonne idée, viens avec moi."
+                        "Ecoute, je pense que c'est vraiment pas une bonne idée, viens avec moi.":
                             jump date1_punk
 
                         "Je ne vais pas le laisser seul.":
@@ -2501,7 +2502,7 @@ label start:
 
     # FIN HEUREUSE : FESTIVAL AVEC PUNK EN COUPLE
     label goodEnding_3:
-
+        scene rue1
         "Faites qu'il ouvre."
         # Patrick ouvre la porte
         "Dieu soit loué il va bien."
