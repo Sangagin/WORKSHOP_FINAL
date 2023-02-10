@@ -587,11 +587,7 @@ label start:
 
 
     "C'est la dernière session d'enregistrement avant le festival."
-<<<<<<< HEAD
-=======
-    # Decision studio
     $thune=thune+200
->>>>>>> 9b58726a3037e76d1c3c8c8f5b7caec013fd3225
 
     menu:
         "Le groupe \"Effervescence\" me plait bien.":
