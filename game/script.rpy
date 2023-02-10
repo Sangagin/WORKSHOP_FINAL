@@ -425,11 +425,11 @@ label start:
         "Je ne pensais pas en arrivant au studio ce matin que cette journée durerait aussi longtemps."
         if choix3_bagarre:
             "Patrick m'en a fait voir de toutes les couleurs..."
-        if choix3_cimetiere:
+        elif choix3_cimetiere:
             "Je ne m'attendais pas à être invité par Marie-Anne de la sorte."
             if flirt_got:
                 "Un rendez-vous dans un cimetière... C'est quand même assez improbable !"
-        if choix3_diabolo:
+        elif choix3_diabolo:
             "Je repense à Jeanne et je me rend compte qu'elle est super sympa !"
             if flirt_hippie :
                 "J'ai adoré son atelier découverte, j'ai pu découvrir de nouvelles choses."
@@ -975,18 +975,19 @@ label start:
         "Le temps de m'accommoder à mes nouveaux outils, on a perdu un peu de temps, ce qui n'a pas eu l'air de gêner le groupe."
         "Quelques heures ont passé et je crois qu'on arrive à la fin de notre première session d'enregistrement."
 
-        show gotpos01
-        got "Hé le bleu bite ! Ca te dirait de venir à notre petite soirée ?"
-        menu:
-            "Ouais pourquoi pas.":
-                got "Allez suis nous on y va !"
-                jump date1_got
+        if amitie_got >= 2:
+            show gotpos01
+            got "Hé le bleu bite ! Ca te dirait de venir à notre petite soirée ?"
+            menu:
+                "Ouais pourquoi pas.":
+                    got "Allez suis nous on y va !"
+                    jump date1_got
 
-            "Je comptais rentrer, je n'ai toujours pas fini de m'installer.":
-                "Moi" "C'est gentil d'avoir proposé ceci dit"
-                got "Boh pas grave ! Une prochaine fois."
-                hide gotpos01
-                jump suite3
+                "Je comptais rentrer, je n'ai toujours pas fini de m'installer.":
+                    "Moi" "C'est gentil d'avoir proposé ceci dit"
+                    got "Boh pas grave ! Une prochaine fois."
+                    hide gotpos01
+                    jump suite3
 
 
 
@@ -1211,8 +1212,11 @@ label start:
             punk "Beau travail aujourd'hui."
             punk "A demain peut-être."
 
+
+
+    # ----- MINI-JEU BAGARRE -----
     label bagarre:
-        #MINI JEU BAGARRE
+
         "Je saute dans la mélée et rejoint Patrick. Je me met face à un de ces skinheads, prèt à en découdre."
         jump guarde
 
@@ -1246,45 +1250,49 @@ label start:
         else:
             jump guarde
 
+    # Si la bagarre est perdue
     label gPerduLaBaguarre:
-        #si defaite
         $victoire_bagarre = False
+
         window show
         hide screen alanCoup
+
         "Après nous avoir mis tous les deux à terre et nous avoir pris nos portefeuille les skinheads sont partis."
+
         scene black with dissolve
         scene bgchemin02
         show hugoangry
+
         punk "Putain, on s'est pris une grosse raclée."
         punk "Je pensais que tu aurait été plus utile que ça."
         "Moi" "Désolé, je ne suis pas un grand bagarreur moi."
         punk "J'ai remarqué."
 
-        "--- Votre amitié avec Patrick diminue ---"
         $amitie_punk -= 1
 
         jump suite3
 
-
+    # Si la bagarre est gagnée
     label gGagneLaBaguarre:
-        hide screen alanHit
-
-        # si victoire
         $victoire_bagarre = True
+
+        hide screen alanHit
         scene black with dissolve
         scene bgchemin02
+
         "Après quelques coups reçus, les skinheads ont pris la fuite."
+
         show hugohappy
+
         punk "Bien joué ! Tu lui as bien montré au tien."
         "Je pourrais en dire autant de toi."
         punk "Oh quel plaisir de les voir prendre leur jambes à leur cou."
         "Moi" "Ouais, c'est vrai que c'est grisant, je peux comprendre que tu apprécies autant."
         punk "Tu l'as dit bouffi. Allez, à la prochaine [nom]."
 
-        "--- Votre amitié avec Patrick augmente ---"
         $amitie_punk += 2
-
         hide hugohappy
+
         "Tandis que je regarde Patrick s'éloigner, je décide qu'il est temps pour moi de rentrer également."
 
         jump suite3
@@ -1328,66 +1336,78 @@ label start:
                 "Ouais je mangerais bien un truc la.":
                     jump date2_got
                 "Je me suis déjà préparé un repas à me réchauffer désolé...":
+<<<<<<< HEAD
                     
                     #"fin de journee"
                     #"tu apprends que la goth est en prison"
                     #"----- BAD ENDING 1 -----"
+=======
+                    hide gotpos02
+>>>>>>> 5a1531d3f6b123a4ea2d0b5afca8cfa0ec0c62b4
                     jump badEnding_1
+
         else:
             jump choix3_got
 
 
     label choix4_punk:
-        # ecrire dialogue de merde passe temps
         scene black with dissolve 
         scene studio
         show hugohappy
-        punk "Hey, champion, viens par là deux secondes."
-        "Moi" "Qu'est-ce qu'il y a, tu as besoin de quelque chose ?"
-        punk "Ça te dirait de remettre ça avec les fachos ? "
-        punk "J'ai entendu dire qu'ils avaient un rassemblement ce soir."
+        "Le groupe arrive au studio et passe l'après-midi à enregistrer avec moi."
+        "C'est fou comme ils s'améliorent de jour en jour..."
+        "La journée est passée à une vitesse, je ne m'en étais pas rendue compte mais le soleil est déjà presque couché."
 
-        menu:
-            "Je vais le suivre, j'ai peur qu'il lui arrive quelque chose de grave.":
-                "Moi" "Je crois qu'ils n'ont pas compris la dernière fois en effet."
+        if amitie_punk >= 5:
+            punk "Hey, champion, viens par là deux secondes."
+            "Moi" "Qu'est-ce qu'il y a, tu as besoin de quelque chose ?"
+            punk "Ça te dirait de remettre ça avec les fachos ? "
+            punk "J'ai entendu dire qu'ils avaient un rassemblement ce soir."
 
-                $amitie_punk += 1
+            menu:
+                "Je vais le suivre, j'ai peur qu'il lui arrive quelque chose de grave.":
+                    "Moi" "Je crois qu'ils n'ont pas compris la dernière fois en effet."
 
-                punk "Parfait ! Viens avec moi on va chercher des baramines et on va leur montrer à ces sales fachos!"
-                "Moi" "Je te suis."
+                    $amitie_punk += 1
 
-                hide hugohappy
-                show hugopieddebiche1
-                "Il attrape un sac au sol que je n'avais pas vu et me met un pied de biche dans les mains après en avoir attrapé un pour lui."
+                    punk "Parfait ! Viens avec moi on va chercher des baramines et on va leur montrer à ces sales fachos!"
+                    "Moi" "Je te suis."
 
-                punk "C'est parti, on va les démolir."
+                    hide hugohappy
+                    show hugopieddebiche1
+                    "Il attrape un sac au sol que je n'avais pas vu et me met un pied de biche dans les mains après en avoir attrapé un pour lui."
 
-                "Moi" "Tu ne penses pas que c'est trop dangereux tout de même ?"
-                punk "Si on est armés, ils ne feront pas le poids."
+                    punk "C'est parti, on va les démolir."
 
-                "Il me pointe du nez le pied de biche que j'ai entre les mains. Je crois qu'il est vraiment résolu à y aller..."
-                "Je ne sais pas si je l'accompagne ou pas, ça a tout de même l'air dangereux."
-                menu:
-                    "Je ne vais pas le laisser seul.":
-                        jump badEnding_3
-                    "Je préfere vraiment rentrer chez moi et éviter tout problème...":
-                        jump badEnding_4
+                    "Moi" "Tu ne penses pas que c'est trop dangereux tout de même ?"
+                    punk "Si on est armés, ils ne feront pas le poids."
 
-                # si reussite
-                jump date1_punk
+                    "Il me pointe du nez le pied de biche que j'ai entre les mains. Je crois qu'il est vraiment résolu à y aller..."
+                    "Je ne sais pas si je l'accompagne ou pas, ça a tout de même l'air dangereux."
+                    menu:
+                        "Je ne vais pas le laisser seul.":
+                            jump badEnding_3
+                        "Je préfere vraiment rentrer chez moi et éviter tout problème...":
+                            jump badEnding_4
+
+                    # si reussite
+                    jump date1_punk
 
 
 
-            "J'ai trop peur de me faire démolir. Je n'y vais pas.":
-                $amitie_punk -= 3
+                "J'ai trop peur de me faire démolir. Je n'y vais pas.":
+                    $amitie_punk -= 3
 
-                "Moi" "Ce sera sans moi haha..."
-                hide hugohappy
-                show hugoangry
-                punk "Mauviette ! "
-                punk "Allez dégage, j'y vais moi !"
+                    "Moi" "Ce sera sans moi haha..."
+                    hide hugohappy
+                    show hugoangry
+                    punk "Mauviette ! "
+                    punk "Allez dégage, j'y vais moi !"
 
-                jump badEnding_4
+                    jump badEnding_4
+
+        else:
+            jump choix3_punk
 
 
 
@@ -1526,7 +1546,7 @@ label start:
                     "Elle se dandine d'un pied sur l'autre, gênée. "
                     "Plusieurs fois elle semble vouloir dire quelque chose, avant de se raviser. "
 
-                    if (amitie_hippie > 4):
+                    if (amitie_hippie >= 4):
                         "..."
                         menu:
                             "J'aimerai bien me rapprocher d'elle.":
