@@ -670,12 +670,8 @@ label start:
             jump suite02
 
         if jour == 4:
-<<<<<<< HEAD
-            jump suite3
-
-=======
             jump jour3
->>>>>>> 9b58726a3037e76d1c3c8c8f5b7caec013fd3225
+            
         if jour == 5:
             jump suite05
         
