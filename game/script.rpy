@@ -336,7 +336,7 @@ label start:
 
         scene black with dissolve 
         scene apt
-
+        $thune=thune+200
         # ------------------------- JOURNEE 2 (PAS JOUABLE) -------------------------------------
         $jour += 1
         "Allez, c'est parti pour une nouvelle journée de travail. "
@@ -436,11 +436,12 @@ label start:
         "Je me suis ensuite rappelé que j'ai deux autres groupes à gérer, il ne faudrait pas que je les oublie non plus."
         "Mais je verrais tout cela demain, pour le moment, je mérite une bonne nuit de sommeil."
 
+        $thune=thune+200
 
     # --------------------------------------------------------------------------
     # ----- JOURNEE 4 -----
     $jour += 1
-
+    label jour3:
     "Dans le noir, le studio a une allure terifiante."
     "Les ombres des instruments peuvent ressembler à des créatures tapies dans la pénombre."
     "Mais il me suffit d'un seul bouton pour les faire disparaître."
@@ -519,6 +520,8 @@ label start:
         scene apt with dissolve
         "Une fois dans mon petit appartemment, je repense à la journée que je viens de passer."
         "Je me glisse sous mes draps, sans pouvoir pour autant fermer l'oeil de la nuit."
+        $thune=thune+200
+
         
 
 
@@ -526,7 +529,7 @@ label start:
     # ----- JOURNEE 5 -----
 
     $jour += 1
-
+    label jour5:
     "Mon réveil me sort de ma somnolence, je n'arrive pas à croire que la nuit soit déjà passée..."
     "Je dois retourner au studio travailler avec mes groupes, en espérant que les membres aient plus dormi que moi."
     "Le studio commence vraiment à m'être familier."
@@ -551,6 +554,8 @@ label start:
 
     "C'est la dernière session d'enregistrement avant le festival."
     # Decision studio
+    $thune=thune+200
+
     menu:
         "Le groupe \"Effervescence\" me plait bien.":
             $amitie_got += 1
@@ -622,9 +627,10 @@ label start:
         if jour == 3:
             jump suite02
         if jour == 4:
-            jump suite3
+            jump jour3
         if jour == 5:
-            jump suite4
+            jump suite05
+        
 
 
     label achat_bracelet:
@@ -988,6 +994,7 @@ label start:
                     got "Boh pas grave ! Une prochaine fois."
                     hide gotpos01
                     jump suite3
+        jump suite3
 
 
 
@@ -1336,14 +1343,7 @@ label start:
                 "Ouais je mangerais bien un truc la.":
                     jump date2_got
                 "Je me suis déjà préparé un repas à me réchauffer désolé...":
-<<<<<<< HEAD
-                    
-                    #"fin de journee"
-                    #"tu apprends que la goth est en prison"
-                    #"----- BAD ENDING 1 -----"
-=======
                     hide gotpos02
->>>>>>> 5a1531d3f6b123a4ea2d0b5afca8cfa0ec0c62b4
                     jump badEnding_1
 
         else:
