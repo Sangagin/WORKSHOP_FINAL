@@ -132,6 +132,10 @@ image arnaudmain = "images/marchand/arnaudmain.png"
 image arnaudneutre = "images/marchand/arnaudneutre.png"
 
 
+# ----- props -----
+image redBall = "images/props/cercle_rouge.png"
+image persoRatrappe = "images/props/diabolo.png"
+
 # ----- fin -----
 
 image ecrandefin = "images/ecrandefin"
@@ -160,6 +164,13 @@ init python:
             self.imageI = imageI
 
 
+    def getMousePosition():
+        import pygame
+        x, y = pygame.mouse.get_pos()
+        store.mousex = x
+        store.mousey = y
+
+
 # --------------------------------------------------------------------------
 # --------------------------------------------------------------------------
 
@@ -174,6 +185,9 @@ label start:
     $amitie_got = 0
     $amitie_hippie = 0
     $amitie_punk = 0
+    $balles_attrape = 0
+    $balles_ratee= 0
+    $posArrive = [100,400,600,800,1000,1500]
 
     # Declaration des flirts
     $flirt_got = False
@@ -1521,8 +1535,7 @@ label start:
         "Avant même que je m'en rende compte, nous étions entourés de verdure."
         "Au beau milieu d'un parc dans lequel plusieurs personnes habillées de la même manière que Jeanne sont en train de s'amuser à se lancer divers objets."
 
-        hippie "Tu vas voir, c'est super facile, faut juste prendre le coup. "
-        hippie "Tu veux commencer par quoi ? Les balles de jonglage ou le diabolo ?"
+        hippie "On va commencert par le diabolo. Tu vas voir, c'est super facile, faut juste prendre le coup. "
 
         menu:
             "Je préfererai essayer le diabolo.":
@@ -1535,72 +1548,7 @@ label start:
                 "L'enthousiasme de Jeanne était communicatif, aussi j'attrapa les bâtons qu'elle me tendait avec empressement."
                 hide romanepouce
 
-                # MINI JEU DIABOLO :
-                #(rester appuyé sur le clic pour le lancer le plus haut possible, puis décaler de droite à gauche pour bien le rattraper)
-                $reussite_diabolo = True
-
-                if reussite_diabolo:
-                    show romanedegeu
-                    hippie "Ouah, t'as pris le coup super vite, c'était incroyable !"
-
-                    "Portée par l'ambiance chaleureuse de la foule, et par sa joie de me voir réussir, Jeanne me prend dans ses bras et me serre contre elle."
-
-                    hippie "Tu es incroyable comme gars, c'est vraiment super de t'avoir comme ami ! D'ailleurs je..."
-
-                    hide romanedegeu
-                    show romaneneutre
-                    "Jeanne réalise finalement la position dans laquelle nous sommes, et se recule précipitamment, les joues rouges comme des pivoines."
-                    "Elle se dandine d'un pied sur l'autre, gênée. "
-                    "Plusieurs fois elle semble vouloir dire quelque chose, avant de se raviser. "
-
-                    if (amitie_hippie >= 4):
-                        "..."
-                        menu:
-                            "J'aimerai bien me rapprocher d'elle.":
-                                $amitie_hippie += 1
-                                $flirt_hippie = True
-                                "Suivant mon instinct, je fais un pas en avant vers elle avant qu'elle ne puisse reprendre la parole."
-                                "Moi" "Ça ne me dérangeais pas tu sais. Un câlin par une aussi jolie fille, ça ne se refuse pas..."
-
-                                "Aaaaaah, mais qu'est ce que je raconte ? Non mais ça va pas ? "
-                                "Elle va me coller une baffe et je vais me faire virer pour avoir fait des avances malpolies à une de mes artistes !"
-
-                                hippie "Vraiment ?"
-
-                                hide romaneneutre
-                                show romaneneutresmile
-                                "Un sourire malicieux pointe le bout de son nez sur le visage de Jeanne. "
-                                "Elle semble avoir retrouvé cette assurance optimiste qui la définissait si bien."
-
-                                hippie "Et donc si je fais ça, cela ne te gêne pas non plus ?"
-
-                                "Jeanne passe son doigt sous mon menton..."
-                                "... avant de s'enfuir en riant."
-                                "C'est à mon tour de me retrouver à rougir, regardant Jeanne partir danser avec des enfants en sautillant. "
-                                "Cette fille a vraiment le cœur sur la main. "
-                                "Je la rejoins, et nous finissons ainsi la journée, à s'amuser avec toutes les autres personnes ici, tout en s'échangeant des regards complices."
-
-                                hippie "On se revoit bientôt au studio !"
-
-                                "Je rentre seul chez moi, en ayant cependant promis de se revoir bientôt."
-
-                            "Je préfere garder mes distances.":
-                                "Un moment de silence un peu gênant s'installa entre nous, avant que nous reprenions les exercices, essayant de faire comme si rien ne s'était passé. "
-                                "J'aurais peut-être dû dire quelque chose ?"
-                                "La journée arriva à sa fin sans autre incident notable, et je fini par rentrer chez moi, seul."
-
-
-                else:
-                    show romanesmile
-                    hippie "Ne t'inquiète pas, tout le monde ne réussit pas du premier coup, c'est normal. "
-                    hippie "On pourra recommencer une prochaine fois si tu veux."
-                    '...'
-                    hippie "Mais pour l'instant il commence à se faire tard, on devrait rentrer. A une prochaine fois !"
-                    hide romanesmile
-
-                    "Déçu, je rentre chez moi, pour me préparer à une nouvelle journée de travail le lendemain."
-
-                    jump date1_done
+                jump diaboloGame
 
             "Les balles de jonglage me tentent un peu plus !":
                 "Jeanne me met dans les mains trois petites balles colorées remplies de sable."
@@ -1621,8 +1569,140 @@ label start:
                 "Une fois sortie du parc, je me retrouve seul, bredouille, avec mes balles de jongle dans la main."
                 "Je m'entraine encore trente minutes avant de rentrer chez moi, épuisé."
 
-        jump suite3
+                jump suite3
 
+
+
+
+
+
+
+    label finJeuDiabolo:
+
+
+
+        $balles_ratee=0
+        $balles_attrape=0
+
+
+
+
+
+        if reussite_diabolo:
+            show romanedegeu
+            hippie "Ouah, t'as pris le coup super vite, c'était incroyable !"
+
+            "Portée par l'ambiance chaleureuse de la foule, et par sa joie de me voir réussir, Jeanne me prend dans ses bras et me serre contre elle."
+
+            hippie "Tu es incroyable comme gars, c'est vraiment super de t'avoir comme ami ! D'ailleurs je..."
+
+            hide romanedegeu
+            show romaneneutre
+            "Jeanne réalise finalement la position dans laquelle nous sommes, et se recule précipitamment, les joues rouges comme des pivoines."
+            "Elle se dandine d'un pied sur l'autre, gênée. "
+            "Plusieurs fois elle semble vouloir dire quelque chose, avant de se raviser. "
+
+            if (amitie_hippie >= 4):
+                "..."
+                menu:
+                    "J'aimerai bien me rapprocher d'elle.":
+                        $amitie_hippie += 1
+                        $flirt_hippie = True
+                        "Suivant mon instinct, je fais un pas en avant vers elle avant qu'elle ne puisse reprendre la parole."
+                        "Moi" "Ça ne me dérangeais pas tu sais. Un câlin par une aussi jolie fille, ça ne se refuse pas..."
+
+                        "Aaaaaah, mais qu'est ce que je raconte ? Non mais ça va pas ? "
+                        "Elle va me coller une baffe et je vais me faire virer pour avoir fait des avances malpolies à une de mes artistes !"
+
+                        hippie "Vraiment ?"
+
+                        hide romaneneutre
+                        show romaneneutresmile
+                        "Un sourire malicieux pointe le bout de son nez sur le visage de Jeanne. "
+                        "Elle semble avoir retrouvé cette assurance optimiste qui la définissait si bien."
+
+                        hippie "Et donc si je fais ça, cela ne te gêne pas non plus ?"
+
+                        "Jeanne passe son doigt sous mon menton..."
+                        "... avant de s'enfuir en riant."
+                        "C'est à mon tour de me retrouver à rougir, regardant Jeanne partir danser avec des enfants en sautillant. "
+                        "Cette fille a vraiment le cœur sur la main. "
+                        "Je la rejoins, et nous finissons ainsi la journée, à s'amuser avec toutes les autres personnes ici, tout en s'échangeant des regards complices."
+
+                        hippie "On se revoit bientôt au studio !"
+
+                        "Je rentre seul chez moi, en ayant cependant promis de se revoir bientôt."
+
+                    "Je préfere garder mes distances.":
+                        "Un moment de silence un peu gênant s'installa entre nous, avant que nous reprenions les exercices, essayant de faire comme si rien ne s'était passé. "
+                        "J'aurais peut-être dû dire quelque chose ?"
+                        "La journée arriva à sa fin sans autre incident notable, et je fini par rentrer chez moi, seul."
+                        jump suite3
+
+            else:
+                show romanesmile
+                hippie "Ne t'inquiète pas, tout le monde ne réussit pas du premier coup, c'est normal. "
+                hippie "On pourra recommencer une prochaine fois si tu veux."
+                '...'
+                hippie "Mais pour l'instant il commence à se faire tard, on devrait rentrer. A une prochaine fois !"
+                hide romanesmile
+
+                "Déçu, je rentre chez moi, pour me préparer à une nouvelle journée de travail le lendemain."
+
+                jump suite3
+
+            
+
+
+    label diaboloGame :
+    
+        $ test=posArrive[renpy.random.randint(0,5)]
+
+        show redBall:
+            zoom 0.2
+            xpos 900
+            ypos 800
+           
+            ease 2 ypos 0
+            ease 2 xpos test ypos 800
+    
+
+        jump rePositionPerso
+
+
+    label rePositionPerso :
+        window hide
+        $ getMousePosition()
+        show persoRatrappe:
+            zoom 0.2
+            xpos mousex 
+            ypos 900
+            
+        $ renpy.pause()
+        $ balles_attrape=balles_attrape+1
+            
+        if(balles_attrape==4):
+        #condiion sortie
+            $reussite_diabolo = True
+            hide persoRatrappe
+            hide redBall
+            jump finJeuDiabolo
+ 
+        else:
+            jump diaboloGame
+     
+        
+        
+        
+        
+        
+     
+        
+        
+        
+     
+                
+        jump rePositionPerso
 
     label date1_punk:
 
